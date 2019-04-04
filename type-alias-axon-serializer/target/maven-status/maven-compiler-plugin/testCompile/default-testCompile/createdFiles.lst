@@ -1,0 +1,12 @@
+org/alias/axon/serializer/resolvable/NotResolvableSerializedTypeTest.class
+org/alias/axon/serializer/aliasable/AliasTypeFixtureResourceBundle.class
+org/alias/axon/serializer/aliasable/AliasableTypeResourceBundleValidatorTest.class
+org/alias/axon/serializer/TypeDecoratableSerializerTest.class
+org/alias/axon/serializer/aliasable/AliasableResolvableSerializedTypeTest.class
+org/alias/axon/serializer/TypeDecoratableSerializedObjectTest.class
+org/alias/axon/serializer/aliasable/AliasableResolvableSerializedTypeTest$1.class
+org/alias/axon/serializer/resolvable/ClassloaderResolvableSerializedTypeTest.class
+org/alias/axon/serializer/aliasable/NoAliasableTypeTest.class
+org/alias/axon/serializer/aliasable/AliasableResolvableTypeTest.class
+org/alias/axon/serializer/aliasable/AliasableTypeResourceBundleRegisterTest.class
+org/alias/axon/serializer/aliasable/AliasTypeFixtureInvalidResourceBundle.class

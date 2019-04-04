@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 Resource Definitions//EN"
+    "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<resources>
+	<jdbc-resource pool-name="EventsourcingEmbeddedH2Pool"
+		jndi-name="jdbc/eventsourcing" />
+	<jdbc-connection-pool
+		name="EventsourcingEmbeddedH2Pool" res-type="javax.sql.XADataSource"
+		datasource-classname="org.h2.jdbcx.JdbcDataSource">
+		<property name="user" value="sa" />
+		<property name="password" value="sa" />
+		<property name="url"
+			value="jdbc:h2:mem:eventsourcing;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;INIT=runscript from 'classpath:databasescripts/eventsourcingCreate.ddl'" />
+	</jdbc-connection-pool>
+
+	<jdbc-resource pool-name="MemberQueryEmbeddedH2Pool"
+		jndi-name="jdbc/query/member" />
+	<jdbc-connection-pool
+		name="MemberQueryEmbeddedH2Pool" res-type="javax.sql.XADataSource"
+		datasource-classname="org.h2.jdbcx.JdbcDataSource">
+		<property name="user" value="sa" />
+		<property name="password" value="sa" />
+		<property name="url"
+			value="jdbc:h2:mem:querymeber;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;INIT=runscript from 'classpath:databasescripts/queryMemberCreate.ddl'" />
+	</jdbc-connection-pool>
+
+</resources>

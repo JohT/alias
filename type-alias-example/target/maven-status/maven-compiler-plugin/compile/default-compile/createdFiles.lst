@@ -1,0 +1,15 @@
+org/alias/example/customized/resourcebundle/CustomizedResourceBundleFileType.class
+org/alias/example/customized/resourcebundle/CustomizedSimpleResourceBundle.class
+org/alias/example/customized/external/NotAnnotatedExternalResourceBundleFileType.class
+org/alias/example/standard/AnotherDefaultFileType.class
+org/alias/example/customized/properties/CustomizedFileName.properties
+org/alias/example/customized/external/CustomizedExternalResourceBundle.class
+org/alias/example/customized/properties/package-info.class
+org/alias/example/customized/resourcebundle/package-info.class
+org/alias/example/customized/properties/AnotherCustomNamedPropertyFileType.class
+org/alias/example/standard/DefaultFileType.class
+org/alias/example/customized/external/package-info.class
+org/alias/example/customized/resourcebundle/AnotherCustomizedResourceBundleFileType.class
+org/alias/example/customized/properties/CustomNamedPropertyFileType.class
+org/alias/example/customized/external/ExternalAnnotationResourceBundleFileType.class
+TypeAlias.class

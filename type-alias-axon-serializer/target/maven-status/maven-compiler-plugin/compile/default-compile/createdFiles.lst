@@ -1,0 +1,14 @@
+org/alias/axon/serializer/aliasable/AliasableTypeResourceBundleRegister.class
+org/alias/axon/serializer/aliasable/AliasableResolvableSerializedType.class
+org/alias/axon/serializer/aliasable/NoAliasableType.class
+org/alias/axon/serializer/experimental/AliasableResourceBundleClassloader.class
+org/alias/axon/serializer/resolvable/ClassloaderResolvableSerializedType.class
+org/alias/axon/serializer/resolvable/NotResolvableSerializedType.class
+org/alias/axon/serializer/TypeDecoratableSerializedObject.class
+org/alias/axon/serializer/resolvable/ResolvableType.class
+org/alias/axon/serializer/aliasable/AliasableType.class
+org/alias/axon/serializer/TypeDecoratableSerializer.class
+org/alias/axon/serializer/aliasable/AliasableTypeResourceBundleValidator.class
+org/alias/axon/serializer/aliasable/AliasableResolvableType.class
+org/alias/axon/serializer/resolvable/ResolvableSerializedType.class
+org/alias/axon/serializer/aliasable/AliasableResolvableType$Builder.class

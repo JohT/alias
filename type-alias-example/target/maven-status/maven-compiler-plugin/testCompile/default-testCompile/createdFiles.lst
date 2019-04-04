@@ -1,0 +1,4 @@
+org/alias/example/customized/properties/CustomizedFileNamePropertiesTest.class
+org/alias/example/customized/external/CustomizedExternalResourceBundleTest.class
+org/alias/example/standard/TypeAliasTest.class
+org/alias/example/customized/resourcebundle/CustomizedSimpleResourceBundleTest.class

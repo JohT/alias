@@ -1,0 +1,19 @@
+/*
+ * {(header)}
+ */
+package {(packagename)};
+
+import java.util.ListResourceBundle;
+import javax.annotation.Generated;
+
+@Generated("type-alias")
+public class {(filename)} extends ListResourceBundle {
+
+	@Override
+	protected Object[][] getContents() {
+		return new Object[][] {
+				{ "{(aliases.aliasname)}", {(aliases.fullqualifiedname)}.class },
+				{ "{(aliases.fullqualifiedname)}", "{(aliases.aliasname)}" },
+		};
+	}
+}
