@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.alias.annotation</groupId>
+	<groupId>io.github.joht</groupId>
 	<artifactId>alias-parent</artifactId>
 	<version>1.0.0-RC1</version>
 	<packaging>pom</packaging>
