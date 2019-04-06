@@ -2,8 +2,8 @@
 Java identifies types by their class name. 
 The class name heavily depends on implementation details (e.g. where the class is located).
 Finding the right name and right place may change during development.
-As soon as libraries use the class name to identify e.g. an serialized object before reconstructing it,
-renaming and moving classes leads to problems (e.g. runtime exceptions). 
+As soon as the class name is used to identify e.g. an deserialized object before reconstructing it,
+a changed class name leads to a runtime exception. 
 
 **type-alias** enables naming those types distinctly besides their class name. 
 This is done at compile time (no runtime dependencies) by using the annotation `@TypeAlias`.
