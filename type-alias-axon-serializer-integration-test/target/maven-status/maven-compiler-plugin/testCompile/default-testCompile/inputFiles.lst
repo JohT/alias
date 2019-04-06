@@ -1,6 +1,0 @@
-/Users/johannestroppacher/Documents/Engineering/Eclipse Workspaces/alias/alias/type-alias-axon-serializer-integration-test/src/test/java/org/alias/axon/serializer/example/domain/model/account/AccountAggregateEventsourcingTest.java
-/Users/johannestroppacher/Documents/Engineering/Eclipse Workspaces/alias/alias/type-alias-axon-serializer-integration-test/src/test/java/org/alias/axon/serializer/example/messages/MessageTypeAliasBundleTest.java
-/Users/johannestroppacher/Documents/Engineering/Eclipse Workspaces/alias/alias/type-alias-axon-serializer-integration-test/src/test/java/org/alias/axon/serializer/example/query/model/member/QueryMemberTypeAliasBundleTest.java
-/Users/johannestroppacher/Documents/Engineering/Eclipse Workspaces/alias/alias/type-alias-axon-serializer-integration-test/src/test/java/org/alias/axon/serializer/example/DomainModelTypeAliasBundleTest.java
-/Users/johannestroppacher/Documents/Engineering/Eclipse Workspaces/alias/alias/type-alias-axon-serializer-integration-test/src/test/java/org/alias/axon/serializer/integration/AccountEventsourcingIntegrationTest.java
-/Users/johannestroppacher/Documents/Engineering/Eclipse Workspaces/alias/alias/type-alias-axon-serializer-integration-test/src/test/java/org/alias/axon/serializer/integration/EventsourcingTestDatabaseRepository.java

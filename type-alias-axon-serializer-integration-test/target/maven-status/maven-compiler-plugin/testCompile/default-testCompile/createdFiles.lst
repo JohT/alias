@@ -1,6 +1,0 @@
-org/alias/axon/serializer/integration/EventsourcingTestDatabaseRepository.class
-org/alias/axon/serializer/example/messages/MessageTypeAliasBundleTest.class
-org/alias/axon/serializer/integration/AccountEventsourcingIntegrationTest.class
-org/alias/axon/serializer/example/domain/model/account/AccountAggregateEventsourcingTest.class
-org/alias/axon/serializer/example/DomainModelTypeAliasBundleTest.class
-org/alias/axon/serializer/example/query/model/member/QueryMemberTypeAliasBundleTest.class
