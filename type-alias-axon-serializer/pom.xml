@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>io.github.joht</groupId>
+		<groupId>io.github.joht.alias</groupId>
 		<artifactId>alias-parent</artifactId>
 		<version>1.0.0-RC1</version>
 	</parent>
