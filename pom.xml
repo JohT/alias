@@ -111,7 +111,7 @@
 								<id>sign-artifacts</id>
 								<phase>verify</phase>
 								<goals>
-									<goal>sign</goal><!--suppress MavenModelInspection -->
+									<goal>sign</goal>
 								</goals>
 							</execution>
 						</executions>
