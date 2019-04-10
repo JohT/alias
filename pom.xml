@@ -3,7 +3,7 @@
 
 	<groupId>io.github.joht.alias</groupId>
 	<artifactId>alias-parent</artifactId>
-	<version>1.0.0-RC5-SNAPSHOT</version>
+	<version>1.0.0-RC5</version>
 	<packaging>pom</packaging>
 
 	<name>alias</name>
@@ -20,7 +20,7 @@
 		<connection>scm:git:git://github.com/JohT/alias.git</connection>
 		<developerConnection>scm:git:git@github.com:JohT/alias.git</developerConnection>
 		<url>https://github.com/JohT/alias</url>
-		<tag>HEAD</tag>
+		<tag>v1.0.0-RC5</tag>
 	</scm>
 
 	<!-- deploy and release configuration -->
