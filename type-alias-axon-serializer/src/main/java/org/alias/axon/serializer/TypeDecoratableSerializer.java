@@ -50,7 +50,7 @@ public class TypeDecoratableSerializer implements Serializer {
 	 * Extends the given {@link Serializer} to use a {@link ResourceBundle} to look for type aliases and to resolve the type
 	 * ({@link String} to {@link Class} object).
 	 * <p>
-	 * <b>Important note about the structure of the {@link ResourceBundle}:<b><br>
+	 * <b>Important note about the structure of the {@link ResourceBundle}:</b><br>
 	 * The resource bundle must contain the {@link String} aliases as keys assigned to their {@link Class}es as value. <br>
 	 * It must also contain the full qualified type name {@link String}s as keys assigned to their {@link String} alias.<br>
 	 * This is needed, to support serialization, deserialization and resolved types (skipping
