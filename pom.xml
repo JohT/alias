@@ -8,6 +8,8 @@
 
 	<name>alias</name>
 	<inceptionYear>2019</inceptionYear>
+	<description>Parent of the type alias modules including examples and use cases</description>
+	<url>https://github.com/JohT/alias</url>
 
 	<licenses>
 		<license>

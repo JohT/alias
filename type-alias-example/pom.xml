@@ -9,6 +9,8 @@
 
 	<artifactId>type-alias-example</artifactId>
 	<name>type-alias-example</name>
+	<description>Contains examples on how to use and configure type alias file generation</description>
+	<url>https://github.com/JohT/alias/tree/master/type-alias-example</url>
 
 	<dependencies>
 		<dependency>

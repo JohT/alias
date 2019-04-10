@@ -9,6 +9,8 @@
 
 	<artifactId>type-alias-axon-serializer</artifactId>
 	<name>type-alias-axon-serializer</name>
+	<description>Contains an type alias aware serializer enhancement for axon.</description>
+	<url>https://github.com/JohT/alias/tree/master/type-alias-axon-serializer</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

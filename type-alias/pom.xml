@@ -13,6 +13,7 @@
 		Provides the annotation @TypeAlias to give types a distinct name besides their class name.
 		Provides customizable file generation to write the alias names into a ResourceBundle or property file.
 	</description>
+	<url>https://github.com/JohT/alias/tree/master/type-alias</url>
 		
 	<dependencies>
 		<!-- Testing -->
