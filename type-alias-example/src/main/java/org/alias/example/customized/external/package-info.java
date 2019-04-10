@@ -1,7 +1,7 @@
 /**
  * TypeAlias annotated classes in this package are written into <br>
  * the generated file <i>CustomizedExternalResourceBundle.java</i> during compilation.<br>
- * It is a ResourceBundle with key = alias name and value = Class<?>.
+ * It is a ResourceBundle with key = alias name and value = type as Class.<br>
  */
 @TypeAliasGeneratedFile(value = "CustomizedExternalResourceBundle", template = RESOURCE_BUNDLE_SIMPLE)
 package org.alias.example.customized.external;
