@@ -17,7 +17,6 @@ import java.lang.annotation.Target;
  * It also means, that is not visible when using runtime reflection methods like {@link Class#getAnnotation(Class)}.
  * 
  * @author JohT
- * @see ExternalTypeAlias
  */
 @Documented
 @Target({ ElementType.TYPE, ElementType.PACKAGE })

@@ -6,6 +6,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import javax.lang.model.AnnotatedConstruct;
+
 /**
  * Assigns a distinct alias name to the annotated type. Optional, an external type may also be specified.
  * <p>
@@ -46,7 +48,7 @@ public @interface TypeAlias {
 	 * <p>
 	 * If not specified, the annotated type (where this annotation is places) is taken as default.<br>
 	 * For details, why this parameter is a {@link String} ans not a {@link Class}, see
-	 * {@link AnnotatedConstruct#getAnnotation(Class).}
+	 * {@link AnnotatedConstruct#getAnnotation(Class)}.
 	 * 
 	 * @return full qualified type name {@link String} or an empty {@link String} representing the annotated type.
 	 */

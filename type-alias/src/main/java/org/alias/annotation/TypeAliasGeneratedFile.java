@@ -26,8 +26,8 @@ import java.util.ResourceBundle;
  * Sub packages are allowed to have their own customization, even if their outer package has another.
  * <p>
  * <b>Default behavior:</b><br>
- * If this annotation isn't used, the {@link #DEFAULT_TEMPLATE} will be used to generate one file with the name
- * {@value #DEFAULT_FILE_NAME} located in the default/unnamed package. <br>
+ * If this annotation isn't used, {@link Template#RESOURCE_BUNDLE} will be used to generate one file with the name
+ * {@value TypeAliasGeneratedFile#DEFAULT_FILE_NAME} located in the default/unnamed package. <br>
  * It is recommended, to use this only as a starting point and for very simple projects. If you wan't to use aliases in
  * more than one module an want to be more flexible, it is advisable to use {@link TypeAliasGeneratedFile} early on.
  * <p>
@@ -101,30 +101,19 @@ public @interface TypeAliasGeneratedFile {
 		 * Generates a {@link ResourceBundle} with the file extension <i>java</i>.<br>
 		 * It contains the alias names as keys and their assigned {@link Class} as values,<br>
 		 * as well as the full qualified class names as keys and their assigned alias {@link String} (bidirectional).
-		 * 
 		 * <p>
-		 * <h3>Example how a ResourceBundle can be loaded:</h3> <blockquote>
-		 * 
+		 * <b>Example how to load a ResourceBundle:</b> <blockquote>
 		 * <pre>
 		 * String resourceBundleName = "org.TypeAlias";
 		 * ResourceBundle resourceBundle = ResourceBundle.getBundle(resourceBundleName);
 		 * </pre>
-		 * 
 		 * </blockquote>
 		 */
 		RESOURCE_BUNDLE("resourcebundle.template", "java"),
 		/**
 		 * Generates a {@link ResourceBundle} with the file extension <i>java</i>.<br>
-		 * It simply contains the alias names as keys and their assigned {@link Class} as values.
-		 * <p>
-		 * <h3>Example how a ResourceBundle can be loaded:</h3> <blockquote>
-		 * 
-		 * <pre>
-		 * String resourceBundleName = "org.TypeAlias";
-		 * ResourceBundle resourceBundle = ResourceBundle.getBundle(resourceBundleName);
-		 * </pre>
-		 * 
-		 * </blockquote>
+		 * It simply contains the alias names as keys and their assigned {@link Class} as values.<br>
+		 * See {@link #RESOURCE_BUNDLE} for an example.
 		 */
 		RESOURCE_BUNDLE_SIMPLE("resourcebundleSimple.template", "java"),
 
