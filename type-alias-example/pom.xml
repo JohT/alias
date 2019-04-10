@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>io.github.joht.alias</groupId>
 		<artifactId>alias-parent</artifactId>
-		<version>1.0.0-RC9</version>
+		<version>1.0.0-RC10-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>type-alias-example</artifactId>
