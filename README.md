@@ -10,6 +10,23 @@ This is done at compile time (no runtime dependencies) by using the annotation `
 The result is a generated file (e.g. ResourceBundle or Properties),
 that contains a register of all aliases and their current type name.
 
+### Quickstart
+Include the following compile-time-only dependency.
+It provides the annotations `@TypeAlias`, `@TypeAliases` to attach alias names,
+`@TypeAliasGeneratedFile` for customization and the java annotation processing based file generator,
+that generates (by default) the ResourceBundle `TypeAlias.java` inside the default package containing all aliases.
+
+```xml
+<dependency>
+  <groupId>io.github.joht.alias</groupId>
+  <artifactId>type-alias</artifactId>
+  <version>1.0.0-RC10</version>
+  <scope>provided</scope>
+  <optional>true</optional>
+</dependency>
+```
+
+### Contents
 - "type-alias" contains the main module with the java annotation processing based code generator.
 - "type-alias-example" shows, how to use and customize "type-alias" code generation.
 - "type-alias-axon-serializer" shows, how to enhance axon serializer to use aliases.
