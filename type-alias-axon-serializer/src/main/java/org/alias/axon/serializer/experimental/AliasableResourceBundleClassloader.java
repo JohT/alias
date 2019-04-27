@@ -48,7 +48,7 @@ public class AliasableResourceBundleClassloader extends ClassLoader {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
     public Class findClass(String name) throws ClassNotFoundException {
 		if (!resourceBundle.containsKey(name)) {
-			throw new ClassNotFoundException();
+			return Class.forName(name);
 		}
 		Object value = resourceBundle.getObject(name);
 		if (value instanceof Class) {
