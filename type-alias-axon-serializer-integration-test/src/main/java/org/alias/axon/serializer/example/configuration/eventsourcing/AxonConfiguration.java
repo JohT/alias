@@ -98,6 +98,10 @@ public class AxonConfiguration {
 	 * @return {@link Function} to get the {@link Serializer} for the given {@link Configuration}
 	 */
 	private static final Function<Configuration, Serializer> jacksonSerializer(ObjectMapper objectMapper) {
+		// The classLoader is optional.
+		// It is a workaround to resolve all types through the ResourceBundle.
+		// Without this workaround, deserialization uses the Classloader to resolve class names.
+		// TODO Test with
 		ClassLoader classLoader = AliasableResourceBundleClassloader.standard();
 		JacksonSerializer serializer = JacksonSerializer.builder().objectMapper(objectMapper).classLoader(classLoader).build();
 		return c -> TypeDecoratableSerializer.aliasThroughDefaultResourceBundle(serializer);

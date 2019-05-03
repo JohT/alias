@@ -4,11 +4,14 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ResourceBundle;
 
+import org.alias.axon.serializer.TypeAliasResourceBundleFixture;
 import org.junit.Test;
 
 public class AliasableTypeResourceBundleValidatorTest {
 
-	private static final ResourceBundle VALID_RESOURCE_BUNDLE = new AliasTypeFixtureResourceBundle();
+	private static final String ALIAS = "Alias";
+	private static final Class<?> TYPE = AliasableTypeResourceBundleRegisterTest.class;
+	private static final ResourceBundle VALID_RESOURCE_BUNDLE = TypeAliasResourceBundleFixture.containing(ALIAS, TYPE);
 	private static final ResourceBundle INVALID_RESOURCE_BUNDLE = new AliasTypeFixtureInvalidResourceBundle();
 
 	/**

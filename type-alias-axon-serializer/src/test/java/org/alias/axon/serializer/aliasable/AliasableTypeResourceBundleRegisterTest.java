@@ -7,14 +7,15 @@ import static org.junit.Assert.fail;
 
 import java.util.ResourceBundle;
 
+import org.alias.axon.serializer.TypeAliasResourceBundleFixture;
 import org.alias.axon.serializer.resolvable.ResolvableType;
 import org.junit.Test;
 
 public class AliasableTypeResourceBundleRegisterTest {
 
-	private static final String REGISTERED_ALIAS = AliasTypeFixtureResourceBundle.ALIAS;
-	private static final Class<?> REGISTERED_TYPE = AliasTypeFixtureResourceBundle.TYPE;
-	private static final ResourceBundle RESOURCE_BUNDLE = new AliasTypeFixtureResourceBundle();
+	private static final String REGISTERED_ALIAS = "Alias";
+	private static final Class<?> REGISTERED_TYPE = AliasableTypeResourceBundleRegisterTest.class;
+	private static final ResourceBundle RESOURCE_BUNDLE = TypeAliasResourceBundleFixture.containing(REGISTERED_ALIAS, REGISTERED_TYPE);
 	private static final ResourceBundle INVALID_RESOURCE_BUNDLE = new AliasTypeFixtureInvalidResourceBundle();
 
 	/**
