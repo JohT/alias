@@ -67,6 +67,7 @@
 		<module>type-alias-example</module>
 		<module>type-alias-axon-serializer</module>
 		<module>type-alias-axon-serializer-integration-test</module>
+		<module>type-alias-jsonb-typereference</module>
 	</modules>
 
 	<dependencies>
