@@ -73,6 +73,6 @@ public class TypeAliasTemplateBasedWriterTest {
 	}
 
 	private static TypeAliasName alias(String aliasname, String type) {
-		return new TypeAliasName(aliasname, type);
+		return TypeAliasName.builder().aliasName(aliasname).fullQualifiedName(type).build();
 	}
 }

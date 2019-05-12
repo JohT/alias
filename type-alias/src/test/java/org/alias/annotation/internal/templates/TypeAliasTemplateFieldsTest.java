@@ -16,7 +16,7 @@ public class TypeAliasTemplateFieldsTest {
 
 	private static final String PACKAGE_NAME = "org";
 	private static final String FILE_NAME = "TestAlias";
-	private static final TypeAliasName ALIAS = new TypeAliasName("Alias", "org.AliasValueObject");
+	private static final TypeAliasName ALIAS = alias("Alias", "org.AliasValueObject");
 
 	private final Collection<TypeAliasName> aliases = new ArrayList<>(Arrays.asList(ALIAS));
 
@@ -65,7 +65,7 @@ public class TypeAliasTemplateFieldsTest {
 
 	@Test
 	public void replacePlaceholderForMultipleAliases() {
-		TypeAliasName another = new TypeAliasName("AnotherAlias", "org.AnotherAliasValueObject");
+		TypeAliasName another = alias("AnotherAlias", "org.AnotherAliasValueObject");
 		aliases.add(another);
 		fields = new TypeAliasTemplateFields(PACKAGE_NAME, FILE_NAME, aliases);
 
@@ -77,5 +77,9 @@ public class TypeAliasTemplateFieldsTest {
 
 	private List<String> linesOf(String replacedContents) {
 		return Arrays.asList(replacedContents.split("\n"));
+	}
+
+	private static TypeAliasName alias(String aliasname, String type) {
+		return TypeAliasName.builder().aliasName(aliasname).fullQualifiedName(type).build();
 	}
 }

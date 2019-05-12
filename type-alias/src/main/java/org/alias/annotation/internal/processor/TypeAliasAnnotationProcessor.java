@@ -194,28 +194,34 @@ public class TypeAliasAnnotationProcessor extends AbstractProcessor {
 		return annotated.stream() //
 				.filter(TypeAliasAnnotationProcessor::isAnyTypeAliasAnnotationType)
 				.flatMap((annotation) -> roundEnvironment.getElementsAnnotatedWith(annotation).stream()) //
-				.filter(TypeElement.class::isInstance)
-				.map(TypeElement.class::cast)
+				.filter(QualifiedNameable.class::isInstance)
+				.map(QualifiedNameable.class::cast)
 				.flatMap(TypeAliasAnnotationProcessor::asTypeAliasNames)
 				.collect(Collectors.toSet());
 	}
 
-	private static Stream<TypeAliasName> asTypeAliasNames(TypeElement element) {
+	private static Stream<TypeAliasName> asTypeAliasNames(QualifiedNameable element) {
 		String annotatedTypeName = element.getQualifiedName().toString();
 		Collection<TypeAliasName> aliasnames = new ArrayList<TypeAliasName>();
 		TypeAliases typeAliases = element.getAnnotation(TypeAliases.class);
 		if (typeAliases != null) {
 			for (TypeAlias typeAlias : typeAliases.value()) {
-				String fullqualifiedname = (typeAlias.type().isEmpty()) ? annotatedTypeName : typeAlias.type();
-				aliasnames.add(new TypeAliasName(typeAlias.value(), fullqualifiedname));
+				aliasnames.add(typeAliasNameFor(annotatedTypeName, typeAlias));
 			}
 		}
 		TypeAlias typeAlias = element.getAnnotation(TypeAlias.class);
 		if (typeAlias != null) {
-			String fullqualifiedname = (typeAlias.type().isEmpty()) ? annotatedTypeName : typeAlias.type();
-			aliasnames.add(new TypeAliasName(typeAlias.value(), fullqualifiedname));
+			aliasnames.add(typeAliasNameFor(annotatedTypeName, typeAlias));
 		}
 		return aliasnames.stream();
+	}
+
+	private static TypeAliasName typeAliasNameFor(String annotatedTypeName, TypeAlias typeAlias) {
+		return TypeAliasName.builder()
+				.aliasName(typeAlias.value())
+				.fullQualifiedName(typeAlias.type())
+				.assignedTypeName(annotatedTypeName)
+				.build();
 	}
 
 	private static boolean isAnyTypeAliasAnnotationType(QualifiedNameable element) {

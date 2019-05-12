@@ -2,75 +2,160 @@ package org.alias.annotation.internal.templates;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
+import org.alias.annotation.internal.templates.TypeAliasName.Builder;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TypeAliasNameTest {
 
 	private static final String ALIAS_NAME = "TestAlias";
-	private static final String FULL_NAME = "FullName";
+	private static final String FULL_NAME = "org.external.TestAlias";
+	private static final String ASSIGNED_TYPE = "org.alias.example";
+	private static final String ASSIGNED_TYPE_NAME = ASSIGNED_TYPE + ".TestAlias";
 
 	/**
 	 * class under test.
 	 */
 	private TypeAliasName alias;
 
+	@Before
+	public void setUp() {
+		alias = allFields(TypeAliasName.builder()).build();
+	}
+
 	@Test
 	public void containsAliasname() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
+		assertEquals(ALIAS_NAME, alias.getAliasname());
+	}
+
+	@Test
+	public void aliasNameTrimmed() {
+		alias = TypeAliasName.builderBasedOn(alias).aliasName("  " + ALIAS_NAME + " ").build();
 		assertEquals(ALIAS_NAME, alias.getAliasname());
 	}
 
 	@Test
 	public void containsFullQualifiedName() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
 		assertEquals(FULL_NAME, alias.getFullqualifiedname());
 	}
 
 	@Test
+	public void fullQualifiedNameTrimmed() {
+		alias = TypeAliasName.builderBasedOn(alias).fullQualifiedName("   " + FULL_NAME).build();
+		assertEquals(FULL_NAME, alias.getFullqualifiedname());
+	}
+
+	@Test
+	public void fullQualifiedNameDefaultsToAssignedTypeName() {
+		alias = TypeAliasName.builderBasedOn(alias).fullQualifiedName(null).build();
+		assertEquals(ASSIGNED_TYPE_NAME, alias.getFullqualifiedname());
+	}
+
+	@Test
+	public void containsAssignedTypeName() {
+		assertEquals(ASSIGNED_TYPE_NAME, alias.getAssignedtypename());
+	}
+
+	@Test
+	public void assignedTypeNameTrimmed() {
+		alias = TypeAliasName.builderBasedOn(alias).assignedTypeName(ASSIGNED_TYPE_NAME + "  ").build();
+		assertEquals(ASSIGNED_TYPE_NAME, alias.getAssignedtypename());
+	}
+
+	@Test
+	public void assignedTypeNameDefaultsToFullQualifiedName() {
+		alias = TypeAliasName.builderBasedOn(alias).assignedTypeName(" ").build();
+		assertEquals(FULL_NAME, alias.getAssignedtypename());
+	}
+
+	@Test
+	public void assignedToPackage() {
+		assertTrue(alias.isAssignedToPackage(ASSIGNED_TYPE));
+	}
+
+	@Test
+	public void notAssignedToPackage() {
+		assertFalse(alias.isAssignedToPackage(ASSIGNED_TYPE + ".other"));
+	}
+
+	@Test
+	public void emptyAliasNameAllowed() {
+		alias = TypeAliasName.builderBasedOn(alias).aliasName("").build();
+		assertEquals("", alias.getAliasname());
+	}
+
+	@Test
+	public void nullAliasNameConvertedToEmptyString() {
+		alias = TypeAliasName.builderBasedOn(alias).aliasName(null).build();
+		assertEquals("", alias.getAliasname());
+	}
+
+	@Test
+	public void failOnEmptyFullQualifiedName() {
+		try {
+			TypeAliasName.builderBasedOn(alias).fullQualifiedName(null).assignedTypeName(null).build();
+			fail("Exppected Exception");
+		} catch (IllegalArgumentException e) {
+			String message = e.getMessage();
+			assertTrue(message, message.toLowerCase().contains("fullqualifiedname"));
+			assertTrue(message, message.toLowerCase().contains("may not be empty"));
+		}
+	}
+
+	@Test
 	public void replacesAliasnamePlaceholder() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
 		assertEquals(ALIAS_NAME, alias.replacePlaceholderInLine("{(aliasname)}"));
 	}
 
 	@Test
 	public void replacesFullqualifiednamePlaceholder() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
 		assertEquals(FULL_NAME, alias.replacePlaceholderInLine("{(fullqualifiedname)}"));
 	}
 
 	@Test
+	public void replacesAssignedpackagePlaceholder() {
+		assertEquals(ASSIGNED_TYPE_NAME, alias.replacePlaceholderInLine("{(assignedtypename)}"));
+	}
+
+	@Test
 	public void equalOnEquaContents() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
-		TypeAliasName expectedEqual = new TypeAliasName(ALIAS_NAME, FULL_NAME);
+		TypeAliasName expectedEqual = TypeAliasName.builderBasedOn(alias).build();
 		assertEquals(expectedEqual, alias);
 		assertEquals(expectedEqual.hashCode(), alias.hashCode());
 	}
 
 	@Test
-	public void equalOnDifferentAlias() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
-		TypeAliasName expectedNotEqual = new TypeAliasName("Other" + ALIAS_NAME, FULL_NAME);
+	public void notEqualOnDifferentAliasName() {
+		TypeAliasName expectedNotEqual = TypeAliasName.builderBasedOn(alias).aliasName("Other").build();
 		assertFalse(alias.equals(expectedNotEqual));
 	}
 
 	@Test
-	public void equalOnDifferentFullQualifiedTypeName() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
-		TypeAliasName expectedNotEqual = new TypeAliasName(ALIAS_NAME, "Other" + FULL_NAME);
+	public void notEqualOnDifferentFullQualifiedTypeName() {
+		TypeAliasName expectedNotEqual = TypeAliasName.builderBasedOn(alias).fullQualifiedName("Other").build();
+		assertFalse(alias.equals(expectedNotEqual));
+	}
+
+	@Test
+	public void notEqualOnDifferentAssignedTypeName() {
+		TypeAliasName expectedNotEqual = TypeAliasName.builderBasedOn(alias).assignedTypeName("Other").build();
 		assertFalse(alias.equals(expectedNotEqual));
 	}
 
 	@Test
 	public void notEqualToNull() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
 		assertFalse(alias.equals(null));
 	}
 
 	@Test
 	public void notEqualToDifferentObject() {
-		alias = new TypeAliasName(ALIAS_NAME, FULL_NAME);
 		assertFalse(alias.equals(new Object()));
 	}
 
+	private static Builder allFields(Builder builder) {
+		return builder.aliasName(ALIAS_NAME).fullQualifiedName(FULL_NAME).assignedTypeName(ASSIGNED_TYPE_NAME);
+	}
 }

@@ -74,7 +74,7 @@ class TypeAliasGeneratedFileConfiguration {
 			packagesPerKey.put(packagename, new HashSet<>());
 			for (TypeAliasName typename : typeAliasNames) {
 				String classname = typename.getFullqualifiedname();
-				if (classname.startsWith(packagename) && !alreadyAssociatedClassNames.contains(classname)) {
+				if (typename.isAssignedToPackage(packagename) && !alreadyAssociatedClassNames.contains(classname)) {
 					packagesPerKey.get(packagename).add(typename);
 					alreadyAssociatedClassNames.add(classname);
 				}

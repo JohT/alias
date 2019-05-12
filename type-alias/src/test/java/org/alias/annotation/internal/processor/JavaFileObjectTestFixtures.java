@@ -28,6 +28,13 @@ enum JavaFileObjectTestFixtures {
 			typeAliasGeneratedFile() + "(value=\"OrgAnotherAlias\"," + propertyFileTemplate() + ")\npackage org.another;"),
 	PACKAGE_ORG_EXAMPLE_NOT_ANNOTATED("package-info", "package org.example;"),
 	PACKAGE_ORG_ANNOTATED("package-info", typeAliasGeneratedFile() + "(value=\"OrgAlias\"," + propertyFileTemplate() + ")\npackage org;"),
+
+	PACKAGE_ORG_ANNOTATED_EXTERNAL_ALIASES("package-info",
+			"@org.alias.annotation.TypeAliases({\n" +
+					"@org.alias.annotation.TypeAlias(value=\"ExternalAlias\",type=\"com.ExternalClass\"),\n" +
+					"@org.alias.annotation.TypeAlias(value=\"AnotherExternalAlias\",type=\"com.AnotherExternalClass\")\n" +
+					"})" +
+					typeAliasGeneratedFile() + "(value=\"OrgExternalAlias\"," + propertyFileTemplate() + ")\npackage org;"),
 	PACKAGE_ORG_RESOURCE_BUNDLE("package-info",
 			typeAliasGeneratedFile() + "(" + "value=\"AliasResourceBundle\"," + resourceBundleTemplate() + ")\npackage org;"),
 	PACKAGE_ORG_ANNOTATED_ON_A_TYPE("OrgConfig",

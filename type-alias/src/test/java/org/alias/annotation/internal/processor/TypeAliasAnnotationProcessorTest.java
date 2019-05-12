@@ -286,7 +286,23 @@ public class TypeAliasAnnotationProcessorTest {
 	}
 
 	@Test
-	public void aliasShouldBeDefinableForMultipleExternalClasses() throws IOException {
+	public void aliasShouldBeDefinableForMultipleExternalClassesWithoutPackageConfiguration() throws IOException {
+		JavaFileObjectTestFixtures external = JavaFileObjectTestFixtures.CLASS_COM_EXTERNAL;
+		JavaFileObjectTestFixtures anotherExternal = JavaFileObjectTestFixtures.CLASS_COM_ANOTHER_EXTERNAL;
+		JavaFileObject aliases = JavaFileObjectTestFixtures.CLASS_ORG_ALIASES_FOR_EXTERNAL_TYPES.createJavaFile();
+
+		compileWithPresetProperties(external.createJavaFile(), anotherExternal.createJavaFile(), aliases)
+				.to(directory.getRoot())
+				.executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+
+		files.assertContains("ExternalAlias=" + external.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
+		files.assertContains("AnotherExternalAlias=" + anotherExternal.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
+		files.assertHasUncommentedPropertyLineCountOf(2, DEFAULT_PROPERTYFILENAME);
+	}
+
+	@Test
+	public void aliasShouldBeDefinableForMultipleExternalClassesInsidePackage() throws IOException {
 		JavaFileObjectTestFixtures external = JavaFileObjectTestFixtures.CLASS_COM_EXTERNAL;
 		JavaFileObjectTestFixtures anotherExternal = JavaFileObjectTestFixtures.CLASS_COM_ANOTHER_EXTERNAL;
 		JavaFileObject aliases = JavaFileObjectTestFixtures.CLASS_ORG_ALIASES_FOR_EXTERNAL_TYPES.createJavaFile();
@@ -297,9 +313,25 @@ public class TypeAliasAnnotationProcessorTest {
 				.executeProcessor(processor);
 		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
 
-		files.assertContains("ExternalAlias=" + external.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
-		files.assertContains("AnotherExternalAlias=" + anotherExternal.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
-		files.assertHasUncommentedPropertyLineCountOf(2, DEFAULT_PROPERTYFILENAME);
+		files.assertContains("ExternalAlias=" + external.getJavaFileName(), "org", "OrgAlias.properties");
+		files.assertContains("AnotherExternalAlias=" + anotherExternal.getJavaFileName(), "org", "OrgAlias.properties");
+		files.assertHasUncommentedPropertyLineCountOf(2, "org", "OrgAlias.properties");
+	}
+
+	@Test
+	public void aliasShouldBeDefinableForMultipleExternalClassesInsidePackageInfo() throws IOException {
+		JavaFileObjectTestFixtures external = JavaFileObjectTestFixtures.CLASS_COM_EXTERNAL;
+		JavaFileObjectTestFixtures anotherExternal = JavaFileObjectTestFixtures.CLASS_COM_ANOTHER_EXTERNAL;
+		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED_EXTERNAL_ALIASES.createJavaFile();
+
+		compileWithPresetProperties(external.createJavaFile(), anotherExternal.createJavaFile(), packageInfo)
+				.to(directory.getRoot())
+				.executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+
+		files.assertContains("ExternalAlias=" + external.getJavaFileName(), "org", "OrgExternalAlias.properties");
+		files.assertContains("AnotherExternalAlias=" + anotherExternal.getJavaFileName(), "org", "OrgExternalAlias.properties");
+		files.assertHasUncommentedPropertyLineCountOf(2, "org", "OrgExternalAlias.properties");
 	}
 
 	@Test
