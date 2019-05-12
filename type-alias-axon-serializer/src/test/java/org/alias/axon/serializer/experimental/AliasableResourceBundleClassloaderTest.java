@@ -7,7 +7,6 @@ import static org.junit.Assert.fail;
 import java.util.ResourceBundle;
 
 import org.alias.axon.serializer.TypeAliasResourceBundleFixture;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class AliasableResourceBundleClassloaderTest {
@@ -39,10 +38,6 @@ public class AliasableResourceBundleClassloaderTest {
 		assertEquals(validClassWithoutAlias, classloader.loadClass(validClassWithoutAlias.getName()));
 	}
 
-	// TODO Active when implemented
-	// String message = "Cannot handle value '%s' for key '%s' provided by ResourceBundle '%s'.";
-	// throw new IllegalArgumentException(String.format(message, value, name, resourceBundle.getBaseBundleName()));
-	@Ignore
 	@Test
 	public void errorWhenResourceBundleIsInvalid() throws ClassNotFoundException {
 		classloader = new AliasableResourceBundleClassloader(INVALID_RESOURCE_BUNDLE, CLASSLOADER);

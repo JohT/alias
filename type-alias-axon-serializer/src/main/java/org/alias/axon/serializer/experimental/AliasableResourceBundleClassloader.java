@@ -24,7 +24,16 @@ public class AliasableResourceBundleClassloader extends ClassLoader {
 	 * @return {@link AliasableResourceBundleClassloader}
 	 */
 	public static final AliasableResourceBundleClassloader standard() {
-		ResourceBundle resourceBundle = ResourceBundle.getBundle(TypeDecoratableSerializer.DEFAULT_TYPE_ALIAS_RESOURCE_BUNDLE_NAME);
+		return forResourceBundle(ResourceBundle.getBundle(TypeDecoratableSerializer.DEFAULT_TYPE_ALIAS_RESOURCE_BUNDLE_NAME));
+	}
+
+	/**
+	 * Creates a standard {@link AliasableResourceBundleClassloader} using the {@link ClassLoader} of this class
+	 * ({@link Class#getClassLoader()}) uses the given {@link ResourceBundle}
+	 * 
+	 * @return {@link AliasableResourceBundleClassloader}
+	 */
+	public static final AliasableResourceBundleClassloader forResourceBundle(ResourceBundle resourceBundle) {
 		return new AliasableResourceBundleClassloader(resourceBundle, AliasableResourceBundleClassloader.class.getClassLoader());
 	}
 
@@ -67,7 +76,8 @@ public class AliasableResourceBundleClassloader extends ClassLoader {
 				}
 			}
 		}
-		return null;
+		String message = "Cannot handle value '%s' for key '%s' provided by ResourceBundle '%s'.";
+		throw new IllegalArgumentException(String.format(message, value, name, resourceBundle.getBaseBundleName()));
     }
 
 	/**
