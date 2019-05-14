@@ -19,13 +19,23 @@ public class CustomizedExternalResourceBundleTest {
 	}
 
 	@Test
-	public void anotherCustomizedResourceBundleFileTypeRegistered() {
+	public void onTopOfATypeInsideArrayOfAliasesDefinedNormalAliasIsRegistered() {
 		assertEquals(ExternalAnnotationResourceBundleFileType.class, bundle.getObject("AliasForNotAnnotatedResourceBundleFile"));
 	}
 
 	@Test
-	public void externalAnnotationResourceBundleFileTypeRegistered() {
+	public void onTopOfATypeAnnotatedExternalAliasInsideTheSamePackageIsRegistered() {
 		assertEquals(NotAnnotatedExternalResourceBundleFileType.class, bundle.getObject("AliasForExternalAlias"));
+	}
+
+	@Test
+	public void onTopOfATypeAnnotatedExternalAliasOutsideThePackageIsRegistered() {
+		assertEquals(Integer.class, bundle.getObject("Integer"));
+	}
+
+	@Test
+	public void inPackageInfoAnnotatedExternalAliasIsRegistered() {
+		assertEquals(String.class, bundle.getObject("String"));
 	}
 
 }

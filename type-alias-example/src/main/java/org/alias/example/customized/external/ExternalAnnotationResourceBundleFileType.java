@@ -10,7 +10,8 @@ import org.alias.annotation.TypeAliases;
  */
 @TypeAliases({
 		@TypeAlias("AliasForNotAnnotatedResourceBundleFile"),
-		@TypeAlias(value = "AliasForExternalAlias", type = "org.alias.example.customized.external.NotAnnotatedExternalResourceBundleFileType")
+		@TypeAlias(value = "AliasForExternalAlias", type = "org.alias.example.customized.external.NotAnnotatedExternalResourceBundleFileType"),
+		@TypeAlias(value = "Integer", type = "java.lang.Integer")
 })
 public class ExternalAnnotationResourceBundleFileType {
 
