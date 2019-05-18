@@ -5,8 +5,11 @@ import java.util.Optional;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
 
 @ApplicationScoped
+@Transactional(TxType.REQUIRED)
 public class AccountRepository {
 
 	@PersistenceContext(unitName = "query.member.model")
@@ -16,6 +19,12 @@ public class AccountRepository {
 		AccountEntity account = new AccountEntity(key);
 		entityManager.persist(account);
 		return account;
+	}
+
+	public void setNickname(AccountEntityKey key, String nickname) {
+		AccountEntity account = read(key);
+		account.setNickname(nickname);
+		entityManager.flush();
 	}
 
 	public AccountEntity read(AccountEntityKey key) {

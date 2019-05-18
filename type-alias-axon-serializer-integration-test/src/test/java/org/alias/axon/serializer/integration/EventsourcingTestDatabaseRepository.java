@@ -1,6 +1,7 @@
 package org.alias.axon.serializer.integration;
 
 import java.io.PrintStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,6 +25,7 @@ import org.junit.Ignore;
 class EventsourcingTestDatabaseRepository {
 
 	private static final String EVENT_QUERY = "SELECT * FROM DOMAINEVENTENTRY";
+	private static final String TOKEN_QUERY = "SELECT * FROM TOKENENTRY";
 	private static final String SNAPSHOT_QUERY = "SELECT * FROM SNAPSHOTEVENTENTRY";
 	private static final String EVENT_PAYLOAD_TYPE_PREFIX_UPDATE = "UPDATE DOMAINEVENTENTRY SET PAYLOADTYPE = CONCAT('%s.',PAYLOADTYPE,'Event')";
 
@@ -41,10 +43,14 @@ class EventsourcingTestDatabaseRepository {
 		return query(EVENT_QUERY);
 	}
 
+	public List<Map<String, Object>> queryTokens() {
+		return query(TOKEN_QUERY);
+	}
+
 	public List<Map<String, Object>> querySnapshots() {
 		return query(SNAPSHOT_QUERY);
 	}
-	
+
 	public void prefixEventPayloadTypesBy(String prefix) {
 		update(String.format(EVENT_PAYLOAD_TYPE_PREFIX_UPDATE, prefix));
 	}
@@ -59,7 +65,7 @@ class EventsourcingTestDatabaseRepository {
 					Map<String, Object> columns = new HashMap<>();
 					ResultSetMetaData metaData = result.getMetaData();
 					for (int columnIndex = 1; columnIndex <= metaData.getColumnCount(); columnIndex++) {
-						columns.put(metaData.getColumnName(columnIndex), result.getObject(columnIndex));
+						columns.put(metaData.getColumnName(columnIndex), decodedBlob(result.getObject(columnIndex)));
 					}
 					resultList.add(columns);
 				}
@@ -68,6 +74,18 @@ class EventsourcingTestDatabaseRepository {
 		} catch (SQLException e) {
 			throw databaseError(e, "Database query %s failed.", sql);
 		}
+	}
+
+	private static Object decodedBlob(Object content) throws SQLException {
+		if (!(content instanceof Blob)) {
+			return content;
+		}
+		Blob blob = (Blob) content;
+		long length = blob.length();
+		if (length > Integer.MAX_VALUE) {
+			return content;
+		}
+		return new String(blob.getBytes(1, (int) length));
 	}
 
 	private void update(String sql) {

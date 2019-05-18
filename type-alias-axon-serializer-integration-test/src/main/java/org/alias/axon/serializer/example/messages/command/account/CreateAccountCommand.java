@@ -2,11 +2,11 @@ package org.alias.axon.serializer.example.messages.command.account;
 
 import java.beans.ConstructorProperties;
 
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
+import org.alias.axon.serializer.example.messages.CommandTargetAggregateIdentifier;
 
 public class CreateAccountCommand {
 
-	@TargetAggregateIdentifier
+	@CommandTargetAggregateIdentifier
 	private final String accountId;
 
 	@ConstructorProperties({ "accountId" })

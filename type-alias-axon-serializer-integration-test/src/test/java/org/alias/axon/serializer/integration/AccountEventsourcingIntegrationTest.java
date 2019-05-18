@@ -1,10 +1,15 @@
 package org.alias.axon.serializer.integration;
 
+import static org.alias.axon.serializer.example.query.model.member.nickname.NicknameProjection.PROCESSING_GROUP_FOR_NICKNAMES;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import javax.annotation.Resource;
@@ -13,8 +18,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 
+import org.alias.axon.serializer.example.domain.model.account.AccountAggregate;
 import org.alias.axon.serializer.example.domain.model.account.AccountService;
 import org.alias.axon.serializer.example.messages.event.account.AccountCreatedEvent;
+import org.alias.axon.serializer.example.messages.event.account.NicknameChangedEvent;
+import org.alias.axon.serializer.example.messages.event.account.NicknamePresetEvent;
+import org.alias.axon.serializer.example.messaging.boundary.query.EventProcessorService;
+import org.alias.axon.serializer.example.messaging.boundary.query.model.QueryModelProjection;
+import org.alias.axon.serializer.example.query.model.member.nickname.NicknameProjection;
 import org.hamcrest.CoreMatchers;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -33,6 +44,10 @@ public class AccountEventsourcingIntegrationTest {
 
 	@Inject
 	private AccountService accountService;
+
+	@Inject
+	@QueryModelProjection(processingGroup = NicknameProjection.PROCESSING_GROUP_FOR_NICKNAMES)
+	private EventProcessorService eventProcessor;
 
 	@Resource(name = "jdbc/eventsourcing")
 	private DataSource eventsourcingDatasource;
@@ -56,9 +71,10 @@ public class AccountEventsourcingIntegrationTest {
 	}
 
 	@Test
-	public void createdAccountHasEmptyPresetNickname() {
+	public void createdAccountHasEmptyPresetNickname() throws InterruptedException {
 		String accountId = accountService.createAccount();
-		assertEquals("", accountService.queryNickname(accountId));
+		String queriedNickname = accountService.queryNickname(accountId);
+		assertEquals("", queriedNickname);
 	}
 
 	@Test
@@ -70,7 +86,7 @@ public class AccountEventsourcingIntegrationTest {
 	}
 
 	@Test
-	public void fullQualifiedEventPayloadTypesShouldBeSupportedAsFallback() {
+	public void fullQualifiedEventPayloadTypesShouldBeSupportedAsFallback() throws InterruptedException {
 		String accountId = accountService.createAccount();
 		String eventsPackage = AccountCreatedEvent.class.getPackage().getName();
 		EventsourcingTestDatabaseRepository.printQueryResults(eventsourcingRepository.queryEvents(), System.out);
@@ -91,13 +107,45 @@ public class AccountEventsourcingIntegrationTest {
 	}
 
 	@Test
+	public void tokensShouldBeUpToDateAfterProcessing() throws InterruptedException {
+		String nickname = "TestNickname";
+		String accountId = accountService.createAccount();
+		// Check, if account creation was tracked
+		waitForMessageContaining(AccountCreatedEvent.class, accountId);
+		waitForMessageContaining(NicknamePresetEvent.class, "");
+
+		accountService.changeNickname(accountId, nickname);
+
+		// Check, if nickname change was tracked
+		waitForMessageContaining(NicknameChangedEvent.class, nickname);
+	}
+
+	@Test
+	public void nicknameChangePublishedBySubscriptionQuery() throws InterruptedException {
+		BlockingQueue<String> publishedNicknames = new ArrayBlockingQueue<String>(1);
+		String nickname = "SubscribedNickname";
+		String accountId = accountService.createAccount();
+
+		// Query all nicknames, that contain the name above.
+		// Ignore already available nicknames.
+		// Add every newly added nickname in future, that matches the query.
+		accountService.queryNicknamesContaining(nickname, publishedNicknames::add);
+
+		// Change the nickname, which should be published to the subscripted query.
+		accountService.changeNickname(accountId, nickname);
+
+		// Wait until the changed nickname gets published, or time out and fail.
+		assertEquals(nickname, publishedNicknames.poll(5, TimeUnit.SECONDS));
+	}
+
+	@Test
 	public void enoughChangesToTriggerSnapshot() {
 		String accountId = accountService.createAccount();
 		for (int i = 0; i < 20; i++) {
 			accountService.changeNickname(accountId, String.format("Nickname %05d", i));
 		}
 		List<String> snapshots = snapshotTypesForAggregateId(accountId);
-		assertThat(snapshots, CoreMatchers.hasItem("AccountAggregate"));
+		assertThat(snapshots, CoreMatchers.hasItem(AccountAggregate.class.getName()));
 	}
 
 	private List<String> eventTypesForAggregateId(String aggregateId) {
@@ -114,5 +162,9 @@ public class AccountEventsourcingIntegrationTest {
 				.filter(columns -> columns.get("AGGREGATEIDENTIFIER").equals(aggregateId))
 				.map(columns -> (String) columns.get("PAYLOADTYPE"))
 				.collect(Collectors.toList());
+	}
+
+	private void waitForMessageContaining(Class<?> messageType, String messageContent) throws InterruptedException {
+		assertTrue(eventProcessor.waitForMessage(PROCESSING_GROUP_FOR_NICKNAMES, messageType, messageContent));
 	}
 }

@@ -3,19 +3,18 @@ package org.alias.axon.serializer.example.query.model.member.account;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 
-import org.alias.annotation.TypeAlias;
-import org.axonframework.queryhandling.QueryHandler;
+import org.alias.axon.serializer.example.messages.query.account.AccountNicknameQuery;
+import org.alias.axon.serializer.example.messaging.boundary.query.model.QueryModelQueryHandler;
 
 @ApplicationScoped
-@TypeAlias("AccountQuery")
 public class AccountQueryHandler {
 
 	@Inject
 	private AccountRepository account;
 
-	@QueryHandler(queryName = "memberqueryAccountNickname")
-	public String getAccountNickname(String accountId) {
-		return account.read(keyOf(accountId)).getNickname();
+	@QueryModelQueryHandler
+	public String getAccountNickname(AccountNicknameQuery query) {
+		return account.read(keyOf(query.getAccountId())).getNickname();
 	}
 
 	private static AccountEntityKey keyOf(String accountId) {

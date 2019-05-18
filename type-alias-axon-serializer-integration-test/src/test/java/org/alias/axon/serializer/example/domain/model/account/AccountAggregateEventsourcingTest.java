@@ -1,5 +1,6 @@
 package org.alias.axon.serializer.example.domain.model.account;
 
+import org.alias.axon.serializer.example.internal.PreconfiguredAggregateTestFixture;
 import org.alias.axon.serializer.example.messages.command.account.ChangeNicknameCommand;
 import org.alias.axon.serializer.example.messages.command.account.CreateAccountCommand;
 import org.alias.axon.serializer.example.messages.event.account.AccountCreatedEvent;
@@ -16,8 +17,8 @@ public class AccountAggregateEventsourcingTest {
 	private AggregateTestFixture<AccountAggregate> accountFixture;
 
 	@Before
-	public void setUp() throws Exception {
-		accountFixture = new AggregateTestFixture<>(AccountAggregate.class);
+	public void setUp() {
+		accountFixture = new PreconfiguredAggregateTestFixture<>(AccountAggregate.class).getFixture();
 	}
 
 	@Test
