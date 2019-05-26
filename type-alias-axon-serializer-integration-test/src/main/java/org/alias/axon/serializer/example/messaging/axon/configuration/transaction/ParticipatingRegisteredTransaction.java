@@ -10,7 +10,7 @@ import org.axonframework.common.transaction.Transaction;
  * This transaction uses or contributes to an leading/driving transaction and
  * does not perform commit or rollback on its own.
  * 
- * @author Johannes Troppacher
+ * @author JohT
  */
 final class ParticipatingRegisteredTransaction implements Transaction {
 

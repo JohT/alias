@@ -4,7 +4,8 @@ import java.util.function.Consumer;
 
 /**
  * {@link Consumer}, that may throw a (here hard-typed) {@link Exception}.
- * @author Johannes Troppacher
+ * 
+ * @author JohT
  *
  * @see Consumer
  * @param <T>

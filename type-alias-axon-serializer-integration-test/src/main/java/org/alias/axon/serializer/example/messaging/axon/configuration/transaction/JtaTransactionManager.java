@@ -16,7 +16,7 @@ import org.axonframework.common.transaction.TransactionManager;
 /**
  * Provides the {@link TransactionManager} for Axon.
  * 
- * @author Johannes Troppacher
+ * @author JohT
  */
 @ApplicationScoped
 public class JtaTransactionManager implements TransactionManager {

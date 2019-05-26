@@ -12,7 +12,7 @@ import org.axonframework.eventhandling.TransactionMethodExecutionException;
  * This transaction wrapper is used for the leading/driving transaction and is
  * responsible to commit or rollback the transaction.
  * 
- * @author Johannes Troppacher
+ * @author JohT
  */
 final class LeadingUserTransaction implements Transaction {
 
