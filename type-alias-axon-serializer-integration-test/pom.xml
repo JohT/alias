@@ -13,11 +13,12 @@
 	<url>https://github.com/JohT/alias/tree/master/type-alias-axon-serializer-integration-test</url>
 
 	<properties>
-		<axon.version>4.1.1</axon.version>
+		<axon.version>4.1.2</axon.version>
 
 		<!-- Optional dependencies for axon -->
 		<dom4j.version>1.6.1</dom4j.version>
 		<xom.version>1.2.10</xom.version>
+		<jackson.core.version>2.9.9.2</jackson.core.version>
 		<jackson.version>2.9.9</jackson.version>
 		<reactor.version>3.2.6.RELEASE</reactor.version>
 
@@ -126,7 +127,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
+			<version>${jackson.core.version}</version>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
