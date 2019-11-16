@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>io.github.joht.alias</groupId>
 		<artifactId>alias-parent</artifactId>
-		<version>1.0.2-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</parent>
 
 	<artifactId>type-alias-axon-serializer-integration-test</artifactId>
@@ -13,7 +13,7 @@
 	<url>https://github.com/JohT/alias/tree/master/type-alias-axon-serializer-integration-test</url>
 
 	<properties>
-		<axon.version>4.1.2</axon.version>
+		<axon.version>4.2</axon.version>
 
 		<!-- Optional dependencies for axon -->
 		<dom4j.version>1.6.1</dom4j.version>
