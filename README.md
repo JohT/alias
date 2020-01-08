@@ -1,4 +1,7 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 # alias
+
 Java identifies types by their class name. 
 The class name heavily depends on implementation details (e.g. where the class is located).
 Finding the right name and right place may change during development.
@@ -24,7 +27,7 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 <dependency>
   <groupId>io.github.joht.alias</groupId>
   <artifactId>type-alias</artifactId>
-  <version>1.0.2</version>
+  <version>1.1.0</version>
   <scope>provided</scope>
   <optional>true</optional>
 </dependency>

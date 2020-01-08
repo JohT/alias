@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 # Type Alias
 Java identifies types by their class name. 
 The class name heavily depends on implementation details (e.g. where the class is located).

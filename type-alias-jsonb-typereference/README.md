@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 # "type-alias-jsonb-typereference"
 This module shows an example on how to work with type references in conjunction with
 "Java API for JSON Binding (JSON-B)". For details please visit http://json-b.net.
