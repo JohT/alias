@@ -114,7 +114,20 @@ a list of `@TypeAlias` annotations can be defined using a surrounding `@TypeAlia
 })
 ```
 
-##### 8. Dependencies
+##### 8. Multiple aliases for one type
+Multiple aliases for one type are supported since version 1.1.0.
+One of these aliases needs to be defined as the "primary" one though,
+so that generated resource bundles can provide a distinct alias name for a given type.
+
+```java
+@TypeAliases({
+	@TypeAlias(value = "PrimaryAlias", primary = true),
+	@TypeAlias("SecondaryAlias")
+})
+```
+
+### Hints
+##### 1. Dependencies
 To minimize dependencies, **type alias** depends only on java itself.
 Furthermore, the annotations are only visible during compilation and therefore doesn't show up in byte code.
 The dependency to **type-alias** can and should be optional. 
@@ -124,7 +137,7 @@ It is just like a build step, whereas it is independent from any build system (p
 As long as their are no additional dependencies and the module has no effect on the compiled code,
 a separate api module is left out for purpose. This may change in future.
 
-##### 9. Unit Test generated files
+##### 2. Unit Test generated files
 If the contents of the generated files are important for you, it is advisable to always write
 unit tests for those contents. Loading a ResourceBundle and querying some entries is
 very easy to do in a unit test. It helps to detect reconfigured file generations,

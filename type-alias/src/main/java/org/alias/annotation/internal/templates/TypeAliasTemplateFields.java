@@ -37,8 +37,9 @@ public class TypeAliasTemplateFields implements PlaceholderReplacer {
 			templateLine = templateLine.replace("{(aliases.", "{(");
 			String templateLines = "";
 			for (TypeAliasName alias : aliases) {
-				templateLines += (templateLines.isEmpty()) ? "" : "\n";
-				templateLines += alias.replacePlaceholderInLine(templateLine);
+				String replacedLine = alias.replacePlaceholderInLine(templateLine);
+				templateLines += (templateLines.isEmpty() || replacedLine.isEmpty()) ? "" : "\n";
+				templateLines += replacedLine;
 			}
 			return templateLines;
 		}

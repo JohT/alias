@@ -69,14 +69,14 @@ class TypeAliasGeneratedFileConfiguration {
 
 	private Map<String, Set<TypeAliasName>> getTypeNamesPerPackage(Collection<? extends TypeAliasName> typeAliasNames) {
 		Map<String, Set<TypeAliasName>> packagesPerKey = new HashMap<>();
-		Set<String> alreadyAssociatedClassNames = new HashSet<>();
+		Set<String> alreadyAssociatedAliasedClassNames = new HashSet<>();
 		for (String packagename : getPackageInfo().keySet()) {
 			packagesPerKey.put(packagename, new HashSet<>());
 			for (TypeAliasName typename : typeAliasNames) {
-				String classname = typename.getFullqualifiedname();
-				if (typename.isAssignedToPackage(packagename) && !alreadyAssociatedClassNames.contains(classname)) {
+				String aliasAndClassname = typename.getAliasname() + "_" + typename.getFullqualifiedname();
+				if (typename.isAssignedToPackage(packagename) && !alreadyAssociatedAliasedClassNames.contains(aliasAndClassname)) {
 					packagesPerKey.get(packagename).add(typename);
-					alreadyAssociatedClassNames.add(classname);
+					alreadyAssociatedAliasedClassNames.add(aliasAndClassname);
 				}
 			}
 		}

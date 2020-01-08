@@ -47,10 +47,23 @@ public @interface TypeAlias {
 	 * (Optional) The type name, that is assigned to the alias.
 	 * <p>
 	 * If not specified, the annotated type (where this annotation is places) is taken as default.<br>
-	 * For details, why this parameter is a {@link String} ans not a {@link Class}, see
+	 * For details, why this parameter is a {@link String} and not a {@link Class}, see
 	 * {@link AnnotatedConstruct#getAnnotation(Class)}.
 	 * 
 	 * @return full qualified type name {@link String} or an empty {@link String} representing the annotated type.
 	 */
 	String type() default "";
+	
+	/**
+	 * (Optional) Marks the primary alias for a type, that has multiple aliases.
+	 * <p>
+	 * If there is only one alias for this type, this parameter has no effect.<br>
+	 * Defining multiple aliases for the same type with more than one primary alias 
+	 * leads to the compile error "Duplicate primary alias detected".<br>
+	 * Defining multiple aliases for the same type without a primary alias 
+	 * leads to the compile error "Duplicate type names detected".<br>
+	 * 
+	 * @return <code>true</code>, if this is the primary alias name of multiple aliases.
+	 */
+	boolean primary() default false;
 }

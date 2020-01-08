@@ -34,7 +34,11 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 ```
 
 ### Contents
-- "type-alias" contains the main module with the java annotation processing based file generator.
-- "type-alias-example" shows, how to use and customize "type-alias" code generation.
-- "type-alias-axon-serializer" shows, how to enhance axon serializer to use aliases.
-- "type-alias-axon-serializer-integration-test" shows, how to configure axon serializer to use aliases.
+- [type-alias](https://github.com/JohT/alias/tree/master/type-alias) 
+contains the main module with the java annotation processing based file generator.
+- [type-alias-example](https://github.com/JohT/alias/tree/master/type-alias-example) 
+shows, how to use and customize "type-alias" code generation.
+- [type-alias-axon-serializer](https://github.com/JohT/alias/tree/master/type-alias-axon-serializer)
+shows, how to enhance axon serializer to use aliases.
+- [type-alias-axon-serializer-integration-test](https://github.com/JohT/alias/tree/master/type-alias-axon-serializer-integration-test)
+shows, how to configure axon serializer to use aliases.

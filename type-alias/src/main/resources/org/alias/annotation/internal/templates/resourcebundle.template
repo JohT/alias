@@ -13,7 +13,7 @@ public class {(filename)} extends ListResourceBundle {
 	protected Object[][] getContents() {
 		return new Object[][] {
 				{ "{(aliases.aliasname)}", {(aliases.fullqualifiedname)}.class },
-				{ "{(aliases.fullqualifiedname)}", "{(aliases.aliasname)}" },
+				{ "{(aliases.fullqualifiedname)}", "{(aliases.aliasname)}" },{(aliases.only.primary)}
 		};
 	}
 }

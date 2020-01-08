@@ -64,6 +64,24 @@ public class TypeAliasTemplateFieldsTest {
 	}
 
 	@Test
+	public void noLineIfTheLineIsOnlyMeantForPrimaryAliases() {
+		fields = new TypeAliasTemplateFields(PACKAGE_NAME, FILE_NAME, aliases);
+		assertEquals("", fields.replacePlaceholderInLine("{(aliases.aliasname)}{(aliases.only.primary)}"));
+	}
+
+	@Test
+	public void skippedLineIfTheLineIsOnlyMeantForPrimaryAliases() {
+		aliases.clear();
+		aliases.add(primary(alias("PrimaryAlias", "org.AliasValueObject")));
+		aliases.add(alias("SeconaryAlias", "org.AliasValueObject"));
+		aliases.add(primary(alias("AnotherAlias", "org.AnotherAliasValueObject")));
+		fields = new TypeAliasTemplateFields(PACKAGE_NAME, FILE_NAME, aliases);
+		List<String> replacedLines = linesOf(fields.replacePlaceholderInLine("{(aliases.aliasname)}{(aliases.only.primary)}"));
+		assertEquals("PrimaryAlias", replacedLines.get(0));
+		assertEquals("AnotherAlias", replacedLines.get(1));
+	}
+
+	@Test
 	public void replacePlaceholderForMultipleAliases() {
 		TypeAliasName another = alias("AnotherAlias", "org.AnotherAliasValueObject");
 		aliases.add(another);
@@ -81,5 +99,9 @@ public class TypeAliasTemplateFieldsTest {
 
 	private static TypeAliasName alias(String aliasname, String type) {
 		return TypeAliasName.builder().aliasName(aliasname).fullQualifiedName(type).build();
+	}
+	
+	private static TypeAliasName primary(TypeAliasName original) {
+		return TypeAliasName.builder().basedOn(original).primary(true).build();
 	}
 }

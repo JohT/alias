@@ -58,6 +58,20 @@ enum JavaFileObjectTestFixtures {
 			"@org.alias.annotation.TypeAlias(value=\"Something\",type=\"com.ExternalClass\"),\n" +
 			"})" +
 			"public class DuplicateTypeDefinitionAnnotatedOrgClass {}"),
+	CLASS_ORG_MULTIPLE_ALIASES("org.MultipleAliases", "" + //
+			"package org;\n" +
+			"@org.alias.annotation.TypeAliases({\n" +
+			"@org.alias.annotation.TypeAlias(value=\"FirstAlias\",primary=true),\n" +
+			"@org.alias.annotation.TypeAlias(value=\"SecondAlias\"),\n" +
+			"})" +
+			"public class MultipleAliases {}"),
+	CLASS_ORG_MULTIPLE_PRIMARY_ALIASES("org.MultipleAliases", "" + //
+			"package org;\n" +
+			"@org.alias.annotation.TypeAliases({\n" +
+			"@org.alias.annotation.TypeAlias(value=\"FirstAlias\",primary=true),\n" +
+			"@org.alias.annotation.TypeAlias(value=\"SecondAlias\",primary=true),\n" +
+			"})" +
+			"public class MultipleAliases {}"),
 	CLASS_ORG_NO_ALIAS("org.NotAnnotatedOrgClass", "" + //
 			"package org;\n" +
 			"public class NotAnnotatedOrgClass {}"),
