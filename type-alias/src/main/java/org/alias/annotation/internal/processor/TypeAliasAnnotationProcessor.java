@@ -83,7 +83,9 @@ public class TypeAliasAnnotationProcessor extends AbstractProcessor {
 		Set<TypeAliasName> typeAliasNames = getTypeAliasNames(annotations, roundEnv);
 		reportDuplicateAliasNames(typeAliasNames);
 		reportDuplicateTypeNames(typeAliasNames);
+		reportDuplicatePrimaryAliases(typeAliasNames);
 		reportEmptyAliasNames(typeAliasNames);
+		typeAliasNames = setAllDistinctAliasesToPrimary(typeAliasNames);
 		TypeAliasGeneratedFileConfiguration configuration = new TypeAliasGeneratedFileConfiguration(annotations, roundEnv, getMessager());
 		for (TypeAliasPackage packageContent : configuration.getAllPackagesFor(typeAliasNames)) {
 			Collection<TypeAliasName> aliases = packageContent.getTypesInPackage();
@@ -159,14 +161,48 @@ public class TypeAliasAnnotationProcessor extends AbstractProcessor {
 	 * @param typenames - {@link Set} of {@link TypeElement}s
 	 */
 	private void reportDuplicateTypeNames(Set<TypeAliasName> typenames) {
+		// It does not count as duplicate, when the type is configured to 
+		// have multiple aliases, where one of them is defined as primary alias.
+		Collection<String> typesWithPrimaryAlias = typenames.stream()
+				.filter(TypeAliasName::isPrimary)
+				.map(TypeAliasName::getFullqualifiedname)
+				.collect(Collectors.toSet());
 		Collection<String> duplicates = typenames.stream()
 				.map(TypeAliasName::getFullqualifiedname)
+				.filter(type -> !typesWithPrimaryAlias.contains(type))
 				.collect(Collectors.toCollection(CollectionOfDuplicates::collectionOfDuplicates));
 		if (!duplicates.isEmpty()) {
 			reportException(new IllegalStateException("Duplicate type names detected: " + duplicates), "");
 		}
 	}
 
+	private static Set<TypeAliasName> setAllDistinctAliasesToPrimary(Set<TypeAliasName> typenames) {
+		Collection<String> typesWithPrimaryAlias = typenames.stream()
+				.filter(TypeAliasName::isPrimary)
+				.map(TypeAliasName::getFullqualifiedname)
+				.collect(Collectors.toSet());
+		return typenames.stream()
+				.map(type -> typesWithPrimaryAlias.contains(type.getFullqualifiedname())? type : type.asPrimary())
+				.collect(Collectors.toSet());
+	}
+
+	/**
+	 * Collects all type names or primary aliases into the {@link CollectionOfDuplicates},<br>
+	 * which only collects the duplicates. <br>
+	 * If there are any duplicates, an exception is reported.
+	 * 
+	 * @param typenames - {@link Set} of {@link TypeElement}s
+	 */
+	private void reportDuplicatePrimaryAliases(Set<TypeAliasName> typenames) {
+		Collection<String> duplicates = typenames.stream()
+				.filter(TypeAliasName::isPrimary)
+				.map(TypeAliasName::getFullqualifiedname)
+				.collect(Collectors.toCollection(CollectionOfDuplicates::collectionOfDuplicates));
+		if (!duplicates.isEmpty()) {
+			reportException(new IllegalStateException("Duplicate primary aliases detected: " + duplicates), "");
+		}
+	}
+	
 	/**
 	 * Checks, if there are {@link TypeAlias} annotated elements with an empty name. These elements will be reported,
 	 * leading to an compile error.
@@ -217,11 +253,7 @@ public class TypeAliasAnnotationProcessor extends AbstractProcessor {
 	}
 
 	private static TypeAliasName typeAliasNameFor(String annotatedTypeName, TypeAlias typeAlias) {
-		return TypeAliasName.builder()
-				.aliasName(typeAlias.value())
-				.fullQualifiedName(typeAlias.type())
-				.assignedTypeName(annotatedTypeName)
-				.build();
+		return TypeAliasName.ofAnnotation(typeAlias).assignedTypeName(annotatedTypeName).build();
 	}
 
 	private static boolean isAnyTypeAliasAnnotationType(QualifiedNameable element) {

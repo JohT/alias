@@ -2,16 +2,20 @@ package org.alias.annotation.internal.templates;
 
 import java.util.Objects;
 
+import org.alias.annotation.TypeAlias;
+
 /**
  * Contains all informations about a type name, its alias and the package it is assigned to.
  * 
  * @author JohT
  */
 public class TypeAliasName implements PlaceholderReplacer {
+	private static final String CONDITIONAL_MARKER_FOR_PRIMARY_ALIASES = "{(only.primary)}";
 
 	private String aliasname;
 	private String fullqualifiedname;
 	private String assignedtypename;
+	private boolean primary = false;
 	
 	/**
 	 * Creates a new {@link TypeAliasName} and uses the full qualified name as alias.
@@ -28,9 +32,13 @@ public class TypeAliasName implements PlaceholderReplacer {
 	}
 
 	public static final Builder builderBasedOn(TypeAliasName template) {
-		return new Builder(template);
+		return builder().basedOn(template);
 	}
 
+	public static final Builder ofAnnotation(TypeAlias annotation) {
+		return builder().ofAnnotation(annotation);
+	}
+	
 	/**
 	 * @deprecated Please use the {@link #builder()}.
 	 */
@@ -87,10 +95,35 @@ public class TypeAliasName implements PlaceholderReplacer {
 	}
 
 	/**
+	 * Matches, if this is the primary alias for a type with multiple alias names.
+	 * 
+	 * @return <code>true</code> if it matches.
+	 */
+	public boolean isPrimary() {
+		return primary;
+	}
+
+	/**
+	 * Creates a new primary {@link TypeAliasName}.
+	 * 
+	 * @return {@link TypeAliasName}
+	 */
+	public TypeAliasName asPrimary() {
+		return builder().basedOn(this).primary(true).build();
+	}
+	
+	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public String replacePlaceholderInLine(String templateLine) {
+		if (templateLine.contains(CONDITIONAL_MARKER_FOR_PRIMARY_ALIASES)) {
+			if (!isPrimary()) {
+				return ""; // Since this line is only mean't for primary aliases, it gets cleared.
+			}
+			// The conditional marker is removed, if it is a primary alias.
+			templateLine = templateLine.replace(CONDITIONAL_MARKER_FOR_PRIMARY_ALIASES, "");
+		}
 		templateLine = templateLine.replace("{(" + "aliasname" + ")}", aliasname);
 		templateLine = templateLine.replace("{(" + "fullqualifiedname" + ")}", fullqualifiedname);
 		templateLine = templateLine.replace("{(" + "assignedtypename" + ")}", assignedtypename);
@@ -111,7 +144,8 @@ public class TypeAliasName implements PlaceholderReplacer {
 		TypeAliasName castOther = (TypeAliasName) other;
 		return Objects.equals(aliasname, castOther.aliasname) //
 				&& Objects.equals(fullqualifiedname, castOther.fullqualifiedname)//
-				&& Objects.equals(assignedtypename, castOther.assignedtypename);
+				&& Objects.equals(assignedtypename, castOther.assignedtypename) //
+				&& (primary == castOther.primary);
 	}
 
 	/**
@@ -124,8 +158,8 @@ public class TypeAliasName implements PlaceholderReplacer {
 
 	@Override
 	public String toString() {
-		return "TypeAliasName [aliasname=" + aliasname + ", fullqualifiedname=" + fullqualifiedname + ", assignedtypename="
-				+ assignedtypename + "]";
+		return "TypeAliasName [aliasname=" + aliasname + ", fullqualifiedname=" + fullqualifiedname
+				+ ", assignedtypename=" + assignedtypename + ", primary=" + primary + "]";
 	}
 
 	/**
@@ -142,19 +176,35 @@ public class TypeAliasName implements PlaceholderReplacer {
 	 * @author JohT
 	 */
 	public static final class Builder {
-		private TypeAliasName typeAliasName;
+		private TypeAliasName typeAliasName = new TypeAliasName();
 
-		public Builder() {
-			this.typeAliasName = new TypeAliasName();
-		}
-
-		public Builder(TypeAliasName template) {
-			this();
+		/**
+		 * Takes all values of the given template {@link TypeAliasName}.
+		 * 
+		 * @param template {@link TypeAliasName}
+		 * @return {@link Builder}
+		 */
+		public Builder basedOn(TypeAliasName template) {
 			aliasName(template.getAliasname());
 			fullQualifiedName(template.getFullqualifiedname());
 			assignedTypeName(template.getAssignedtypename());
+			primary(template.isPrimary());
+			return this;
 		}
-
+		
+		/**
+		 * Takes the values of the given annotation.
+		 * 
+		 * @param typeAliasAnnotation {@link TypeAlias}
+		 * @return {@link Builder}
+		 */
+		public Builder ofAnnotation(TypeAlias typeAliasAnnotation) {
+			aliasName(typeAliasAnnotation.value());
+			fullQualifiedName(typeAliasAnnotation.type());
+			primary(typeAliasAnnotation.primary());
+			return this;
+		}
+		
 		/**
 		 * Stable and distinct alias name of the type.
 		 * <p>
@@ -195,6 +245,19 @@ public class TypeAliasName implements PlaceholderReplacer {
 		 */
 		public Builder assignedTypeName(String name) {
 			typeAliasName.assignedtypename = name;
+			return this;
+		}
+
+		/**
+		 * Marks the primary alias for a type, that has multiple aliases.
+		 * <p>
+		 * Defaults to false.
+		 * 
+		 * @param value boolean
+		 * @return {@link Builder}
+		 */
+		public Builder primary(boolean value) {
+			typeAliasName.primary = value;
 			return this;
 		}
 

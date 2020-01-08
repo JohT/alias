@@ -5,16 +5,20 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.lang.annotation.Annotation;
+
+import org.alias.annotation.TypeAlias;
 import org.alias.annotation.internal.templates.TypeAliasName.Builder;
 import org.junit.Before;
 import org.junit.Test;
 
 public class TypeAliasNameTest {
 
-	private static final String ALIAS_NAME = "TestAlias";
-	private static final String FULL_NAME = "org.external.TestAlias";
-	private static final String ASSIGNED_TYPE = "org.alias.example";
-	private static final String ASSIGNED_TYPE_NAME = ASSIGNED_TYPE + ".TestAlias";
+	static final boolean PRIMARY = true;
+	static final String ALIAS_NAME = "TestAlias";
+	static final String FULL_NAME = "org.external.TestAlias";
+	static final String ASSIGNED_TYPE = "org.alias.example";
+	static final String ASSIGNED_TYPE_NAME = ASSIGNED_TYPE + ".TestAlias";
 
 	/**
 	 * class under test.
@@ -40,6 +44,49 @@ public class TypeAliasNameTest {
 	@Test
 	public void containsFullQualifiedName() {
 		assertEquals(FULL_NAME, alias.getFullqualifiedname());
+	}
+
+	@Test
+	public void containsPrimary() {
+		assertEquals(PRIMARY, alias.isPrimary());
+	}
+
+	@Test
+	public void primaryAliasOfNotPrimaryOne() {
+		alias = TypeAliasName.alsoAsAlias(FULL_NAME).asPrimary();
+		assertTrue(alias.isPrimary());
+		assertEquals(FULL_NAME, alias.getAliasname());
+		assertEquals(FULL_NAME, alias.getFullqualifiedname());
+	}
+
+	@Test
+	public void takeValuesFromAnnotation() {
+		TypeAlias annotation = new TypeAlias() {
+			
+			@Override
+			public Class<? extends Annotation> annotationType() {
+				return TypeAlias.class;
+			}
+			
+			@Override
+			public String value() {
+				return ALIAS_NAME;
+			}
+			
+			@Override
+			public String type() {
+				return FULL_NAME;
+			}
+			
+			@Override
+			public boolean primary() {
+				return PRIMARY;
+			}
+		};
+		alias = TypeAliasName.ofAnnotation(annotation).build();
+		assertEquals(ALIAS_NAME, alias.getAliasname());
+		assertEquals(FULL_NAME, alias.getFullqualifiedname());
+		assertEquals(PRIMARY, alias.isPrimary());
 	}
 
 	@Test
@@ -121,6 +168,18 @@ public class TypeAliasNameTest {
 	}
 
 	@Test
+	public void emptyReplacementOnConditionalLineForPrimaryAliases() {
+		alias = TypeAliasName.builderBasedOn(alias).primary(false).build();
+		assertEquals("", alias.replacePlaceholderInLine("blabla {(only.primary)}"));
+	}
+	
+	@Test
+	public void normalReplacementOnConditionalLineForPrimaryAliases() {
+		alias = TypeAliasName.builderBasedOn(alias).primary(true).build();
+		assertEquals("test", alias.replacePlaceholderInLine("test{(only.primary)}"));
+	}
+	
+	@Test
 	public void equalOnEquaContents() {
 		TypeAliasName expectedEqual = TypeAliasName.builderBasedOn(alias).build();
 		assertEquals(expectedEqual, alias);
@@ -146,6 +205,12 @@ public class TypeAliasNameTest {
 	}
 
 	@Test
+	public void notEqualOnDifferentPrimary() {
+		TypeAliasName expectedNotEqual = TypeAliasName.builderBasedOn(alias).primary(false).build();
+		assertFalse(alias.equals(expectedNotEqual));
+	}
+	
+	@Test
 	public void notEqualToNull() {
 		assertFalse(alias.equals(null));
 	}
@@ -156,6 +221,9 @@ public class TypeAliasNameTest {
 	}
 
 	private static Builder allFields(Builder builder) {
-		return builder.aliasName(ALIAS_NAME).fullQualifiedName(FULL_NAME).assignedTypeName(ASSIGNED_TYPE_NAME);
+		return builder.aliasName(ALIAS_NAME)
+				.fullQualifiedName(FULL_NAME)
+				.assignedTypeName(ASSIGNED_TYPE_NAME)
+				.primary(PRIMARY);
 	}
 }
