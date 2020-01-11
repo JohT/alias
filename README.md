@@ -1,5 +1,5 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.joht.alias/type-alias.svg?style=shield)](https://maven-badges.herokuapp.com/maven-central/io.github.joht.alias/type-alias/)
 # alias
 
 Java identifies types by their class name. 
