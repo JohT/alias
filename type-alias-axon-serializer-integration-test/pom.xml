@@ -13,13 +13,13 @@
 	<url>https://github.com/JohT/alias/tree/master/type-alias-axon-serializer-integration-test</url>
 
 	<properties>
-		<axon.version>4.2.1</axon.version>
+		<axon.version>4.5.1</axon.version>
 
 		<!-- Optional dependencies for axon -->
 		<dom4j.version>1.6.1</dom4j.version>
 		<xom.version>1.2.10</xom.version>
-		<jackson.core.version>2.10.0.pr1</jackson.core.version>
-		<jackson.version>2.9.10</jackson.version>
+		<jackson.core.version>2.10.5.1</jackson.core.version>
+		<jackson.version>2.11.0</jackson.version>
 		<reactor.version>3.2.6.RELEASE</reactor.version>
 
 		<!-- Logging libraries -->
