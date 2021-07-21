@@ -25,7 +25,7 @@
 		<reactor.version>3.4.7</reactor.version>
 
 		<!-- Logging libraries -->
-		<slf4j.version>1.7.31</slf4j.version>
+		<slf4j.version>1.7.32</slf4j.version>
 		<log4j.version>2.14.1</log4j.version>
 
 		<!-- Integration testing -->
@@ -93,14 +93,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Database -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.200</version>
-			<scope>compile</scope>
-		</dependency>
-
 		<!-- CQRS and EventSourcing Framework -->
 		<dependency>
 			<groupId>org.axonframework</groupId>
@@ -154,6 +146,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 		<dependency>
