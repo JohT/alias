@@ -33,6 +33,9 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 </dependency>
 ```
 
+### Building this project
+Install maven and use `mvn install` to build this project, run all tests including the integration tests and copy the resulting artifacts into the local maven repository. A list of the most important commands can be found in [COMMANDS.md](COMMANDS.md).
+
 ### Contents
 - [type-alias](https://github.com/JohT/alias/tree/master/type-alias) 
 contains the main module with the java annotation processing based file generator.
