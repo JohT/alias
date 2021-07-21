@@ -5,10 +5,9 @@
 
 	<defaultProtocol type="Servlet 3.0" />
 
-	<container qualifier="glassfish-embedded" default="true">
-		<configuration>
-			<property name="resourcesXml">src/test/resources/payara-resources.xml</property>
-		</configuration>
-	</container>
-
+    <container qualifier="widlfly-managed" default="true">
+        <configuration>
+            <property name="jbossHome">${jbossHome:target/wildfly-24.0.0.Final}</property>
+        </configuration>
+    </container>
 </arquillian>
