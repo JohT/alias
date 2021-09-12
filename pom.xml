@@ -59,7 +59,7 @@
 		<!-- Test libraries -->
 		<junit.version>4.13.2</junit.version>
 		<hamcrest.version>2.2</hamcrest.version>
-		<mockito.version>1.9.5</mockito.version>
+		<mockito.version>1.10.19</mockito.version>
 	</properties>
 
 	<modules>
