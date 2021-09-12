@@ -58,7 +58,7 @@
 
 		<!-- Test libraries -->
 		<junit.version>4.13.2</junit.version>
-		<hamcrest.version>1.3</hamcrest.version>
+		<hamcrest.version>2.2</hamcrest.version>
 		<mockito.version>1.9.5</mockito.version>
 	</properties>
 
