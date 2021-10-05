@@ -31,7 +31,7 @@
 
 		<!-- Wildfly managed -->
 		<wildfly-arquillian.version>3.0.1.Final</wildfly-arquillian.version>
-		<wildfly.version>24.0.1.Final</wildfly.version>
+		<wildfly.version>25.0.0.Final</wildfly.version>
 
 		<!-- Unit testing -->
 		<mockito.version>1.10.19</mockito.version>
