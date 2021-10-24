@@ -1,6 +1,13 @@
 # CHANGELOG.md
 
-## **v1.1.1** Integration tests  (latest)
+## **v1.1.2** Update of test and example dependencies (latest)
+
+### Maintenance:
+- [Renovate](https://github.com/apps/renovate) activated and configured
+- Test and example dependencies updated
+- Integration test fixed
+
+## **v1.1.1** Integration tests
 
 ### Features:
 - Renewed integration test environment using a managed wildfly (latest distributing) with arquillian.

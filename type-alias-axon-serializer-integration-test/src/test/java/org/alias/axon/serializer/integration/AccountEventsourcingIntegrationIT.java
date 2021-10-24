@@ -40,7 +40,7 @@ import org.junit.runners.MethodSorters;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @RunWith(Arquillian.class)
-public class AccountEventsourcingIntegrationTest {
+public class AccountEventsourcingIntegrationIT {
 
 	@Inject
 	private AccountService accountService;
@@ -61,6 +61,8 @@ public class AccountEventsourcingIntegrationTest {
 	public static JavaArchive createDeployment() throws Exception {
 		return ShrinkWrap.create(JavaArchive.class)
 				.addPackages(true, "org.alias.axon.serializer.example")
+				.addPackages(true, "org.axonframework")
+				.addAsResource("META-INF/services/org.axonframework.messaging.annotation.ParameterResolverFactory")
 				.addAsResource("META-INF/persistence.xml")
 				.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
