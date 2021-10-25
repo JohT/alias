@@ -1,6 +1,6 @@
 package org.alias.jsonb.typereference;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
@@ -14,8 +14,8 @@ import org.alias.jsonb.typereference.testvalues.animals.Animal;
 import org.alias.jsonb.typereference.testvalues.animals.Horse;
 import org.alias.jsonb.typereference.testvalues.animals.Monkey;
 import org.alias.jsonb.typereference.testvalues.animals.Zoo;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TypeReferenceEnhancementIntegrationTest {
 
@@ -25,7 +25,7 @@ public class TypeReferenceEnhancementIntegrationTest {
 	private TypeReferenceEnhancer<Animal> typeReferenceEnhancer = new TypeReferenceEnhancer<Animal>() {
 	};
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		new TestJsonbConfigProvider().joinConfig(new JsonbConfig().withAdapters(typeReferenceEnhancer));
 	}

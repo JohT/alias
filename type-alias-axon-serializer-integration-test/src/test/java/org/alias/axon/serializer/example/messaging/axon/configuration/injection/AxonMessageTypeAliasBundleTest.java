@@ -1,13 +1,13 @@
 package org.alias.axon.serializer.example.messaging.axon.configuration.injection;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ResourceBundle;
 
 import org.alias.axon.serializer.example.messages.MessageAliases;
 import org.axonframework.eventhandling.GapAwareTrackingToken;
 import org.axonframework.messaging.MetaData;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class AxonMessageTypeAliasBundleTest {
 

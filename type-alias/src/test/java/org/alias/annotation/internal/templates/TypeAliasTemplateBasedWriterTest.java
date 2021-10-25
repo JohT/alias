@@ -1,8 +1,8 @@
 package org.alias.annotation.internal.templates;
 
 import static java.util.Arrays.asList;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.function.Consumer;
 
 import org.alias.annotation.TypeAliasGeneratedFile.Template;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TypeAliasTemplateBasedWriterTest {
 
@@ -52,7 +52,8 @@ public class TypeAliasTemplateBasedWriterTest {
 	}
 
 	private void assertContainsText(String expectedContent, String content) {
-		assertTrue(String.format("%s not found in\n%s", expectedContent, content), content.contains(expectedContent));
+		String message = String.format("%s not found in\n%s", expectedContent, content);
+		assertTrue(content.contains(expectedContent), message);
 	}
 
 	private String getWrittenContentAsString(Consumer<PrintWriter> contentWriter) throws IOException {

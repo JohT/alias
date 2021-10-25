@@ -1,14 +1,14 @@
 package org.alias.example.customized.properties;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class CustomizedFileNamePropertiesTest {
 
@@ -16,7 +16,7 @@ public class CustomizedFileNamePropertiesTest {
 
 	private Properties properties = new Properties();
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		loadProperties(PROPERTY_FILE);
 	}

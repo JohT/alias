@@ -1,16 +1,16 @@
 package org.alias.annotation.internal.processor;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 import javax.tools.JavaFileObject;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.TemporaryFolder;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
 
 /**
  * These tests are something in between integration and unit tests.
@@ -26,16 +26,16 @@ public class TypeAliasAnnotationProcessorTest {
 	 */
 	private TypeAliasAnnotationProcessor processor = new TypeAliasAnnotationProcessor();
 
-	@Rule
-	public final TemporaryFolder directory = new TemporaryFolder();
+	@TempDir
+	File tempDirectoy;
 
 	@Test
 	public void propertyFileShouldContainTypeAliasName() throws IOException {
 		JavaFileObjectTestFixtures typeAliasAnnotatedClass = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS;
 		JavaFileObject source = typeAliasAnnotatedClass.createJavaFile();
 
-		compileWithPresetProperties(source).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(source).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("OrgExampleAliasClass=" + typeAliasAnnotatedClass.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
 		files.assertHasUncommentedPropertyLineCountOf(1, DEFAULT_PROPERTYFILENAME);
@@ -48,8 +48,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObjectTestFixtures orgClass = JavaFileObjectTestFixtures.CLASS_ORG_TYPE_ALIAS;
 
 		compileWithPresetProperties(orgExampleClass.createJavaFile(), orgAnotherClass.createJavaFile(), orgClass.createJavaFile())
-				.to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+				.to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("OrgExampleAliasClass=" + orgExampleClass.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
 		files.assertContains("OrgAnotherAliasClass=" + orgAnotherClass.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
@@ -62,9 +62,9 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObjectTestFixtures orgClass = JavaFileObjectTestFixtures.CLASS_ORG_TYPE_ALIAS;
 		JavaFileObjectTestFixtures resourceBundleConfig = JavaFileObjectTestFixtures.PACKAGE_ORG_RESOURCE_BUNDLE;
 
-		compileWithPresetProperties(orgClass.createJavaFile(), resourceBundleConfig.createJavaFile()).to(directory.getRoot())
+		compileWithPresetProperties(orgClass.createJavaFile(), resourceBundleConfig.createJavaFile()).to(tempDirectoy)
 				.executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("\"OrgAliasClass\", " + orgClass.getJavaFileName() + ".class", "org", "AliasResourceBundle.java");
 	}
@@ -72,8 +72,8 @@ public class TypeAliasAnnotationProcessorTest {
 	@Test
 	public void defaultResourceBundleFileShouldContainAliasName() throws IOException {
 		JavaFileObjectTestFixtures orgClass = JavaFileObjectTestFixtures.CLASS_ORG_TYPE_ALIAS;
-		compileSources(orgClass.createJavaFile()).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileSources(orgClass.createJavaFile()).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("\"OrgAliasClass\", " + orgClass.getJavaFileName() + ".class", "TypeAlias.java");
 	}
@@ -83,9 +83,9 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObjectTestFixtures withAlias = JavaFileObjectTestFixtures.CLASS_ORG_TYPE_ALIAS;
 		JavaFileObjectTestFixtures withoutAlias = JavaFileObjectTestFixtures.CLASS_ORG_NO_ALIAS;
 
-		compileWithPresetProperties(withAlias.createJavaFile(), withoutAlias.createJavaFile()).to(directory.getRoot())
+		compileWithPresetProperties(withAlias.createJavaFile(), withoutAlias.createJavaFile()).to(tempDirectoy)
 				.executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("OrgAliasClass=" + withAlias.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
 		files.assertHasUncommentedPropertyLineCountOf(1, DEFAULT_PROPERTYFILENAME);
@@ -95,8 +95,8 @@ public class TypeAliasAnnotationProcessorTest {
 	public void propertyFileShouldContainHeaderComments() throws IOException {
 		JavaFileObjectTestFixtures typeAliasAnnotatedClass = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS;
 
-		compileWithPresetProperties(typeAliasAnnotatedClass.createJavaFile()).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(typeAliasAnnotatedClass.createJavaFile()).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("# Generated by", DEFAULT_PROPERTYFILENAME);
 		files.assertContains("type-alias", DEFAULT_PROPERTYFILENAME);
@@ -110,8 +110,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject anotherInnerConfig = JavaFileObjectTestFixtures.PACKAGE_ORG_ANOTHER.createJavaFile();
 
 		compileWithPresetProperties(innerConfig, anotherInnerConfig, noConfigOuter.createJavaFile(), configuredInner.createJavaFile())
-				.to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+				.to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		// The default properties should only contain the types,
 		// that doesn't belong to a configured (annotated package-info.java)
@@ -129,21 +129,21 @@ public class TypeAliasAnnotationProcessorTest {
 	public void compilationShouldFailOnAmbiguousTypeAliasNames() throws IOException {
 		JavaFileObjectTestFixtures original = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS;
 		JavaFileObjectTestFixtures duplicate = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_DUPLICATE_TYPE_ALIAS;
-		compileWithPresetProperties(original.createJavaFile(), duplicate.createJavaFile()).to(directory.getRoot())
+		compileWithPresetProperties(original.createJavaFile(), duplicate.createJavaFile()).to(tempDirectoy)
 				.expectErrorFrom(processor);
 	}
 
 	@Test
 	public void compilationShouldFailOnEmptyTypeAliasNames() throws IOException {
 		JavaFileObjectTestFixtures empty = JavaFileObjectTestFixtures.CLASS_ORG_EMPTY_TYPE_ALIAS;
-		compileWithPresetProperties(empty.createJavaFile()).to(directory.getRoot()).expectErrorFrom(processor);
+		compileWithPresetProperties(empty.createJavaFile()).to(tempDirectoy).expectErrorFrom(processor);
 	}
 
 	@Test
 	public void compilationShouldFailOnAmbiguousPackageConfigurations() throws IOException {
 		JavaFileObjectTestFixtures original = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED;
 		JavaFileObjectTestFixtures duplicate = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED_ON_A_TYPE;
-		compileWithPresetProperties(original.createJavaFile(), duplicate.createJavaFile()).to(directory.getRoot())
+		compileWithPresetProperties(original.createJavaFile(), duplicate.createJavaFile()).to(tempDirectoy)
 				.expectErrorFrom(processor);
 	}
 
@@ -152,15 +152,15 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject external = JavaFileObjectTestFixtures.CLASS_COM_EXTERNAL.createJavaFile();
 		JavaFileObject definitions = JavaFileObjectTestFixtures.CLASS_ORG_ALIASES_FOR_EXTERNAL_TYPES.createJavaFile();
 		JavaFileObject duplicate = JavaFileObjectTestFixtures.CLASS_ORG_ALIASES_DUPLICATE_TYPE_DEFINITION.createJavaFile();
-		compileWithPresetProperties(external, definitions, duplicate).to(directory.getRoot()).expectErrorFrom(processor);
+		compileWithPresetProperties(external, definitions, duplicate).to(tempDirectoy).expectErrorFrom(processor);
 	}
 
 	@Test
 	public void propertyFileShouldNotBeGeneratedWithoutAnyTypeAliasAnnotation() throws IOException {
 		JavaFileObject noAlias = JavaFileObjectTestFixtures.CLASS_ORG_NO_ALIAS.createJavaFile();
 
-		compileWithPresetProperties(noAlias).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(noAlias).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertFilesWithExtension(0, "properties");
 	}
@@ -171,9 +171,9 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObjectTestFixtures outsidePackage = JavaFileObjectTestFixtures.CLASS_ORG_ANOTHER_TYPE_ALIAS;
 		JavaFileObjectTestFixtures withinPackage = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS;
 
-		compileWithPresetProperties(packageInfo, withinPackage.createJavaFile(), outsidePackage.createJavaFile()).to(directory.getRoot())
+		compileWithPresetProperties(packageInfo, withinPackage.createJavaFile(), outsidePackage.createJavaFile()).to(tempDirectoy)
 				.executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("OrgExampleAliasClass=" + withinPackage.getJavaFileName(), "org", "example", "OrgExampleAlias.properties");
 		files.assertHasUncommentedPropertyLineCountOf(1, "org", "example", "OrgExampleAlias.properties");
@@ -185,9 +185,9 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObjectTestFixtures outsidePackage = JavaFileObjectTestFixtures.CLASS_ORG_ANOTHER_TYPE_ALIAS;
 		JavaFileObjectTestFixtures withinPackage = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS;
 
-		compileWithPresetProperties(packageInfo, withinPackage.createJavaFile(), outsidePackage.createJavaFile()).to(directory.getRoot())
+		compileWithPresetProperties(packageInfo, withinPackage.createJavaFile(), outsidePackage.createJavaFile()).to(tempDirectoy)
 				.executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("OrgAnotherAliasClass=" + outsidePackage.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
 		files.assertHasUncommentedPropertyLineCountOf(1, DEFAULT_PROPERTYFILENAME);
@@ -198,8 +198,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED.createJavaFile();
 		JavaFileObjectTestFixtures source = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS;
 
-		compileWithPresetProperties(packageInfo, source.createJavaFile()).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(packageInfo, source.createJavaFile()).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("OrgExampleAliasClass=" + source.getJavaFileName(), "org", "OrgAlias.properties");
 		files.assertHasUncommentedPropertyLineCountOf(1, "org", "OrgAlias.properties");
@@ -213,9 +213,9 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject neighbourPackage = JavaFileObjectTestFixtures.CLASS_ORG_ANOTHER_TYPE_ALIAS.createJavaFile();
 		JavaFileObject subPackage = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS.createJavaFile();
 
-		compileWithPresetProperties(packageInfo, samePackage, subPackage, neighbourPackage).to(directory.getRoot())
+		compileWithPresetProperties(packageInfo, samePackage, subPackage, neighbourPackage).to(tempDirectoy)
 				.executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertHasUncommentedPropertyLineCountOf(3, "org", "OrgAlias.properties");
 		files.assertFilesWithExtension(1, "properties");
@@ -226,8 +226,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_EXAMPLE.createJavaFile();
 		JavaFileObject source = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS.createJavaFile();
 
-		compileWithPresetProperties(packageInfo, source).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(packageInfo, source).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertHasUncommentedPropertyLineCountOf(1, "org", "example", "OrgExampleAlias.properties");
 		files.assertFilesWithExtension(1, "properties");
@@ -238,8 +238,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_EXAMPLE_NOT_ANNOTATED.createJavaFile();
 		JavaFileObject source = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS.createJavaFile();
 
-		compileWithPresetProperties(packageInfo, source).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(packageInfo, source).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertFilesWithExtension(1, "properties");
 	}
@@ -249,8 +249,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED.createJavaFile();
 		JavaFileObject noAlias = JavaFileObjectTestFixtures.CLASS_ORG_NO_ALIAS.createJavaFile();
 
-		compileWithPresetProperties(packageInfo, noAlias).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(packageInfo, noAlias).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 		files.assertFilesWithExtension(0, "properties");
 	}
 
@@ -259,8 +259,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED.createJavaFile();
 		JavaFileObjectTestFixtures source = JavaFileObjectTestFixtures.CLASS_ORG_EXAMPLE_TYPE_ALIAS;
 
-		compileWithPresetProperties(packageInfo, source.createJavaFile()).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(packageInfo, source.createJavaFile()).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		Properties typeAlias = new Properties();
 		try (InputStream inputStream = files.inputStreamOf("org", "OrgAlias.properties")) {
@@ -274,9 +274,9 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObjectTestFixtures orgNoAlias = JavaFileObjectTestFixtures.CLASS_ORG_NO_ALIAS;
 		JavaFileObjectTestFixtures orgAliasForNotAnnotatedType = JavaFileObjectTestFixtures.CLASS_ORG_ALIAS_FOR_NOT_ANNOTATED_TYPE;
 
-		compileWithPresetProperties(orgNoAlias.createJavaFile(), orgAliasForNotAnnotatedType.createJavaFile()).to(directory.getRoot())
+		compileWithPresetProperties(orgNoAlias.createJavaFile(), orgAliasForNotAnnotatedType.createJavaFile()).to(tempDirectoy)
 				.executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("ForeignAlias=" + orgNoAlias.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
 		files.assertHasUncommentedPropertyLineCountOf(1, DEFAULT_PROPERTYFILENAME);
@@ -288,9 +288,9 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObjectTestFixtures anotherExternal = JavaFileObjectTestFixtures.CLASS_COM_ANOTHER_EXTERNAL;
 		JavaFileObject aliases = JavaFileObjectTestFixtures.CLASS_ORG_ALIASES_FOR_EXTERNAL_TYPES.createJavaFile();
 
-		compileWithPresetProperties(external.createJavaFile(), anotherExternal.createJavaFile(), aliases).to(directory.getRoot())
+		compileWithPresetProperties(external.createJavaFile(), anotherExternal.createJavaFile(), aliases).to(tempDirectoy)
 				.executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("ExternalAlias=" + external.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
 		files.assertContains("AnotherExternalAlias=" + anotherExternal.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
@@ -305,8 +305,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED.createJavaFile();
 
 		compileWithPresetProperties(external.createJavaFile(), anotherExternal.createJavaFile(), aliases, packageInfo)
-				.to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+				.to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("ExternalAlias=" + external.getJavaFileName(), "org", "OrgAlias.properties");
 		files.assertContains("AnotherExternalAlias=" + anotherExternal.getJavaFileName(), "org", "OrgAlias.properties");
@@ -319,8 +319,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject objectWithMultipleAliases = typeWithMultipleAliases.createJavaFile();
 		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED.createJavaFile();
 
-		compileWithPresetProperties(objectWithMultipleAliases, packageInfo).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(objectWithMultipleAliases, packageInfo).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("FirstAlias=" + typeWithMultipleAliases.getJavaFileName(), "org", "OrgAlias.properties");
 		files.assertContains("SecondAlias=" + typeWithMultipleAliases.getJavaFileName(), "org", "OrgAlias.properties");
@@ -330,7 +330,7 @@ public class TypeAliasAnnotationProcessorTest {
 	@Test
 	public void failOnMultipleAliasesWithDuplicatePrimaryAliasesForOneType() throws IOException {
 		JavaFileObject duplicate = JavaFileObjectTestFixtures.CLASS_ORG_MULTIPLE_PRIMARY_ALIASES.createJavaFile();
-		compileWithPresetProperties(duplicate).to(directory.getRoot()).expectErrorFrom(processor);
+		compileWithPresetProperties(duplicate).to(tempDirectoy).expectErrorFrom(processor);
 	}
 
 	@Test
@@ -341,8 +341,8 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObject objectWithMultipleAliases = multipleAliases.createJavaFile();
 		JavaFileObject packageInfo = resourceBundleConfig.createJavaFile();
 
-		compileWithPresetProperties(objectWithMultipleAliases, packageInfo).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(objectWithMultipleAliases, packageInfo).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("\"FirstAlias\", " + multipleAliases.getJavaFileName() + ".class", "org", "AliasResourceBundle.java");
 		files.assertContains("\"SecondAlias\", " + multipleAliases.getJavaFileName() + ".class", "org", "AliasResourceBundle.java");
@@ -355,9 +355,9 @@ public class TypeAliasAnnotationProcessorTest {
 		JavaFileObjectTestFixtures anotherExternal = JavaFileObjectTestFixtures.CLASS_COM_ANOTHER_EXTERNAL;
 		JavaFileObject packageInfo = JavaFileObjectTestFixtures.PACKAGE_ORG_ANNOTATED_EXTERNAL_ALIASES.createJavaFile();
 
-		compileWithPresetProperties(external.createJavaFile(), anotherExternal.createJavaFile(), packageInfo).to(directory.getRoot())
+		compileWithPresetProperties(external.createJavaFile(), anotherExternal.createJavaFile(), packageInfo).to(tempDirectoy)
 				.executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("ExternalAlias=" + external.getJavaFileName(), "org", "OrgExternalAlias.properties");
 		files.assertContains("AnotherExternalAlias=" + anotherExternal.getJavaFileName(), "org", "OrgExternalAlias.properties");
@@ -368,8 +368,8 @@ public class TypeAliasAnnotationProcessorTest {
 	public void multipleTypeAliasesWithOneDefault() throws IOException {
 		JavaFileObjectTestFixtures withDefault = JavaFileObjectTestFixtures.CLASS_ORG_TYPE_ALIASES_WITH_DEFAULT;
 
-		compileWithPresetProperties(withDefault.createJavaFile()).to(directory.getRoot()).executeProcessor(processor);
-		FileCollector files = FileCollector.collectFilesFromRoot(directory.getRoot());
+		compileWithPresetProperties(withDefault.createJavaFile()).to(tempDirectoy).executeProcessor(processor);
+		FileCollector files = FileCollector.collectFilesFromRoot(tempDirectoy);
 
 		files.assertContains("OrgAliasClass=" + withDefault.getJavaFileName(), DEFAULT_PROPERTYFILENAME);
 		files.assertHasUncommentedPropertyLineCountOf(1, DEFAULT_PROPERTYFILENAME);

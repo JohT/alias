@@ -7,8 +7,8 @@ import org.alias.axon.serializer.example.messages.event.account.AccountCreatedEv
 import org.alias.axon.serializer.example.messages.event.account.NicknameChangedEvent;
 import org.alias.axon.serializer.example.messages.event.account.NicknamePresetEvent;
 import org.axonframework.test.aggregate.AggregateTestFixture;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class AccountAggregateEventsourcingTest {
 
@@ -16,7 +16,7 @@ public class AccountAggregateEventsourcingTest {
 
 	private AggregateTestFixture<AccountAggregate> accountFixture;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		accountFixture = new PreconfiguredAggregateTestFixture<>(AccountAggregate.class).getFixture();
 	}

@@ -1,10 +1,10 @@
 package org.alias.jsonb.typereference.resolver;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ResourceBundle;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TypeReferenceResourceBundleValidatorTest {
 
@@ -65,7 +65,7 @@ public class TypeReferenceResourceBundleValidatorTest {
 	}
 
 	private static void assertContains(String expectedElement, String messages) {
-		assertTrue(expectedElement + " should be contained in " + messages,
-				messages.contains(expectedElement));
+		String message = expectedElement + " should be contained in " + messages;
+		assertTrue(messages.contains(expectedElement), message);
 	}
 }

@@ -27,5 +27,12 @@
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
+		
+		<!-- Unit Testing -->
+		<dependency>
+    		<groupId>org.junit.jupiter</groupId>
+    		<artifactId>junit-jupiter</artifactId>
+    		<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>

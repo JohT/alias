@@ -20,9 +20,6 @@ import javax.tools.StandardJavaFileManager;
 import javax.tools.StandardLocation;
 import javax.tools.ToolProvider;
 
-import org.junit.Ignore;
-
-@Ignore
 class AnnotationProcessorExecutor {
 
 	private final JavaCompiler compiler;

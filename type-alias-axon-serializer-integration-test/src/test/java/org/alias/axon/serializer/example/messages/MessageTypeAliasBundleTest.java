@@ -1,13 +1,13 @@
 package org.alias.axon.serializer.example.messages;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ResourceBundle;
 
 import org.alias.axon.serializer.example.messages.event.account.AccountCreatedEvent;
 import org.alias.axon.serializer.example.messages.event.account.NicknameChangedEvent;
 import org.alias.axon.serializer.example.messages.event.account.NicknamePresetEvent;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class MessageTypeAliasBundleTest {
 

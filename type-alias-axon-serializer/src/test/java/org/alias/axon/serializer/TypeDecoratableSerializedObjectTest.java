@@ -1,6 +1,6 @@
 package org.alias.axon.serializer;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -11,8 +11,8 @@ import org.alias.axon.serializer.resolvable.ResolvableSerializedType;
 import org.axonframework.serialization.SerializedObject;
 import org.axonframework.serialization.SerializedType;
 import org.axonframework.serialization.SimpleSerializedType;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TypeDecoratableSerializedObjectTest {
 
@@ -25,7 +25,7 @@ public class TypeDecoratableSerializedObjectTest {
 	 */
 	private TypeDecoratableSerializedObject<?> decorator = new TypeDecoratableSerializedObject<>(delegate, TYPE_DECORATOR);
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		doReturn("testdata").when(delegate).getData();
 		doReturn(Object.class).when(delegate).getContentType();

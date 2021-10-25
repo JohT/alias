@@ -1,13 +1,13 @@
 package org.alias.axon.serializer.aliasable;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Optional;
 import java.util.function.Function;
 
 import org.axonframework.serialization.SerializedType;
 import org.axonframework.serialization.SimpleSerializedType;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class AliasableResolvableSerializedTypeTest {
 

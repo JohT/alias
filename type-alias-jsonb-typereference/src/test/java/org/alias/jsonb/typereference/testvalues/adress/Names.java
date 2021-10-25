@@ -7,9 +7,7 @@ import java.util.Collections;
 import java.util.Objects;
 
 import org.alias.annotation.TypeAlias;
-import org.junit.Ignore;
 
-@Ignore
 @TypeAlias("Names")
 public class Names {
 

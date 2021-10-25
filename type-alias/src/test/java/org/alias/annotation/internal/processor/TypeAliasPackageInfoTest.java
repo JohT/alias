@@ -1,12 +1,12 @@
 package org.alias.annotation.internal.processor;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.alias.annotation.TypeAliasGeneratedFile.Template;
 import org.alias.annotation.internal.processor.TypeAliasPackageInfo.Builder;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TypeAliasPackageInfoTest {
 
@@ -85,42 +85,42 @@ public class TypeAliasPackageInfoTest {
 	@Test
 	public void equalOnEqualContent() {
 		TypeAliasPackageInfo equalPackageInfo = TypeAliasPackageInfo.createFrom(packageInfo).build();
-		assertTrue(equalPackageInfo.toString(), packageInfo.equals(equalPackageInfo));
+		assertTrue(packageInfo.equals(equalPackageInfo), String.valueOf(equalPackageInfo));
 	}
 
 	@Test
 	public void notEqualOnDifferentPackageName() {
 		TypeAliasPackageInfo different = TypeAliasPackageInfo.createFrom(packageInfo).packageName(PACKAGE + ".sub").build();
-		assertFalse(packageInfo.toString(), packageInfo.equals(different));
+		assertFalse(packageInfo.equals(different), String.valueOf(packageInfo));
 	}
 
 	@Test
 	public void notEqualOnDifferentFileName() {
 		TypeAliasPackageInfo different = TypeAliasPackageInfo.createFrom(packageInfo).fileName("Different" + FILENAME).build();
-		assertFalse(packageInfo.toString(), packageInfo.equals(different));
+		assertFalse(packageInfo.equals(different), String.valueOf(packageInfo));
 	}
 
 	@Test
 	public void notEqualOnDifferentFileExtension() {
 		TypeAliasPackageInfo different = TypeAliasPackageInfo.createFrom(packageInfo).fileExtension("txt").build();
-		assertFalse(packageInfo.toString(), packageInfo.equals(different));
+		assertFalse(packageInfo.equals(different), String.valueOf(packageInfo));
 	}
 
 	@Test
 	public void notEqualOnDifferentTemplateName() {
 		TypeAliasPackageInfo different = TypeAliasPackageInfo.createFrom(packageInfo).templateName("resourcebundle").build();
-		assertFalse(packageInfo.toString(), packageInfo.equals(different));
+		assertFalse(packageInfo.equals(different), String.valueOf(packageInfo));
 	}
 
 	@Test
 	public void notEqualComparedToNull() {
-		assertFalse(packageInfo.toString(), packageInfo.equals(null));
+		assertFalse(packageInfo.equals(null), String.valueOf(packageInfo));
 	}
 
 	@Test
 	@SuppressWarnings("unlikely-arg-type")
 	public void notEqualComparedToAnotherType() {
-		assertFalse(packageInfo.toString(), packageInfo.equals("Other Type"));
+		assertFalse(packageInfo.equals("Other Type"), String.valueOf(packageInfo));
 	}
 
 	private static Builder withAllFields(Builder builder) {

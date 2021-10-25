@@ -1,14 +1,14 @@
 package org.alias.annotation.internal.templates;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.IOException;
 
 import org.alias.annotation.TypeAlias;
 import org.alias.annotation.TypeAliasGeneratedFile;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TypeAliasTextTemplateTest {
 
@@ -55,8 +55,8 @@ public class TypeAliasTextTemplateTest {
 			TypeAliasTextTemplate.forPlaceholder(null);
 			fail("Expected IllegalArgumentException.");
 		} catch (IllegalArgumentException e) {
-			assertTrue(e.getMessage(), e.getMessage().contains("placeholder"));
-			assertTrue(e.getMessage(), e.getMessage().contains("null"));
+			assertTrue(e.getMessage().contains("placeholder"), e.getMessage());
+			assertTrue(e.getMessage().contains("null"), e.getMessage());
 		}
 	}
 
@@ -66,8 +66,8 @@ public class TypeAliasTextTemplateTest {
 			TypeAliasTextTemplate.forPlaceholder(" ");
 			fail("Expected IllegalArgumentException.");
 		} catch (IllegalArgumentException e) {
-			assertTrue(e.getMessage(), e.getMessage().contains("placeholder"));
-			assertTrue(e.getMessage(), e.getMessage().contains("empty"));
+			assertTrue(e.getMessage().contains("placeholder"), e.getMessage());
+			assertTrue(e.getMessage().contains("empty"), e.getMessage());
 		}
 	}
 
@@ -77,8 +77,8 @@ public class TypeAliasTextTemplateTest {
 			TypeAliasTextTemplate.forDifferentPlaceholderAndReader("placeholder", null);
 			fail("Expected IllegalArgumentException.");
 		} catch (IllegalArgumentException e) {
-			assertTrue(e.getMessage(), e.getMessage().contains("template"));
-			assertTrue(e.getMessage(), e.getMessage().contains("null"));
+			assertTrue(e.getMessage().contains("template"), e.getMessage());
+			assertTrue(e.getMessage().contains("null"), e.getMessage());
 		}
 	}
 
@@ -87,7 +87,8 @@ public class TypeAliasTextTemplateTest {
 	}
 
 	private void assertContainsText(String expectedContent, String content) {
-		assertTrue(String.format("%s not found in\n%s", expectedContent, content), content.contains(expectedContent));
+		String message = String.format("%s not found in\n%s", expectedContent, content);
+		assertTrue(content.contains(expectedContent), message);
 	}
 
 }

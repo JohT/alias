@@ -2,9 +2,6 @@ package org.alias.jsonb.typereference.resolver;
 
 import java.util.ListResourceBundle;
 
-import org.junit.Ignore;
-
-@Ignore
 class AliasTypeFixtureResourceBundle extends ListResourceBundle {
 
 	static final String ALIAS = "Alias";

@@ -2,14 +2,14 @@ package org.alias.annotation.internal.processor;
 
 import static java.util.Arrays.asList;
 import static org.alias.annotation.internal.templates.TypeAliasName.alsoAsAlias;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Collection;
 
 import org.alias.annotation.internal.templates.TypeAliasName;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TypeAliasPackageTest {
 
@@ -38,29 +38,29 @@ public class TypeAliasPackageTest {
 	@Test
 	public void equalOnEqualContent() {
 		TypeAliasPackage equalPackageContent = new TypeAliasPackage(PACKAGE_INFO, TYPES_IN_PACKAGE);
-		assertTrue(equalPackageContent.toString(), packageContent.equals(equalPackageContent));
+		assertTrue(packageContent.equals(equalPackageContent), String.valueOf(equalPackageContent));
 	}
 
 	@Test
 	public void notEqualOnDifferentPackageInfo() {
 		TypeAliasPackage different = new TypeAliasPackage(DIFFERENT_PACKAGE_INFO, TYPES_IN_PACKAGE);
-		assertFalse(packageContent.toString(), packageContent.equals(different));
+		assertFalse(packageContent.equals(different), String.valueOf(packageContent));
 	}
 
 	@Test
 	public void notEqualOnDifferentTypes() {
 		TypeAliasPackage different = new TypeAliasPackage(PACKAGE_INFO, DIFFERENT_TYPES_IN_PACKAGE);
-		assertFalse(packageContent.toString(), packageContent.equals(different));
+		assertFalse(packageContent.equals(different), String.valueOf(packageContent));
 	}
 
 	@Test
 	public void notEqualComparedToNull() {
-		assertFalse(packageContent.toString(), packageContent.equals(null));
+		assertFalse(packageContent.equals(null), String.valueOf(packageContent));
 	}
 
 	@Test
 	@SuppressWarnings("unlikely-arg-type")
 	public void notEqualComparedToAnotherType() {
-		assertFalse(packageContent.toString(), packageContent.equals("Other Type"));
+		assertFalse(packageContent.equals("Other Type"), String.valueOf(packageContent));
 	}
 }

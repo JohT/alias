@@ -1,9 +1,8 @@
 package org.alias.axon.serializer.integration;
 
 import static org.alias.axon.serializer.example.query.model.member.nickname.NicknameProjection.PROCESSING_GROUP_FOR_NICKNAMES;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 import java.util.Map;
@@ -28,18 +27,18 @@ import org.alias.axon.serializer.example.messaging.boundary.query.model.QueryMod
 import org.alias.axon.serializer.example.query.model.member.nickname.NicknameProjection;
 import org.hamcrest.CoreMatchers;
 import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.junit5.ArquillianExtension;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.Before;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
-@RunWith(Arquillian.class)
+import static org.hamcrest.MatcherAssert.assertThat;
+
+@ExtendWith(ArquillianExtension.class)
 public class AccountEventsourcingIntegrationIT {
 
 	@Inject
@@ -59,20 +58,20 @@ public class AccountEventsourcingIntegrationIT {
 
 	@Deployment
 	public static JavaArchive createDeployment() throws Exception {
-		return ShrinkWrap.create(JavaArchive.class)
+		return ShrinkWrap.create(JavaArchive.class) //
 				.addPackages(true, "org.alias.axon.serializer.example")
 				.addPackages(true, "org.axonframework")
 				.addAsResource("META-INF/services/org.axonframework.messaging.annotation.ParameterResolverFactory")
-				.addAsResource("META-INF/persistence.xml")
-				.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+				.addAsResource("META-INF/persistence.xml").addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		eventsourcingRepository = new EventsourcingTestDatabaseRepository(eventsourcingDatasource);
 	}
 
 	@Test
+	@Order(1)
 	public void createdAccountHasEmptyPresetNickname() throws InterruptedException {
 		String accountId = accountService.createAccount();
 		String queriedNickname = accountService.queryNickname(accountId);
@@ -80,6 +79,7 @@ public class AccountEventsourcingIntegrationIT {
 	}
 
 	@Test
+	@Order(2)
 	public void aliasNamesShouldBeTakenAsEventPayloadType() {
 		String accountId = accountService.createAccount();
 		List<String> eventTypes = eventTypesForAggregateId(accountId);
@@ -88,12 +88,14 @@ public class AccountEventsourcingIntegrationIT {
 	}
 
 	@Test
+	@Order(3)
 	public void fullQualifiedEventPayloadTypesShouldBeSupportedAsFallback() throws InterruptedException {
 		String accountId = accountService.createAccount();
 		String eventsPackage = AccountCreatedEvent.class.getPackage().getName();
 		EventsourcingTestDatabaseRepository.printQueryResults(eventsourcingRepository.queryEvents(), System.out);
 		// changing the same aggregate triggers reading all events (without snapshots).
-		// if there is a problem while reading and reconstructing, the test will and should fail.
+		// if there is a problem while reading and reconstructing, the test will and
+		// should fail.
 		eventsourcingRepository.prefixEventPayloadTypesBy(eventsPackage);
 		EventsourcingTestDatabaseRepository.printQueryResults(eventsourcingRepository.queryEvents(), System.out);
 		String nickname = "OtherTestNickname";
@@ -102,6 +104,7 @@ public class AccountEventsourcingIntegrationIT {
 	}
 
 	@Test
+	@Order(4)
 	public void changedNicknameMatchesQueriedNickname() {
 		String nickname = "TestNickname";
 		String accountId = accountService.createAccount();
@@ -109,6 +112,7 @@ public class AccountEventsourcingIntegrationIT {
 	}
 
 	@Test
+	@Order(5)
 	public void tokensShouldBeUpToDateAfterProcessing() throws InterruptedException {
 		String nickname = "TestNickname";
 		String accountId = accountService.createAccount();
@@ -123,6 +127,7 @@ public class AccountEventsourcingIntegrationIT {
 	}
 
 	@Test
+	@Order(6)
 	public void nicknameChangePublishedBySubscriptionQuery() throws InterruptedException {
 		BlockingQueue<String> publishedNicknames = new ArrayBlockingQueue<String>(1);
 		String nickname = "SubscribedNickname";
@@ -141,6 +146,7 @@ public class AccountEventsourcingIntegrationIT {
 	}
 
 	@Test
+	@Order(7)
 	public void enoughChangesToTriggerSnapshot() {
 		String accountId = accountService.createAccount();
 		for (int i = 0; i < 20; i++) {
@@ -159,11 +165,8 @@ public class AccountEventsourcingIntegrationIT {
 	}
 
 	private static List<String> payloadtypeForAggregateId(List<Map<String, Object>> queryResults, String aggregateId) {
-		return queryResults
-				.stream()
-				.filter(columns -> columns.get("AGGREGATEIDENTIFIER").equals(aggregateId))
-				.map(columns -> (String) columns.get("PAYLOADTYPE"))
-				.collect(Collectors.toList());
+		return queryResults.stream().filter(columns -> columns.get("AGGREGATEIDENTIFIER").equals(aggregateId))
+				.map(columns -> (String) columns.get("PAYLOADTYPE")).collect(Collectors.toList());
 	}
 
 	private void waitForMessageContaining(Class<?> messageType, String messageContent) throws InterruptedException {
