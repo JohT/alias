@@ -14,14 +14,11 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.junit.Ignore;
-
 /**
  * Provides accesses to the eventsourcing database for integration testing.
  * 
  * @author JohT
  */
-@Ignore
 class EventsourcingTestDatabaseRepository {
 
 	private static final String EVENT_QUERY = "SELECT * FROM DOMAINEVENTENTRY";

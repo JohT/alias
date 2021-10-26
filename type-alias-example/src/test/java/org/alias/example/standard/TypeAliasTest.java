@@ -1,20 +1,18 @@
 package org.alias.example.standard;
 
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ResourceBundle;
 
 import org.alias.example.multiple.MultipleAliasedFileType;
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TypeAliasTest {
 
 	private ResourceBundle bundle;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		bundle = ResourceBundle.getBundle("TypeAlias");
 	}

@@ -1,13 +1,13 @@
 package org.alias.axon.serializer.experimental;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.ResourceBundle;
 
 import org.alias.axon.serializer.TypeAliasResourceBundleFixture;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class AliasableResourceBundleClassloaderTest {
 
@@ -46,8 +46,8 @@ public class AliasableResourceBundleClassloaderTest {
 			fail("Expected IllegalArgumentException");
 		} catch (IllegalArgumentException e) {
 			String message = e.getMessage();
-			assertTrue(message, message.contains(INVALID_RESOURCE_BUNDLE.getBaseBundleName()));
-			assertTrue(message, message.contains(ALIAS));
+			assertTrue(message.contains(INVALID_RESOURCE_BUNDLE.getBaseBundleName()), message);
+			assertTrue(message.contains(ALIAS), message);
 		}
 	}
 }

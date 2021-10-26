@@ -1,6 +1,6 @@
 package org.alias.axon.serializer.example.messaging.axon.configuration.injection;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.lang.annotation.Annotation;
 import java.util.Iterator;
@@ -11,9 +11,8 @@ import javax.enterprise.inject.spi.CDI;
 import javax.enterprise.util.TypeLiteral;
 
 import org.axonframework.messaging.annotation.ParameterResolverFactory;
-import org.junit.Test;
-
-import jdk.nashorn.internal.ir.annotations.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class CdiParameterResolverFactoryTest {
 
@@ -34,7 +33,7 @@ public class CdiParameterResolverFactoryTest {
 		assertEquals(registeredServiceLoader, ParameterResolverFactory.class.getName());
 	}
 
-	@Ignore
+	@Disabled
 	public static final class CdiDummy<T> extends CDI<Object> {
 
 		@Override

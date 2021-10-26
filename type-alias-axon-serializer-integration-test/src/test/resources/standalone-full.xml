@@ -2,12 +2,11 @@
 
 <server xmlns="urn:jboss:domain:10.0">
     <extensions>
-    	<!-- 
         <extension module="org.jboss.as.clustering.infinispan"/>
         <extension module="org.jboss.as.clustering.jgroups"/>
         <extension module="org.jboss.as.connector"/>
         <extension module="org.jboss.as.deployment-scanner"/>
-        -->
+
         <extension module="org.jboss.as.ee"/>
         <!-- 
         <extension module="org.jboss.as.ejb3"/>
@@ -188,7 +187,7 @@
         		</xa-datasource>
 				<xa-datasource jndi-name="jdbc/query/member" pool-name="MemberQueryEmbeddedH2Pool" enabled="true" use-java-context="true" statistics-enabled="${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}">
 					<driver>h2</driver>
-           			<xa-datasource-property name="URL">jdbc:h2:mem:querymeber;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;INIT=runscript from 'classpath:databasescripts/queryMemberCreate.ddl'</xa-datasource-property>
+           			<xa-datasource-property name="URL">jdbc:h2:mem:querymember;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;INIT=runscript from 'classpath:databasescripts/queryMemberCreate.ddl'</xa-datasource-property>
            			<xa-pool>
                 		<min-pool-size>10</min-pool-size>
                 		<max-pool-size>20</max-pool-size>
@@ -234,7 +233,7 @@
                     <managed-scheduled-executor-service name="default" jndi-name="java:jboss/ee/concurrency/scheduler/default" context-service="default" hung-task-threshold="60000" keepalive-time="3000"/>
                 </managed-scheduled-executor-services>
             </concurrent>
-            <default-bindings context-service="java:jboss/ee/concurrency/context/default" datasource="java:jboss/datasources/ExampleDS" jms-connection-factory="java:jboss/DefaultJMSConnectionFactory" managed-executor-service="java:jboss/ee/concurrency/executor/default" managed-scheduled-executor-service="java:jboss/ee/concurrency/scheduler/default" managed-thread-factory="java:jboss/ee/concurrency/factory/default"/>
+            <default-bindings context-service="java:jboss/ee/concurrency/context/default" datasource="jdbc/eventsourcing" jms-connection-factory="java:jboss/DefaultJMSConnectionFactory" managed-executor-service="java:jboss/ee/concurrency/executor/default" managed-scheduled-executor-service="java:jboss/ee/concurrency/scheduler/default" managed-thread-factory="java:jboss/ee/concurrency/factory/default"/>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:ee-security:1.0"/>
         <!-- 

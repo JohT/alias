@@ -1,19 +1,18 @@
 package org.alias.example.customized.external;
 
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ResourceBundle;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class CustomizedExternalResourceBundleTest {
 
 	private static final String PACKAGE = ExternalAnnotationResourceBundleFileType.class.getPackage().getName();
 	private ResourceBundle bundle;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		bundle = ResourceBundle.getBundle(PACKAGE + ".CustomizedExternalResourceBundle");
 	}

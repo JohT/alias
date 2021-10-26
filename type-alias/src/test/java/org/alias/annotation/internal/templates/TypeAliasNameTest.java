@@ -1,16 +1,16 @@
 package org.alias.annotation.internal.templates;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.lang.annotation.Annotation;
 
 import org.alias.annotation.TypeAlias;
 import org.alias.annotation.internal.templates.TypeAliasName.Builder;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TypeAliasNameTest {
 
@@ -25,7 +25,7 @@ public class TypeAliasNameTest {
 	 */
 	private TypeAliasName alias;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		alias = allFields(TypeAliasName.builder()).build();
 	}
@@ -147,8 +147,8 @@ public class TypeAliasNameTest {
 			fail("Exppected Exception");
 		} catch (IllegalArgumentException e) {
 			String message = e.getMessage();
-			assertTrue(message, message.toLowerCase().contains("fullqualifiedname"));
-			assertTrue(message, message.toLowerCase().contains("may not be empty"));
+			assertTrue(message.toLowerCase().contains("fullqualifiedname"), message);
+			assertTrue(message.toLowerCase().contains("may not be empty"), message);
 		}
 	}
 

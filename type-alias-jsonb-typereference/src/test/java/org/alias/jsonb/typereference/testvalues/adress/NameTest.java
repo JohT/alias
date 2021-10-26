@@ -1,11 +1,11 @@
 package org.alias.jsonb.typereference.testvalues.adress;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class NameTest {
 

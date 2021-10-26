@@ -2,14 +2,15 @@ package org.alias.axon.serializer.aliasable;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.not;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.alias.axon.serializer.aliasable.AliasableResolvableType.Builder;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AliasableResolvableTypeTest {
 
@@ -43,21 +44,21 @@ public class AliasableResolvableTypeTest {
 	@Test
 	public void noAliasIsDefault() {
 		type = setAllMandatoryFieldsInto(AliasableResolvableType.builder()).build();
-		assertFalse(type.toString(), type.getAlias().isPresent());
+		assertFalse(type.getAlias().isPresent(), type.toString());
 	}
 
 	@Test
 	public void noResolvedTypeIsDefault() {
 		type = setAllMandatoryFieldsInto(AliasableResolvableType.builder()).build();
-		assertFalse(type.toString(), type.getResolvedType().isPresent());
+		assertFalse(type.getResolvedType().isPresent(), type.toString());
 	}
 
 	@Test
 	public void presetForTypeNameWithoutAlias() {
 		type = AliasableResolvableType.ofTypeName(TYPE_NAME);
 		assertEquals(TYPE_NAME, type.getTypeName());
-		assertFalse(type.toString(), type.getAlias().isPresent());
-		assertFalse(type.toString(), type.getResolvedType().isPresent());
+		assertFalse(type.getAlias().isPresent(), type.toString());
+		assertFalse(type.getResolvedType().isPresent(), type.toString());
 	}
 
 	@Test
@@ -65,7 +66,7 @@ public class AliasableResolvableTypeTest {
 		type = AliasableResolvableType.ofType(RESOLVED_TYPE).build();
 		assertEquals(TYPE_NAME, type.getTypeName());
 		assertEquals(RESOLVED_TYPE, type.getResolvedType().get());
-		assertFalse(type.toString(), type.getAlias().isPresent());
+		assertFalse(type.getAlias().isPresent(), type.toString());
 	}
 
 	@Test
@@ -109,14 +110,14 @@ public class AliasableResolvableTypeTest {
 	@Test
 	public void notEqualComparedToNull() {
 		type = setAllFieldsInto(AliasableResolvableType.builder()).build();
-		assertFalse(type.toString(), type.equals(null));
+		assertFalse(type.equals(null), type.toString());
 	}
 
 	@Test
 	@SuppressWarnings("unlikely-arg-type")
 	public void notEqualComparedToOtherType() {
 		type = setAllFieldsInto(AliasableResolvableType.builder()).build();
-		assertFalse(type.toString(), type.equals(""));
+		assertFalse(type.equals(""), type.toString());
 	}
 
 	@Test

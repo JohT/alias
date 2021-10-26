@@ -1,8 +1,8 @@
 package org.alias.annotation.internal.processor;
 
 import static java.util.Arrays.asList;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,14 +19,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
-import org.junit.Ignore;
-
 /**
  * Collects all files in the given root directory and provides them and their contents for unit testing.
  * 
  * @author JohT
  */
-@Ignore
 class FileCollector extends SimpleFileVisitor<Path> {
 
 	private final File root;
@@ -88,21 +85,21 @@ class FileCollector extends SimpleFileVisitor<Path> {
 	public void assertContains(String expectedContents, String... pathSegments) throws IOException {
 		String filecontents = contentsOf(pathSegments);
 		String message = String.format("Expected content %s not found in:\n---\n%s\n---", expectedContents, filecontents);
-		assertTrue(message, filecontents.contains(expectedContents));
+		assertTrue(filecontents.contains(expectedContents), message);
 	}
 
 	public void assertHasUncommentedPropertyLineCountOf(long expectedLines, String... pathSegments) throws IOException {
 		String content = contentsOf(pathSegments);
 		long linecount = uncommentedLinesOf(content);
 		String message = String.format("Expected line count of %d, but found %d in:\n---\n%s\n---", expectedLines, linecount, content);
-		assertEquals(message, expectedLines, linecount);
+		assertEquals(expectedLines, linecount, message);
 	}
 
 	public void assertFilesWithExtension(long expectedFiles, String extension) throws IOException {
 		long filecount = countFilesWithExtension(extension);
 		String text = "Expected %d file(s) with extension '%s', but found %d in:\n%s";
 		String message = String.format(text, expectedFiles, extension, filecount, files.keySet().toString());
-		assertEquals(message, expectedFiles, filecount);
+		assertEquals(expectedFiles, filecount, message);
 	}
 
 	private String contentsOf(String... pathSegments) throws IOException {

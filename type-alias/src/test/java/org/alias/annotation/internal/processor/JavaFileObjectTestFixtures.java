@@ -5,14 +5,11 @@ import java.net.URI;
 import javax.tools.JavaFileObject;
 import javax.tools.SimpleJavaFileObject;
 
-import org.junit.Ignore;
-
 /**
  * Enumeration of compile-able {@link JavaFileObject}s, that are used as fixtures for tests.
  * 
  * @author JohT
  */
-@Ignore
 enum JavaFileObjectTestFixtures {
 
 	/**

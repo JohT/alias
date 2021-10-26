@@ -1,12 +1,12 @@
 package org.alias.annotation.internal.templates;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.IOException;
 
 import org.alias.annotation.TypeAliasGeneratedFile.Template;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TypeAliasTemplateReaderTest {
 
@@ -52,11 +52,12 @@ public class TypeAliasTemplateReaderTest {
 			template.getContentLines();
 			fail("Expected IllegalStateException.");
 		} catch (IllegalStateException e) {
-			assertTrue(e.getMessage(), e.getMessage().contains(templatename));
+			assertTrue(e.getMessage().contains(templatename), e.getMessage());
 		}
 	}
 
 	private void assertContainsText(String expectedContent, String content) {
-		assertTrue(String.format("%s not found in\n%s", expectedContent, content), content.contains(expectedContent));
+		String message = String.format("%s not found in\n%s", expectedContent, content);
+		assertTrue(content.contains(expectedContent), message);
 	}
 }

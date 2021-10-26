@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.ListResourceBundle;
 
-import org.junit.Ignore;
-
-@Ignore
 class AliasTypeFixtureInvalidResourceBundle extends ListResourceBundle {
 
 	static final String KEY_TO_UNEXPECTED_VALUE_TYPE = "KeyToUnexpectedValueType";

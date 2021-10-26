@@ -1,8 +1,12 @@
 {
   "extends": [
     "config:base",
+    "schedule:earlyMondays",
     ":automergeDigest",
     ":automergePatch",
-    ":automergeMinor"
+    ":automergeMinor",
+    ":automergeRequireAllStatusChecks",
+    ":automergeBranch",
+    ":ignoreUnstable"
   ]
 }

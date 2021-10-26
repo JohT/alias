@@ -4,14 +4,12 @@ import javax.json.bind.JsonbConfig;
 
 import org.alias.jsonb.typereference.configprovider.ImmutableJsonbConfig;
 import org.alias.jsonb.typereference.configprovider.JsonbConfigProvider;
-import org.junit.Ignore;
 
 /**
  * Demonstrates how to provide an customized {@link JsonbConfig} e.g. for the {@link TypeReferenceEnhancer}.
  * 
  * @author JohT
  */
-@Ignore
 public class TestJsonbConfigProvider implements JsonbConfigProvider {
 
 	// The configuration is held here only for testing purposes. Avoid ThreadLocals when it can be done easier.

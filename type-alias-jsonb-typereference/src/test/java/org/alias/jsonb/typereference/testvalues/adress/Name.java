@@ -7,9 +7,7 @@ import javax.json.bind.annotation.JsonbCreator;
 import javax.json.bind.annotation.JsonbProperty;
 
 import org.alias.annotation.TypeAlias;
-import org.junit.Ignore;
 
-@Ignore
 @TypeAlias("Name")
 public class Name {
 

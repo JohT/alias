@@ -1,9 +1,9 @@
 package org.alias.axon.serializer.aliasable;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class NoAliasableTypeTest {
 
@@ -13,11 +13,11 @@ public class NoAliasableTypeTest {
 
 	@Test
 	public void containsTypeName() {
-		assertEquals(type.toString(), TYPE_NAME, type.getTypeName());
+		assertEquals(TYPE_NAME, type.getTypeName(), type.toString());
 	}
 	
 	@Test
 	public void hasNoAlias() {
-		assertFalse(type.toString(), type.getAlias().isPresent());
+		assertFalse(type.getAlias().isPresent(), String.valueOf(type));
 	}
 }

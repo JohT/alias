@@ -9,9 +9,7 @@ import java.util.Objects;
 import javax.json.bind.annotation.JsonbProperty;
 
 import org.alias.annotation.TypeAlias;
-import org.junit.Ignore;
 
-@Ignore
 @TypeAlias("Zoo")
 public class Zoo {
 

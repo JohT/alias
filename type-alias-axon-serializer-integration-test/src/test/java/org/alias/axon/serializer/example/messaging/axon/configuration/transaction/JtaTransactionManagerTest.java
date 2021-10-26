@@ -1,7 +1,6 @@
 package org.alias.axon.serializer.example.messaging.axon.configuration.transaction;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
 import java.lang.reflect.Field;
@@ -13,11 +12,13 @@ import javax.transaction.UserTransaction;
 
 import org.axonframework.common.transaction.Transaction;
 import org.hamcrest.CoreMatchers;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class JtaTransactionManagerTest {
 
@@ -33,7 +34,7 @@ public class JtaTransactionManagerTest {
 	@InjectMocks
 	private JtaTransactionManager transactionManager;
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		MockitoAnnotations.initMocks(this);
 	}

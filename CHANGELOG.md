@@ -1,6 +1,14 @@
 # CHANGELOG.md
 
-## **v1.1.1** Integration tests  (latest)
+## **v1.1.2** Update of test and example dependencies (latest)
+
+### Maintenance:
+- Tests migrated to [JUnit 5](https://junit.org/junit5/docs/current/user-guide/)
+- Integration test fixed
+- Test and example dependencies updated
+- [Renovate](https://github.com/apps/renovate) activated and configured
+
+## **v1.1.1** Integration tests
 
 ### Features:
 - Renewed integration test environment using a managed wildfly (latest distributing) with arquillian.
