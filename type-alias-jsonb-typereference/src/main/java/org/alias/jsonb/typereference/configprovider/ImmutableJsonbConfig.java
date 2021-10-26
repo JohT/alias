@@ -6,8 +6,8 @@ import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import javax.json.bind.JsonbConfig;
-import javax.json.bind.adapter.JsonbAdapter;
+import jakarta.json.bind.JsonbConfig;
+import jakarta.json.bind.adapter.JsonbAdapter;
 
 public class ImmutableJsonbConfig {
 

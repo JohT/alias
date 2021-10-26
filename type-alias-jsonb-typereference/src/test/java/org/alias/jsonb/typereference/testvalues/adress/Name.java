@@ -3,10 +3,10 @@ package org.alias.jsonb.typereference.testvalues.adress;
 import java.beans.ConstructorProperties;
 import java.util.Objects;
 
-import javax.json.bind.annotation.JsonbCreator;
-import javax.json.bind.annotation.JsonbProperty;
-
 import org.alias.annotation.TypeAlias;
+
+import jakarta.json.bind.annotation.JsonbCreator;
+import jakarta.json.bind.annotation.JsonbProperty;
 
 @TypeAlias("Name")
 public class Name {

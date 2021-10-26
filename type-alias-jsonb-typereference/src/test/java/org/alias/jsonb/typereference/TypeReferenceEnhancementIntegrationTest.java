@@ -4,10 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
-import javax.json.bind.JsonbConfig;
-
 import org.alias.jsonb.typereference.testvalues.adress.Name;
 import org.alias.jsonb.typereference.testvalues.adress.Names;
 import org.alias.jsonb.typereference.testvalues.animals.Animal;
@@ -16,6 +12,10 @@ import org.alias.jsonb.typereference.testvalues.animals.Monkey;
 import org.alias.jsonb.typereference.testvalues.animals.Zoo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import jakarta.json.bind.Jsonb;
+import jakarta.json.bind.JsonbBuilder;
+import jakarta.json.bind.JsonbConfig;
 
 public class TypeReferenceEnhancementIntegrationTest {
 

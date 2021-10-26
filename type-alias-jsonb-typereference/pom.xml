@@ -22,6 +22,21 @@
 			<scope>provided</scope>
 			<optional>true</optional>
 		</dependency>
+		
+		<!-- Jakarta EE -->
+		<dependency>
+    		<groupId>jakarta.json.bind</groupId>
+    		<artifactId>jakarta.json.bind-api</artifactId>
+    		<version>2.0.0</version>
+		</dependency>
+		<dependency>
+    		<groupId>jakarta.json</groupId>
+    		<artifactId>jakarta.json-api</artifactId>
+    		<version>2.0.1</version>
+		</dependency>
+		
+		<!-- Java EE (old) -->
+		<!-- 		
 		<dependency>
 			<groupId>javax.json.bind</groupId>
 			<artifactId>javax.json.bind-api</artifactId>
@@ -32,6 +47,7 @@
 			<artifactId>javax.json-api</artifactId>
 			<version>1.1.4</version>
 		</dependency>
+		-->
 
 		<!-- Testing -->
 		<dependency>
@@ -39,12 +55,22 @@
     		<artifactId>junit-jupiter</artifactId>
     		<scope>test</scope>
 		</dependency>
+		<!-- Jakarta EE -->
 		<dependency>
 			<groupId>org.eclipse</groupId>
 			<artifactId>yasson</artifactId>
 			<version>2.0.2</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- Java EE (old) -->
+		<!-- 
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>yasson</artifactId>
+			<version>1.0.9</version>
+			<scope>test</scope>
+		</dependency>
+		 -->
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.json</artifactId>

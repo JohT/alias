@@ -1,9 +1,9 @@
 package org.alias.jsonb.typereference;
 
-import javax.json.bind.JsonbConfig;
-
 import org.alias.jsonb.typereference.configprovider.ImmutableJsonbConfig;
 import org.alias.jsonb.typereference.configprovider.JsonbConfigProvider;
+
+import jakarta.json.bind.JsonbConfig;
 
 /**
  * Demonstrates how to provide an customized {@link JsonbConfig} e.g. for the {@link TypeReferenceEnhancer}.
