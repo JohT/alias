@@ -4,6 +4,7 @@ import static org.alias.axon.serializer.example.query.model.member.nickname.Nick
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -22,6 +23,7 @@ import org.alias.axon.serializer.example.domain.model.account.AccountService;
 import org.alias.axon.serializer.example.messages.event.account.AccountCreatedEvent;
 import org.alias.axon.serializer.example.messages.event.account.NicknameChangedEvent;
 import org.alias.axon.serializer.example.messages.event.account.NicknamePresetEvent;
+import org.alias.axon.serializer.example.messaging.axon.configuration.injection.CdiParameterResolverFactoryTest;
 import org.alias.axon.serializer.example.messaging.boundary.query.EventProcessorService;
 import org.alias.axon.serializer.example.messaging.boundary.query.model.QueryModelProjection;
 import org.alias.axon.serializer.example.query.model.member.nickname.NicknameProjection;
@@ -30,7 +32,8 @@ import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit5.ArquillianExtension;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -57,12 +60,23 @@ public class AccountEventsourcingIntegrationIT {
 	private EntityManager queryMember;
 
 	@Deployment
-	public static JavaArchive createDeployment() throws Exception {
-		return ShrinkWrap.create(JavaArchive.class) //
+	public static WebArchive createDeployment() throws Exception {
+		File[] files = Maven.resolver()
+				.loadPomFromFile("pom.xml")
+				.importCompileAndRuntimeDependencies()
+				.resolve()
+				.withTransitivity().asFile();
+
+		WebArchive archive = ShrinkWrap.create(WebArchive.class)
 				.addPackages(true, "org.alias.axon.serializer.example")
-				.addPackages(true, "org.axonframework")
+				.deleteClass(CdiParameterResolverFactoryTest.CdiDummy.class)
 				.addAsResource("META-INF/services/org.axonframework.messaging.annotation.ParameterResolverFactory")
-				.addAsResource("META-INF/persistence.xml").addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
+				.addAsResource("META-INF/persistence.xml").addAsLibraries(files)
+				.addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
+
+		// System.out.println(archive.toString(true)); // Console log the deploy structure
+		
+		return archive;
 	}
 
 	@BeforeEach
