@@ -27,7 +27,7 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 <dependency>
   <groupId>io.github.joht.alias</groupId>
   <artifactId>type-alias</artifactId>
-  <version>1.1.1</version>
+  <version>1.1.2</version>
   <scope>provided</scope>
   <optional>true</optional>
 </dependency>
