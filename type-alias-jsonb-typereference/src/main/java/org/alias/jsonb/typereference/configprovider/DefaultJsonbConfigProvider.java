@@ -1,6 +1,6 @@
 package org.alias.jsonb.typereference.configprovider;
 
-import javax.json.bind.JsonbConfig;
+import jakarta.json.bind.JsonbConfig;
 
 enum DefaultJsonbConfigProvider implements JsonbConfigProvider {
 

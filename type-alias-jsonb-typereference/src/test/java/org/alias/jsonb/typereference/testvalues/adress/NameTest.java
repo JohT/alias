@@ -2,10 +2,10 @@ package org.alias.jsonb.typereference.testvalues.adress;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
-
 import org.junit.jupiter.api.Test;
+
+import jakarta.json.bind.Jsonb;
+import jakarta.json.bind.JsonbBuilder;
 
 public class NameTest {
 

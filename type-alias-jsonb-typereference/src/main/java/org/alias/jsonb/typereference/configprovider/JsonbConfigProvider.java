@@ -2,7 +2,7 @@ package org.alias.jsonb.typereference.configprovider;
 
 import java.util.ServiceLoader;
 
-import javax.json.bind.JsonbConfig;
+import jakarta.json.bind.JsonbConfig;
 
 /**
  * Enables a way to provide customized {@link JsonbConfig} instances for injection (e.g. via {@link ServiceLoader}).

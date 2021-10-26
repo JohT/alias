@@ -2,17 +2,17 @@ package org.alias.jsonb.typereference;
 
 import java.util.ServiceLoader;
 
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
-import javax.json.bind.JsonbConfig;
-import javax.json.bind.adapter.JsonbAdapter;
-
 import org.alias.jsonb.typereference.configprovider.ImmutableJsonbConfig;
 import org.alias.jsonb.typereference.configprovider.JsonbConfigProvider;
 import org.alias.jsonb.typereference.resolver.ResourceBundleTypeReferenceResolver;
 import org.alias.jsonb.typereference.resolver.TypeReferenceResolver;
+
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
+import jakarta.json.bind.Jsonb;
+import jakarta.json.bind.JsonbBuilder;
+import jakarta.json.bind.JsonbConfig;
+import jakarta.json.bind.adapter.JsonbAdapter;
 
 /**
  * Enhances any dynamically typed content by a type reference property <br>

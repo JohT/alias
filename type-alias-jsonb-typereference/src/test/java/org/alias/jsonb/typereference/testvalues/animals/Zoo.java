@@ -6,9 +6,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Objects;
 
-import javax.json.bind.annotation.JsonbProperty;
-
 import org.alias.annotation.TypeAlias;
+
+import jakarta.json.bind.annotation.JsonbProperty;
 
 @TypeAlias("Zoo")
 public class Zoo {

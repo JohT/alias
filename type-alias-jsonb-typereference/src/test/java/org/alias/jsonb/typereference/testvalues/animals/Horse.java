@@ -2,10 +2,10 @@ package org.alias.jsonb.typereference.testvalues.animals;
 
 import java.util.Objects;
 
-import javax.json.bind.annotation.JsonbCreator;
-import javax.json.bind.annotation.JsonbProperty;
-
 import org.alias.annotation.TypeAlias;
+
+import jakarta.json.bind.annotation.JsonbCreator;
+import jakarta.json.bind.annotation.JsonbProperty;
 
 @TypeAlias("Horse")
 public class Horse implements Animal {
