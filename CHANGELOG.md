@@ -3,9 +3,10 @@
 ## **v1.1.2** Update of test and example dependencies (latest)
 
 ### Maintenance:
-- [Renovate](https://github.com/apps/renovate) activated and configured
-- Test and example dependencies updated
+- Tests migrated to [JUnit 5](https://junit.org/junit5/docs/current/user-guide/)
 - Integration test fixed
+- Test and example dependencies updated
+- [Renovate](https://github.com/apps/renovate) activated and configured
 
 ## **v1.1.1** Integration tests
 
