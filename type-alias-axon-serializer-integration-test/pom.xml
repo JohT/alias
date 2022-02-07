@@ -34,7 +34,7 @@
 		<wildfly.version>26.0.1.Final</wildfly.version>
 
 		<!-- Unit testing -->
-		<equalsverifier.version>3.7.2</equalsverifier.version>
+		<equalsverifier.version>3.9</equalsverifier.version>
 	</properties>
 
 	<dependencyManagement>
