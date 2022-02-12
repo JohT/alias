@@ -2,11 +2,13 @@
   "extends": [
     "config:base",
     "schedule:earlyMondays",
+    ":combinePatchMinorReleases",
     ":automergeDigest",
     ":automergePatch",
     ":automergeMinor",
     ":automergeRequireAllStatusChecks",
     ":automergeBranch",
-    ":ignoreUnstable"
+    ":ignoreUnstable",
+    "group:recommended"
   ]
 }
