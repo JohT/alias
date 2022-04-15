@@ -1,18 +1,47 @@
-*.iml
-target/
-**/*.iml
-.classpath
+# Eclipse
 .project
-.settings/
-.DS_Store
+.classpath
+.settings
+bin/
+
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode
+
+# OSX
+**/.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
+
+# Maven
+target/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
-pom.xml.next
-release.properties
 dependency-reduced-pom.xml
+release.properties
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
+
+# Others
+ObjectStore/
 *.zip
 *.log
+*.jar
+*.iml
+**/*.iml
