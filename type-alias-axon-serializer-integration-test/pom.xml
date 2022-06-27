@@ -13,7 +13,7 @@
 	<url>https://github.com/JohT/alias/tree/master/type-alias-axon-serializer-integration-test</url>
 
 	<properties>
-		<axon.version>4.5.10</axon.version>
+		<axon.version>4.5.12</axon.version>
 
 		<!-- Optional dependencies for axon -->
 		<dom4j.version>2.1.3</dom4j.version>
