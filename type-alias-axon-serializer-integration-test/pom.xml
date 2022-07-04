@@ -24,7 +24,7 @@
 
 		<!-- Logging libraries -->
 		<slf4j.version>1.7.36</slf4j.version>
-		<log4j.version>2.17.2</log4j.version>
+		<log4j.version>2.18.0</log4j.version>
 
 		<!-- Integration testing -->
 		<arquillian.version>1.7.0.Alpha10</arquillian.version>
