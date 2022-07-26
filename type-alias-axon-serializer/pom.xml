@@ -44,4 +44,24 @@
 		</dependency>
 		
 	</dependencies>
+
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.version}</version>
+					<configuration>
+						<source>${library.java.version}</source>
+						<target>${library.java.version}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<compilerArgs>
+							<arg>-proc:none</arg>
+						</compilerArgs>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
