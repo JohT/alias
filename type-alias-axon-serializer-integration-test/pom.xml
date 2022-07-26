@@ -1,18 +1,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>io.github.joht.alias</groupId>
-		<artifactId>alias-parent</artifactId>
-		<version>1.1.3-SNAPSHOT</version>
-	</parent>
-
+	<groupId>io.github.joht.alias</groupId>
 	<artifactId>type-alias-axon-serializer-integration-test</artifactId>
+	<version>1.1.3-SNAPSHOT</version>	
+	
 	<name>type-alias-axon-serializer-integration-test</name>
 	<description>Contains the integration test for the type alias aware axon serializer including a fully working demo configuration for axon using JavaEE 8.</description>
 	<url>https://github.com/JohT/alias/tree/master/type-alias-axon-serializer-integration-test</url>
 
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git://github.com/JohT/alias.git</connection>
+		<developerConnection>scm:git:git@github.com:JohT/alias.git</developerConnection>
+		<url>https://github.com/JohT/alias</url>
+		<tag>HEAD</tag>
+	</scm>
+
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+
 		<axon.version>4.5.14</axon.version>
 
 		<!-- Optional dependencies for axon -->
@@ -35,6 +49,17 @@
 
 		<!-- Unit testing -->
 		<equalsverifier.version>3.10</equalsverifier.version>
+		<junit-jupiter.version>5.8.2</junit-jupiter.version>
+		<hamcrest.version>2.2</hamcrest.version>
+		<mockito.version>1.10.19</mockito.version>
+		
+		<!-- Maven Plugins -->
+		<maven.compiler.version>3.10.1</maven.compiler.version>
+		<maven.surefire.version>2.22.2</maven.surefire.version>
+		<maven.failsafe.version>2.22.2</maven.failsafe.version>
+		<maven.assembly.version>3.3.0</maven.assembly.version>
+		<maven.dependency.version>3.3.0</maven.dependency.version>
+		<eclipse.lifecycle.mapping.version>1.0.0</eclipse.lifecycle.mapping.version>
 	</properties>
 
 	<dependencyManagement>
@@ -136,7 +161,6 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
 		</dependency>
 
 		<dependency>
@@ -162,6 +186,7 @@
 		<dependency>
     		<groupId>org.junit.jupiter</groupId>
     		<artifactId>junit-jupiter</artifactId>
+    		<version>${junit-jupiter.version}</version>
     		<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -231,7 +256,7 @@
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
+					<version>${eclipse.lifecycle.mapping.version}</version>
 					<configuration>
 						<lifecycleMappingMetadata>
 							<pluginExecutions>
@@ -265,6 +290,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -274,10 +300,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven.failsafe.version}</version>
 				<executions>
 					<execution>
 						<goals>
@@ -290,7 +318,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.3.0</version>
+				<version>${maven.dependency.version}</version>
 				<executions>
 					<execution>
 						<id>unpack</id>
