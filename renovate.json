@@ -13,11 +13,10 @@
     {
       "fileMatch": ["^arquillian.xml$"],
       "matchStrings": [
-        "property\\s+name\\s?=\\s?\"jbossHome\"\\>\\$\\{jbossHome:.*?\\-(?<currentValue>.*?)\\}"
+        "property\\s+name\\s?=\\s?\"jbossHome\"\\s?\\>\\$\\{jbossHome\\:[\\w\/]+?\\-(?<currentValue>.*?)\\}"
       ],
       "depNameTemplate": "wildfly/wildfly",
-      "datasourceTemplate": "github-releases",
-      "extractVersionTemplate": "^v?(?<version>.*?)$"
+      "datasourceTemplate": "github-releases"
     }
   ]
 }
