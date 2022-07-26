@@ -15,7 +15,7 @@
       "matchStrings": [
         "property\\s+name\\s?=\\s?\"jbossHome\"\\>\\$\\{jbossHome:.*?\\-(?<currentValue>.*?)\\}"
       ],
-      "depName": "wildfly/wildfly",
+      "depNameTemplate": "wildfly/wildfly",
       "datasourceTemplate": "github-releases",
       "extractVersionTemplate": "^v?(?<version>.*?)$"
     }
