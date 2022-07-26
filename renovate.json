@@ -11,7 +11,7 @@
   ],
   "regexManagers": [
     {
-      "fileMatch": ["^arquillian.xml$"],
+      "fileMatch": ["(^|/)arquillian.xml$"],
       "matchStrings": [
         "property\\s+name\\s?=\\s?\"jbossHome\"\\s?\\>\\$\\{jbossHome\\:[\\w\/]+?\\-(?<currentValue>.*?)\\}"
       ],
