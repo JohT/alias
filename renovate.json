@@ -8,15 +8,5 @@
     ":automergeRequireAllStatusChecks",
     ":ignoreUnstable",
     "group:recommended"
-  ],
-  "regexManagers": [
-    {
-      "fileMatch": ["(^|/|\\.)arquillian\\.xml$"],
-      "matchStrings": [
-        "property\\s+name\\s?=\\s?\"jbossHome\"\\s?\\>\\$\\{jbossHome\\:[\\w\/]+?\\-(?<currentValue>.*?)\\}"
-      ],
-      "depNameTemplate": "wildfly/wildfly",
-      "datasourceTemplate": "github-releases"
-    }
   ]
 }
