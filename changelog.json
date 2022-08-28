@@ -1,0 +1,16 @@
+{
+ "fromRepo": ".",
+ "fromCommit": "0000000000000000000000000000000000000000",
+ "toRef": "refs/heads/master",
+ 
+ "ignoreCommitsIfMessageMatches": "^\\[maven-release-plugin\\].*|^\\[Gradle Release Plugin\\].*|^Merge.*",
+ "readableTagName": "-([^-]+?)$",
+ "dateFormat": "YYYY-MM-dd HH:mm:ss",
+ "untaggedName": "Next release",
+ "noIssueName": "Other changes",
+ "timeZone": "UTC",
+ "removeIssueFromMessage": "true",
+
+ "gitHubApi": "",
+ "gitHubIssuePattern": "#([0-9]+)",
+}

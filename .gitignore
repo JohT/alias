@@ -45,3 +45,4 @@ ObjectStore/
 *.jar
 *.iml
 **/*.iml
+**/.okhttpcache

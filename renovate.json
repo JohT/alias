@@ -8,5 +8,6 @@
     ":automergeRequireAllStatusChecks",
     ":ignoreUnstable",
     "group:recommended"
-  ]
+  ],
+  "labels": ["dependencies"]
 }

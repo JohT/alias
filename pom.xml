@@ -24,7 +24,12 @@
 		<url>https://github.com/JohT/alias</url>
 		<tag>HEAD</tag>
 	</scm>
-
+	
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/JohT/alias/issues</url>
+	</issueManagement>
+	
 	<!-- deploy and release configuration -->
 	<distributionManagement>
 		<snapshotRepository>
@@ -60,6 +65,7 @@
 		<maven.surefire.version>2.22.2</maven.surefire.version>
 		<maven.failsafe.version>2.22.2</maven.failsafe.version>
 		<maven.assembly.version>3.3.0</maven.assembly.version>
+		<git-changelog-maven-plugin.version>1.92</git-changelog-maven-plugin.version>
 		
 		<!-- Java Annotation Processing API -->
 		<annotation.api.version>1.3.2</annotation.api.version>
@@ -237,5 +243,126 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		
+		<plugins>
+			<plugin>
+				<!-- This plugin generates the CHANGELOG.md based on git past merge commits -->
+				<groupId>se.bjurr.gitchangelog</groupId>
+				<artifactId>git-changelog-maven-plugin</artifactId>
+				<version>${git-changelog-maven-plugin.version}</version>
+				<inherited>false</inherited>
+				<executions>
+					<execution>
+						<id>GenerateGitChangelog</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>git-changelog</goal>
+						</goals>
+						<!-- Template for the contents of the CHANGELOG.md file-->
+						<configuration>
+							<gitHubEnabled>true</gitHubEnabled>
+							<useIntegrations>true</useIntegrations>
+							<gitHubIssuePattern>#([0-9]+)</gitHubIssuePattern>
+							<ignoreCommitsOlderThan>2019-08-01 00:00:00</ignoreCommitsOlderThan>
+<!-- Handlebar.java doesn't seem to work with Java 11, see https://github.com/tomasbjerre/git-changelog-maven-plugin/issues/43 -->
+<!--
+							<javascriptHelper>
+<![CDATA[
+Handlebars.registerHelper('startsWith', function(messageTitle, options) {
+	const s = options.hash['s']
+	if (new RegExp('^' + s + '.*').test(messageTitle)) {
+		return options.fn(this);
+	} else {
+		return options.inverse(this);
+	}
+});
+Handlebars.registerHelper('firstLetters', function(from, options) {
+	const num = parseInt(options.hash['number'])
+	return from.substring(0,num)
+});
+]]>
+							</javascriptHelper>
+-->
+							<templateContent>
+							<![CDATA[
+# Changelog
+
+Changelog for [{{repoName}}](https://github.com/{{ownerName}}/{{repoName}}).
+
+{{#tags}}
+## [{{name}}](https://github.com/{{ownerName}}/{{repoName}}{{#ifReleaseTag .}}/releases/tag/{{name}}{{/ifReleaseTag}}){{#ifReleaseTag .}} ({{tagDate .}}){{/ifReleaseTag}}
+
+### Enhancements
+ {{#issues}}
+  {{#labels}}
+   {{#ifMatches . "^(?!.*dependencies).*$"}}
+    {{#commits}}
+    {{#merge}}
+     {{#hasIssue}}
+      {{#hasLink}}
+       {{#ifMatches link ".*\/pull\/.*"}}
+ - [{{issue}}]({{link}}) {{title}} ({{commitDate}})
+       {{/ifMatches}}
+      {{/hasLink}}
+      {{^hasLink}}
+ - {{issue}} {{title}} ({{commitDate}})
+      {{/hasLink}}
+     {{/hasIssue}}
+    {{/merge}}
+    {{/commits}}
+   {{/ifMatches}}
+  {{/labels}}
+ {{/issues}}
+ {{#issues}}
+  {{^hasLabels}}
+   {{#commits}}
+   {{#merge}}
+   {{#hasIssue}}
+    {{#hasLink}}
+     {{#ifMatches link ".*\/pull\/.*"}}
+ - [{{issue}}]({{link}}) {{title}} ({{commitDate}})
+     {{/ifMatches}}
+    {{/hasLink}}
+    {{^hasLink}}
+ - {{issue}} {{title}} ({{commitDate}})
+    {{/hasLink}}
+   {{/hasIssue}}
+   {{/merge}}
+   {{/commits}}
+  {{/hasLabels}}
+ {{/issues}}
+
+### Dependencies
+ {{#issues}}
+  {{#hasLabels}}
+   {{#labels}}
+    {{#ifMatches . "^dependencies.*"}}
+     {{#commits}}
+     {{#merge}}
+      {{#hasIssue}}
+       {{#hasLink}}
+        {{#ifMatches link ".*\/pull\/.*"}}
+  - [{{issue}}]({{link}}) {{title}} ({{commitDate}})
+        {{/ifMatches}}
+       {{/hasLink}}
+       {{^hasLink}}
+  - {{issue}} {{title}} ({{commitDate}})
+       {{/hasLink}}
+      {{/hasIssue}}
+     {{/merge}}
+     {{/commits}}
+    {{/ifMatches}}
+   {{/labels}}
+  {{/hasLabels}} 
+ {{/issues}}
+ 
+{{/tags}}							]]>
+							</templateContent>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>		
+		</plugins>
+		
 	</build>
 </project>
