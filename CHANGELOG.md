@@ -1,22 +1,116 @@
-# CHANGELOG.md
+# Changelog
 
-## **v1.1.2** Update of test and example dependencies (latest)
+Changelog for [alias](https://github.com/JohT/alias).
 
-### Maintenance:
-- Tests migrated to [JUnit 5](https://junit.org/junit5/docs/current/user-guide/)
-- Integration test fixed
-- Test and example dependencies updated
-- [Renovate](https://github.com/apps/renovate) activated and configured
+## [Unreleased](https://github.com/JohT/alias)
 
-## **v1.1.1** Integration tests
+### Enhancements
+ - [#51](https://github.com/JohT/alias/pull/51) [Snyk] Security upgrade org.apache.logging.log4j:log4j-core from 2.17.0 to 2.17.1 (2022-01-01)
+ - [#64](https://github.com/JohT/alias/pull/64) Delete .gitignore defined files that still remained in the repository (2022-04-15)
+ - [#81](https://github.com/JohT/alias/pull/81) Support Java 11, base library remains Java 1.8 (2022-07-26)
+ - [#82](https://github.com/JohT/alias/pull/82) Configure renovate version updates for arquillian.xml (2022-07-26)
+ - [#86](https://github.com/JohT/alias/pull/86) Provide version number independent wildfly distribution folder (2022-07-27)
 
-### Features:
-- Renewed integration test environment using a managed wildfly (latest distributing) with arquillian.
+### Dependencies
+  - [#31](https://github.com/JohT/alias/pull/31) Update dependency org.eclipse:yasson to v2 (2021-10-26)
+  - [#47](https://github.com/JohT/alias/pull/47) Bump log4j-core from 2.14.1 to 2.15.0 in /type-alias-axon-serializer-integration-test (2021-12-10)
+  - [#48](https://github.com/JohT/alias/pull/48) Bump log4j-core from 2.15.0 to 2.16.0 in /type-alias-axon-serializer-integration-test (2021-12-15)
+  - [#49](https://github.com/JohT/alias/pull/49) Bump log4j-core from 2.16.0 to 2.17.0 in /type-alias-axon-serializer-integration-test (2021-12-18)
+  - [#50](https://github.com/JohT/alias/pull/50) Update dependency org.wildfly:wildfly-dist to v26 (2021-12-20)
+  - [#54](https://github.com/JohT/alias/pull/54) Update actions/setup-java action to v3 (2022-03-28)
+  - [#55](https://github.com/JohT/alias/pull/55) Bump jackson-databind from 2.13.2 to 2.13.2.1 in /type-alias-axon-serializer-integration-test (2022-03-28)
+  - [#56](https://github.com/JohT/alias/pull/56) Update dependency jakarta.json.bind:jakarta.json.bind-api to v3 (2022-07-26)
+  - [#57](https://github.com/JohT/alias/pull/57) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.10.1 (2022-04-13)
+  - [#58](https://github.com/JohT/alias/pull/58) Update dependency org.sonatype.plugins:nexus-staging-maven-plugin to v1.6.12 (2022-04-13)
+  - [#59](https://github.com/JohT/alias/pull/59) Update jackson.version to v2.13.2 (2022-04-13)
+  - [#60](https://github.com/JohT/alias/pull/60) Update dependency jakarta.json:jakarta.json-api to v2.1.0 (2022-04-13)
+  - [#61](https://github.com/JohT/alias/pull/61) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.2.2 (2022-04-13)
+  - [#62](https://github.com/JohT/alias/pull/62) Update dependency io.projectreactor:reactor-core to v3.4.17 (2022-04-13)
+  - [#63](https://github.com/JohT/alias/pull/63) Update dependency org.wildfly:wildfly-dist to v26.1.0.Final (2022-04-15)
+  - [#65](https://github.com/JohT/alias/pull/65) Update dependency org.sonatype.plugins:nexus-staging-maven-plugin to v1.6.13 (2022-05-02)
+  - [#66](https://github.com/JohT/alias/pull/66) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.4.0 (2022-05-02)
+  - [#67](https://github.com/JohT/alias/pull/67) Update github/codeql-action action to v2 (2022-05-09)
+  - [#68](https://github.com/JohT/alias/pull/68) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.3 (2022-05-23)
+  - [#69](https://github.com/JohT/alias/pull/69) Update dependency io.projectreactor:reactor-core to v3.4.18 (2022-05-23)
+  - [#70](https://github.com/JohT/alias/pull/70) Update dependency org.wildfly:wildfly-dist to v26.1.1.Final (2022-07-26)
+  - [#71](https://github.com/JohT/alias/pull/71) Update jackson.version to v2.13.3 (2022-05-30)
+  - [#72](https://github.com/JohT/alias/pull/72) Update axon.version to v4.5.10 (2022-06-06)
+  - [#73](https://github.com/JohT/alias/pull/73) Update dependency io.projectreactor:reactor-core to v3.4.19 (2022-06-20)
+  - [#74](https://github.com/JohT/alias/pull/74) Update axon.version to v4.5.12 (2022-06-27)
+  - [#75](https://github.com/JohT/alias/pull/75) Update dependency org.eclipse:yasson to v3 (2022-07-26)
+  - [#76](https://github.com/JohT/alias/pull/76) Update dependency org.apache.logging.log4j:log4j-core to v2.18.0 (2022-07-04)
+  - [#77](https://github.com/JohT/alias/pull/77) Update axon.version to v4.5.14 (2022-07-18)
+  - [#78](https://github.com/JohT/alias/pull/78) Update dependency io.projectreactor:reactor-core to v3.4.21 (2022-07-18)
+  - [#79](https://github.com/JohT/alias/pull/79) Update dependency jakarta.json:jakarta.json-api to v2.1.1 (2022-07-26)
+  - [#80](https://github.com/JohT/alias/pull/80) Update dependency org.apache.maven.plugins:maven-deploy-plugin to v3 (2022-07-26)
+  - [#84](https://github.com/JohT/alias/pull/84) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.10.1 (2022-07-27)
+  - [#85](https://github.com/JohT/alias/pull/85) Update dependency org.junit.jupiter:junit-jupiter to v5.9.0 (2022-07-27)
+  - [#88](https://github.com/JohT/alias/pull/88) Update axon.version to v4.5.15 (2022-08-08)
+  - [#89](https://github.com/JohT/alias/pull/89) Update dependency org.eclipse:yasson to v3.0.1 (2022-08-08)
+  - [#90](https://github.com/JohT/alias/pull/90) Update dependency io.projectreactor:reactor-core to v3.4.22 (2022-08-15)
+  - [#91](https://github.com/JohT/alias/pull/91) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.4.1 (2022-08-15)
+  - [#92](https://github.com/JohT/alias/pull/92) Update dependency org.slf4j:jcl-over-slf4j to v2 (2022-08-22)
+  - [#93](https://github.com/JohT/alias/pull/93) Update dependency org.slf4j:log4j-over-slf4j to v2 (2022-08-22)
+ 
+## [v1.1.2](https://github.com/JohT/alias/releases/tag/v1.1.2) (2021-10-26)
 
-### Fixes:
-- Version updates to fix integration test security vulnerabilities. The main module (type-alias) hadn't been changed. With only one test dependency it isn't affected by security vulnerabilities introduced by  dependencies.
+### Enhancements
+ - [#12](https://github.com/JohT/alias/pull/12) Configure Renovate (2021-09-11)
+ - [#46](https://github.com/JohT/alias/pull/46) Maintenance Update v1.1.2 including JUnit 5 migration (2021-10-26)
 
-## **v1.1.0** Support for multiple aliases
+### Dependencies
+  - [#13](https://github.com/JohT/alias/pull/13) Update axon.version to v4.5.3 (2021-09-11)
+  - [#14](https://github.com/JohT/alias/pull/14) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.12.5 (2021-09-11)
+  - [#16](https://github.com/JohT/alias/pull/16) Update dependency io.projectreactor:reactor-core to v3.4.9 (2021-09-11)
+  - [#17](https://github.com/JohT/alias/pull/17) Update dependency javax:javaee-web-api to v8.0.1 (2021-09-11)
+  - [#24](https://github.com/JohT/alias/pull/24) Update dependency javax.enterprise.concurrent:javax.enterprise.concurrent-api to v1.1 (2021-09-12)
+  - [#25](https://github.com/JohT/alias/pull/25) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.3.1 (2021-09-12)
+  - [#26](https://github.com/JohT/alias/pull/26) Update dependency org.apache.maven.plugins:maven-source-plugin to v3.2.1 (2021-09-12)
+  - [#27](https://github.com/JohT/alias/pull/27) Update dependency org.mockito:mockito-all to v1.10.19 (2021-09-12)
+  - [#28](https://github.com/JohT/alias/pull/28) Update actions/checkout action to v2 (2021-09-12)
+  - [#29](https://github.com/JohT/alias/pull/29) Update actions/setup-java action to v2 (2021-09-14)
+  - [#30](https://github.com/JohT/alias/pull/30) Update dependency org.apache.maven.plugins:maven-gpg-plugin to v3 (2021-09-12)
+  - [#32](https://github.com/JohT/alias/pull/32) Update dependency org.hamcrest:hamcrest-core to v2 (2021-09-12)
+  - [#35](https://github.com/JohT/alias/pull/35) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.8.1 (2021-09-12)
+  - [#38](https://github.com/JohT/alias/pull/38) Update jackson.version to v2.12.5 (patch) (2021-09-12)
+  - [#39](https://github.com/JohT/alias/pull/39) Update dependency io.projectreactor:reactor-core to v3.4.10 (2021-09-14)
+  - [#43](https://github.com/JohT/alias/pull/43) Update dependency org.wildfly:wildfly-dist to v25 (2021-10-05)
+ 
+## [v1.1.1](https://github.com/JohT/alias/releases/tag/v1.1.1) (2021-07-21)
 
-### Features:
-- [Support for multiple aliases](https://github.com/JohT/alias/issues/4)
+### Enhancements
+ - [#11](https://github.com/JohT/alias/pull/11) Use Wildfly for integration tests and update dependencies (2021-07-21)
+
+### Dependencies
+  - [#10](https://github.com/JohT/alias/pull/10) Bump junit from 4.12 to 4.13.1 (2020-10-13)
+  - [#6](https://github.com/JohT/alias/pull/6) Bump jackson-databind from 2.9.10.1 to 2.9.10.3 in /type-alias-axon-serializer-integration-test (2020-03-05)
+  - [#7](https://github.com/JohT/alias/pull/7) Bump jackson-databind from 2.9.10.3 to 2.9.10.4 in /type-alias-axon-serializer-integration-test (2020-04-23)
+  - [#8](https://github.com/JohT/alias/pull/8) Bump jackson-databind from 2.9.10.4 to 2.10.0.pr1 in /type-alias-axon-serializer-integration-test (2020-06-18)
+  - [#9](https://github.com/JohT/alias/pull/9) Bump log4j-core from 2.13.0 to 2.13.2 in /type-alias-axon-serializer-integration-test (2020-07-03)
+ 
+## [v1.1.0](https://github.com/JohT/alias/releases/tag/v1.1.0) (2020-01-08)
+
+### Enhancements
+ - [#5](https://github.com/JohT/alias/pull/5) Support for multiple aliases #4 (2020-01-08)
+
+### Dependencies
+ 
+## [v1.0.2](https://github.com/JohT/alias/releases/tag/v1.0.2) (2019-11-16)
+
+### Enhancements
+
+### Dependencies
+  - [#3](https://github.com/JohT/alias/pull/3) Bump jackson-databind from 2.9.9.2 to 2.9.10.1 in /type-alias-axon-serializer-integration-test (2019-11-13)
+ 
+## [v1.0.1](https://github.com/JohT/alias/releases/tag/v1.0.1) (2019-10-16)
+
+### Enhancements
+
+### Dependencies
+ 
+## [v1.0.0](https://github.com/JohT/alias/releases/tag/v1.0.0) (2019-08-02)
+
+### Enhancements
+
+### Dependencies
+ 
