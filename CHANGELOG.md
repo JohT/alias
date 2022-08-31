@@ -10,6 +10,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - [#81](https://github.com/JohT/alias/pull/81) Support Java 11, base library remains Java 1.8 (2022-07-26)
  - [#82](https://github.com/JohT/alias/pull/82) Configure renovate version updates for arquillian.xml (2022-07-26)
  - [#86](https://github.com/JohT/alias/pull/86) Provide version number independent wildfly distribution folder (2022-07-27)
+ - [#94](https://github.com/JohT/alias/pull/94) Generate CHANGELOG.md automatically (2022-08-31)
 
 ### Dependencies
   - [#31](https://github.com/JohT/alias/pull/31) Update dependency org.eclipse:yasson to v2 (2021-10-26)

@@ -27,7 +27,7 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 <dependency>
   <groupId>io.github.joht.alias</groupId>
   <artifactId>type-alias</artifactId>
-  <version>1.1.2</version>
+  <version>2.0.0</version>
   <scope>provided</scope>
   <optional>true</optional>
 </dependency>
@@ -35,6 +35,15 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 
 ### Building this project
 Install maven and use `mvn install` to build this project, run all tests including the integration tests and copy the resulting artifacts into the local maven repository. A list of the most important commands can be found in [COMMANDS.md](COMMANDS.md).
+
+### Changes
+All changes are listed in [CHANGELOG.md](./CHANGELOG.md). The file is generated automatically during "generate-resources" build phase based on merged pull requests and their tags.
+
+#### Breaking changes in Version 2.x
+
+- `type-alias-jsonb-typereference` had been migrated to Java 11
+- `type-alias-example` had been migrated to Java 11
+- `type-alias-axon-serializer-integration-test` will no longer be published to maven central
 
 ### Contents
 - [type-alias](https://github.com/JohT/alias/tree/master/type-alias) 
