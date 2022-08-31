@@ -5,6 +5,12 @@ Changelog for [alias](https://github.com/JohT/alias).
 ## [Unreleased](https://github.com/JohT/alias)
 
 ### Enhancements
+
+### Dependencies
+ 
+## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
+
+### Enhancements
  - [#51](https://github.com/JohT/alias/pull/51) [Snyk] Security upgrade org.apache.logging.log4j:log4j-core from 2.17.0 to 2.17.1 (2022-01-01)
  - [#64](https://github.com/JohT/alias/pull/64) Delete .gitignore defined files that still remained in the repository (2022-04-15)
  - [#81](https://github.com/JohT/alias/pull/81) Support Java 11, base library remains Java 1.8 (2022-07-26)
