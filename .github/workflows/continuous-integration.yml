@@ -47,7 +47,7 @@ jobs:
         cache: 'maven'
         
     - name: (Maven) Build
-      run: mvn --batch-mode install --file pom.xml
+      run: mvn -X --batch-mode install --file pom.xml
       
     - name: (Setup) Java Development Kit (JDK) 8 for integration tests
       uses: actions/setup-java@v3
@@ -72,5 +72,5 @@ jobs:
         git config --global user.email 'joht@users.noreply.github.com'
         git pull
         git add CHANGELOG.md
-        git commit -m "${{ env.CI_COMMIT_CHANGELOG_MESSAGE }}"
+        git diff-index --quiet HEAD || git commit -m "${{ env.CI_COMMIT_CHANGELOG_MESSAGE }}"
         git push
