@@ -265,6 +265,9 @@
 							<gitHubEnabled>true</gitHubEnabled>
 							<useIntegrations>true</useIntegrations>
 							<gitHubIssuePattern>#([0-9]+)</gitHubIssuePattern>
+							<removeIssueFromMessage>true</removeIssueFromMessage>
+							<untaggedName>Next release</untaggedName>
+							<toRef>refs/heads/master</toRef>
 							<ignoreCommitsOlderThan>2019-08-01 00:00:00</ignoreCommitsOlderThan>
 <!-- Handlebar.java doesn't seem to work with Java 11, see https://github.com/tomasbjerre/git-changelog-maven-plugin/issues/43 -->
 <!--
