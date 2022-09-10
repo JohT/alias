@@ -261,6 +261,7 @@
 						<!-- Template for the contents of the CHANGELOG.md file-->
 						<configuration>
 							<gitHubEnabled>true</gitHubEnabled>
+							<gitHubToken>${env.WORKFLOW_GIT_ACCESS_TOKEN}</gitHubToken>
 							<useIntegrations>true</useIntegrations>
 							<gitHubIssuePattern>#([0-9]+)</gitHubIssuePattern>
 							<ignoreCommitsOlderThan>2019-08-01 00:00:00</ignoreCommitsOlderThan>
