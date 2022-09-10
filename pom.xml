@@ -260,6 +260,8 @@
 						</goals>
 						<!-- Template for the contents of the CHANGELOG.md file-->
 						<configuration>
+                            <file>CHANGELOG.md</file>
+                            <templateFile>changelogTemplate.mustache</templateFile>
 							<gitHubEnabled>true</gitHubEnabled>
 							<useIntegrations>true</useIntegrations>
 							<gitHubIssuePattern>#([0-9]+)</gitHubIssuePattern>
@@ -283,81 +285,6 @@ Handlebars.registerHelper('firstLetters', function(from, options) {
 ]]>
 							</javascriptHelper>
 -->
-							<templateContent>
-							<![CDATA[
-# Changelog
-
-Changelog for [{{repoName}}](https://github.com/{{ownerName}}/{{repoName}}).
-
-{{#tags}}
-## [{{name}}](https://github.com/{{ownerName}}/{{repoName}}{{#ifReleaseTag .}}/releases/tag/{{name}}{{/ifReleaseTag}}){{#ifReleaseTag .}} ({{tagDate .}}){{/ifReleaseTag}}
-
-### Enhancements
- {{#issues}}
-  {{#labels}}
-   {{#ifMatches . "^(?!.*dependencies).*$"}}
-    {{#commits}}
-    {{#merge}}
-     {{#hasIssue}}
-      {{#hasLink}}
-       {{#ifMatches link ".*\/pull\/.*"}}
- - [{{issue}}]({{link}}) {{title}} ({{commitDate}})
-       {{/ifMatches}}
-      {{/hasLink}}
-      {{^hasLink}}
- - {{issue}} {{title}} ({{commitDate}})
-      {{/hasLink}}
-     {{/hasIssue}}
-    {{/merge}}
-    {{/commits}}
-   {{/ifMatches}}
-  {{/labels}}
- {{/issues}}
- {{#issues}}
-  {{^hasLabels}}
-   {{#commits}}
-   {{#merge}}
-   {{#hasIssue}}
-    {{#hasLink}}
-     {{#ifMatches link ".*\/pull\/.*"}}
- - [{{issue}}]({{link}}) {{title}} ({{commitDate}})
-     {{/ifMatches}}
-    {{/hasLink}}
-    {{^hasLink}}
- - {{issue}} {{title}} ({{commitDate}})
-    {{/hasLink}}
-   {{/hasIssue}}
-   {{/merge}}
-   {{/commits}}
-  {{/hasLabels}}
- {{/issues}}
-
-### Dependencies
- {{#issues}}
-  {{#hasLabels}}
-   {{#labels}}
-    {{#ifMatches . "^dependencies.*"}}
-     {{#commits}}
-     {{#merge}}
-      {{#hasIssue}}
-       {{#hasLink}}
-        {{#ifMatches link ".*\/pull\/.*"}}
-  - [{{issue}}]({{link}}) {{title}} ({{commitDate}})
-        {{/ifMatches}}
-       {{/hasLink}}
-       {{^hasLink}}
-  - {{issue}} {{title}} ({{commitDate}})
-       {{/hasLink}}
-      {{/hasIssue}}
-     {{/merge}}
-     {{/commits}}
-    {{/ifMatches}}
-   {{/labels}}
-  {{/hasLabels}} 
- {{/issues}}
- 
-{{/tags}}							]]>
-							</templateContent>
 						</configuration>
 					</execution>
 				</executions>
