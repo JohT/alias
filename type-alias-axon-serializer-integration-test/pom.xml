@@ -45,7 +45,7 @@
 
 		<!-- Wildfly managed -->
 		<wildfly-arquillian.version>3.0.1.Final</wildfly-arquillian.version>
-		<wildfly.version>26.1.1.Final</wildfly.version>
+		<wildfly.version>26.1.2.Final</wildfly.version>
 
 		<!-- Unit testing -->
 		<equalsverifier.version>3.10.1</equalsverifier.version>
