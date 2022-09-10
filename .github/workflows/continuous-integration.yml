@@ -47,6 +47,8 @@ jobs:
         cache: 'maven'
         
     - name: (Maven) Build
+      env:
+        WORKFLOW_GIT_ACCESS_TOKEN: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
       run: mvn -X --batch-mode install --file pom.xml
       
     - name: (Setup) Java Development Kit (JDK) 8 for integration tests
