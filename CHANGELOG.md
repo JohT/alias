@@ -8,6 +8,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - [#97](https://github.com/JohT/alias/pull/97) Activate auto commit in CI for generated CHANGELOG.md (2022-09-10)
 
 ### Dependencies
+  - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
