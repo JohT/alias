@@ -23,6 +23,7 @@ on:
       - 'renovate.json'
       - '**/*.txt'
       - '**/*.xml'
+      - '**/*.mustache'
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
@@ -35,6 +36,7 @@ on:
       - 'renovate.json'
       - '**/*.txt'
       - '**/*.xml'
+      - '**/*.mustache'
   schedule:
     - cron: '36 12 * * 5'
 
