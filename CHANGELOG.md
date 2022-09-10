@@ -2,7 +2,7 @@
 
 Changelog for [alias](https://github.com/JohT/alias).
 
-## [Unreleased](https://github.com/JohT/alias)
+## [Next release](https://github.com/JohT/alias)
 
 ### Enhancements
  - [#97](https://github.com/JohT/alias/pull/97) Activate auto commit in CI for generated CHANGELOG.md (2022-09-10)
