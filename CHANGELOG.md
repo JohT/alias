@@ -5,10 +5,12 @@ Changelog for [alias](https://github.com/JohT/alias).
 ## [Next release](https://github.com/JohT/alias)
 
 ### Enhancements
+ - [#87](https://github.com/JohT/alias/pull/87) Update dependency org.jboss.arquillian:arquillian-bom to v1.7.0.Alpha12 (2022-09-11)
  - [#97](https://github.com/JohT/alias/pull/97) Activate auto commit in CI for generated CHANGELOG.md (2022-09-10)
 
 ### Dependencies
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
+  - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
