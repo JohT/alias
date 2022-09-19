@@ -10,7 +10,9 @@ Changelog for [alias](https://github.com/JohT/alias).
 
 ### Dependencies
   - [#100](https://github.com/JohT/alias/pull/100) Update dependency org.eclipse:yasson to v3.0.2 (2022-09-19)
+  - [#101](https://github.com/JohT/alias/pull/101) Update dependency org.slf4j:jcl-over-slf4j to v2.0.1 (2022-09-19)
   - [#102](https://github.com/JohT/alias/pull/102) Update dependency org.slf4j:log4j-over-slf4j to v2.0.1 (2022-09-19)
+  - [#103](https://github.com/JohT/alias/pull/103) Update dependency org.apache.logging.log4j:log4j-core to v2.19.0 (2022-09-19)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
