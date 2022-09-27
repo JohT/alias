@@ -14,6 +14,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#102](https://github.com/JohT/alias/pull/102) Update dependency org.slf4j:log4j-over-slf4j to v2.0.1 (2022-09-19)
   - [#103](https://github.com/JohT/alias/pull/103) Update dependency org.apache.logging.log4j:log4j-core to v2.19.0 (2022-09-19)
   - [#104](https://github.com/JohT/alias/pull/104) Update axon.version to v4.6.0 (2022-09-19)
+  - [#105](https://github.com/JohT/alias/pull/105) Update dependency org.junit.jupiter:junit-jupiter to v5.9.1 (2022-09-27)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
