@@ -5,9 +5,11 @@
     "schedule:earlyMondays",
     ":combinePatchMinorReleases",
     ":automergeDigest",
+    ":automergePatch",
     ":automergeRequireAllStatusChecks",
     ":ignoreUnstable",
     "group:recommended"
   ],
+  "ignoreDeps": ["lifecycle-mapping"],
   "labels": ["dependencies"]
 }
