@@ -10,6 +10,6 @@
     ":ignoreUnstable",
     "group:recommended"
   ],
-  "ignoreDeps": ["lifecycle-mapping"],
+  "ignoreDeps": ["org.eclipse.m2e:lifecycle-mapping"],
   "labels": ["dependencies"]
 }
