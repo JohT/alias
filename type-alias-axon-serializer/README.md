@@ -10,9 +10,9 @@ Since this module is written to extend axon serializer externally using a decora
 there are limitations: 
 
 ##### Not fully decoratable 
-The directly mapped Classes of the ResourceBundle cannot be used during deserialization,
-because the current Serializer implementations usees inter method calls, that are not decoratable.
-This does not affect alias naming. Tt only limits performance optimization.
+The directly mapped classes of the ResourceBundle cannot be used during deserialization 
+because the current serializer implementations uses inter-method calls, that are not decoratable.
+This doesn't affect alias naming. It only limits performance optimization.
 As a temporal (experimental) workaround, "AliasableResourceBundleClassloader" could be used for these implementation. However, it is not said that this is faster than the default ClassLoader.
 
 ##### Might by done easier
