@@ -23,6 +23,8 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#111](https://github.com/JohT/alias/pull/111) Update axon.version to v4.6.1 (patch) (2022-10-06)
   - [#112](https://github.com/JohT/alias/pull/112) Update dependency se.bjurr.gitchangelog:git-changelog-maven-plugin to v1.95.2 (2022-10-10)
   - [#113](https://github.com/JohT/alias/pull/113) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4.2 (2022-10-14)
+  - [#114](https://github.com/JohT/alias/pull/114) Update dependency io.projectreactor:reactor-core to v3.4.24 (2022-10-14)
+  - [#115](https://github.com/JohT/alias/pull/115) Update dependency org.jboss.arquillian:arquillian-bom to v1.7.0.Alpha13 (2022-10-14)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
