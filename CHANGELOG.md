@@ -27,6 +27,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#115](https://github.com/JohT/alias/pull/115) Update dependency org.jboss.arquillian:arquillian-bom to v1.7.0.Alpha13 (2022-10-14)
   - [#116](https://github.com/JohT/alias/pull/116) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.14.0 (2022-11-07)
   - [#117](https://github.com/JohT/alias/pull/117) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.11 (2022-11-07)
+  - [#118](https://github.com/JohT/alias/pull/118) Update axon.version to v4.6.2 (patch) (2022-11-09)
   - [#119](https://github.com/JohT/alias/pull/119) Update dependency io.projectreactor:reactor-core to v3.5.0 (2022-11-09)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
