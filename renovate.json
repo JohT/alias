@@ -2,7 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    "schedule:earlyMondays",
+    "schedule:nonOfficeHours",
     ":combinePatchMinorReleases",
     ":automergeDigest",
     ":automergePatch",
