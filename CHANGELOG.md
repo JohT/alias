@@ -31,6 +31,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#119](https://github.com/JohT/alias/pull/119) Update dependency io.projectreactor:reactor-core to v3.5.0 (2022-11-09)
   - [#120](https://github.com/JohT/alias/pull/120) Update jackson.version to v2.14.0 (minor) (2022-11-09)
   - [#121](https://github.com/JohT/alias/pull/121) Update dependency org.wildfly:wildfly-dist to v27 (2022-11-09)
+  - [#126](https://github.com/JohT/alias/pull/126) Update jackson.version to v2.14.1 (patch) (2022-11-22)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
