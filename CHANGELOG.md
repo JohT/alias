@@ -34,6 +34,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#126](https://github.com/JohT/alias/pull/126) Update jackson.version to v2.14.1 (patch) (2022-11-22)
   - [#128](https://github.com/JohT/alias/pull/128) Update dependency org.slf4j:log4j-over-slf4j to v2.0.5 (2022-11-26)
   - [#129](https://github.com/JohT/alias/pull/129) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.4.0 (2022-11-30)
+  - [#130](https://github.com/JohT/alias/pull/130) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.12 (2022-12-01)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
