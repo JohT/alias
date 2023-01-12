@@ -37,6 +37,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#130](https://github.com/JohT/alias/pull/130) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.12 (2022-12-01)
   - [#140](https://github.com/JohT/alias/pull/140) Update axon.version to v4.6.3 (patch) (2022-12-30)
   - [#143](https://github.com/JohT/alias/pull/143) Update dependency org.junit.jupiter:junit-jupiter to v5.9.2 (2023-01-11)
+  - [#144](https://github.com/JohT/alias/pull/144) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.5.0 (2023-01-12)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
