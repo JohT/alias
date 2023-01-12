@@ -58,7 +58,7 @@
 		<maven.surefire.version>2.22.2</maven.surefire.version>
 		<maven.failsafe.version>2.22.2</maven.failsafe.version>
 		<maven.assembly.version>3.3.0</maven.assembly.version>
-		<maven.dependency.version>3.4.0</maven.dependency.version>
+		<maven.dependency.version>3.5.0</maven.dependency.version>
 		<maven.resources.plugin.version>3.3.0</maven.resources.plugin.version>
 		<eclipse.lifecycle.mapping.version>1.0.0</eclipse.lifecycle.mapping.version>
 	</properties>
