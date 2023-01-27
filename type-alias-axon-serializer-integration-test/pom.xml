@@ -27,7 +27,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 
-		<axon.version>4.6.3</axon.version>
+		<axon.version>4.7.0</axon.version>
 
 		<!-- Optional dependencies for axon -->
 		<dom4j.version>2.1.4</dom4j.version>
