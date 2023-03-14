@@ -63,7 +63,7 @@
 		
 		<maven.compiler.version>3.11.0</maven.compiler.version>
 		<maven.surefire.version>3.0.0</maven.surefire.version>
-		<maven.failsafe.version>2.22.2</maven.failsafe.version>
+		<maven.failsafe.version>3.0.0</maven.failsafe.version>
 		<maven.assembly.version>3.3.0</maven.assembly.version>
 		<git-changelog-maven-plugin.version>1.96.1</git-changelog-maven-plugin.version>
 		
