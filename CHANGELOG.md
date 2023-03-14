@@ -47,6 +47,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#160](https://github.com/JohT/alias/pull/160) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.14 (2023-02-28)
   - [#161](https://github.com/JohT/alias/pull/161) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.11.0 (2023-02-28)
   - [#163](https://github.com/JohT/alias/pull/163) Update dependency se.bjurr.gitchangelog:git-changelog-maven-plugin to v1.96.0 (2023-03-01)
+  - [#166](https://github.com/JohT/alias/pull/166) Update dependency io.projectreactor:reactor-core to v3.5.4 (2023-03-14)
   - [#167](https://github.com/JohT/alias/pull/167) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3 (2023-03-14)
   - [#168](https://github.com/JohT/alias/pull/168) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3 (2023-03-14)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
