@@ -54,6 +54,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#175](https://github.com/JohT/alias/pull/175) Update dependency org.eclipse:yasson to v3.0.3 (2023-04-06)
   - [#177](https://github.com/JohT/alias/pull/177) Update dependency org.wildfly:wildfly-dist to v28 (2023-04-21)
   - [#178](https://github.com/JohT/alias/pull/178) Update dependency se.bjurr.gitchangelog:git-changelog-maven-plugin to v1.97.0 (2023-04-22)
+  - [#179](https://github.com/JohT/alias/pull/179) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.15.0 (2023-04-24)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
