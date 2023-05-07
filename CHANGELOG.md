@@ -58,6 +58,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#180](https://github.com/JohT/alias/pull/180) Update jackson.version to v2.15.0 (minor) (2023-04-24)
   - [#181](https://github.com/JohT/alias/pull/181) Update axon.version to v4.7.4 (patch) (2023-04-25)
   - [#183](https://github.com/JohT/alias/pull/183) Update dependency org.apache.maven.plugins:maven-gpg-plugin to v3.1.0 (2023-05-06)
+  - [#184](https://github.com/JohT/alias/pull/184) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.1.0 (2023-05-07)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
