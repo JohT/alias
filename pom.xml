@@ -62,7 +62,7 @@
 		<library.java.version>1.8</library.java.version>
 		
 		<maven.compiler.version>3.11.0</maven.compiler.version>
-		<maven.surefire.version>3.0.0</maven.surefire.version>
+		<maven.surefire.version>3.1.0</maven.surefire.version>
 		<maven.failsafe.version>3.1.0</maven.failsafe.version>
 		<maven.assembly.version>3.3.0</maven.assembly.version>
 		<git-changelog-maven-plugin.version>1.97.0</git-changelog-maven-plugin.version>
