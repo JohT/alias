@@ -33,7 +33,7 @@
 		<dom4j.version>2.1.4</dom4j.version>
 		<xom.version>1.2.10</xom.version>
 		<jackson.core.version>2.15.1</jackson.core.version>
-		<jackson.version>2.15.0</jackson.version>
+		<jackson.version>2.15.1</jackson.version>
 		<reactor.version>3.5.6</reactor.version>
 
 		<!-- Logging libraries -->
