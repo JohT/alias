@@ -61,6 +61,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#184](https://github.com/JohT/alias/pull/184) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.1.0 (2023-05-07)
   - [#185](https://github.com/JohT/alias/pull/185) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.1.0 (2023-05-08)
   - [#193](https://github.com/JohT/alias/pull/193) Update dependency org.apache.maven.plugins:maven-source-plugin to v3.3.0 (2023-05-21)
+  - [#194](https://github.com/JohT/alias/pull/194) Update dependency jakarta.json:jakarta.json-api to v2.1.2 (2023-05-23)
   - [#195](https://github.com/JohT/alias/pull/195) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.6.0 (2023-05-23)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
