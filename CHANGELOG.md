@@ -64,6 +64,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#194](https://github.com/JohT/alias/pull/194) Update dependency jakarta.json:jakarta.json-api to v2.1.2 (2023-05-23)
   - [#195](https://github.com/JohT/alias/pull/195) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.6.0 (2023-05-23)
   - [#197](https://github.com/JohT/alias/pull/197) Update jackson.version to v2.15.2 (patch) (2023-05-31)
+  - [#199](https://github.com/JohT/alias/pull/199) Update dependency org.apache.maven.plugins:maven-release-plugin to v3.0.1 (2023-06-03)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
