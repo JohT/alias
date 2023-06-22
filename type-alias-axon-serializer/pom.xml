@@ -14,7 +14,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<axon.version>4.7.6</axon.version>
+		<axon.version>4.8.0</axon.version>
 	</properties>
 
 	<dependencies>
