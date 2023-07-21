@@ -70,6 +70,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#206](https://github.com/JohT/alias/pull/206) Update dependency org.wildfly.arquillian:wildfly-arquillian-container-managed to v5 (2023-07-07)
   - [#207](https://github.com/JohT/alias/pull/207) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.15 (2023-07-08)
   - [#208](https://github.com/JohT/alias/pull/208) Update dependency se.bjurr.gitchangelog:git-changelog-maven-plugin to v1.97.1 (2023-07-09)
+  - [#210](https://github.com/JohT/alias/pull/210) Update dependency org.wildfly:wildfly-dist to v29 (2023-07-21)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
