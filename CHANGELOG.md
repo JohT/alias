@@ -73,6 +73,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#210](https://github.com/JohT/alias/pull/210) Update dependency org.wildfly:wildfly-dist to v29 (2023-07-21)
   - [#211](https://github.com/JohT/alias/pull/211) Update dependency org.junit.jupiter:junit-jupiter to v5.10.0 (2023-07-23)
   - [#213](https://github.com/JohT/alias/pull/213) Update axon.version to v4.8.1 (patch) (2023-08-15)
+  - [#216](https://github.com/JohT/alias/pull/216) Update dependency org.wildfly:wildfly-dist to v29.0.1.Final (2023-08-26)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
