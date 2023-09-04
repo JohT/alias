@@ -77,6 +77,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#217](https://github.com/JohT/alias/pull/217) Update dependency se.bjurr.gitchangelog:git-changelog-maven-plugin to v1.98.2 (2023-09-01)
   - [#218](https://github.com/JohT/alias/pull/218) Update dependency org.slf4j:jcl-over-slf4j to v2.0.9 (2023-09-03)
   - [#219](https://github.com/JohT/alias/pull/219) Update dependency org.slf4j:log4j-over-slf4j to v2.0.8 (2023-09-03)
+  - [#221](https://github.com/JohT/alias/pull/221) Update dependency org.slf4j:jcl-over-slf4j to v2.0.9 (2023-09-04)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
