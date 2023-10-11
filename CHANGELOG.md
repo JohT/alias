@@ -84,6 +84,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#226](https://github.com/JohT/alias/pull/226) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.6.0 (2023-09-16)
   - [#228](https://github.com/JohT/alias/pull/228) Update dependency se.bjurr.gitchangelog:git-changelog-maven-plugin to v1.100.1 (2023-09-24)
   - [#229](https://github.com/JohT/alias/pull/229) Update dependency se.bjurr.gitchangelog:git-changelog-maven-plugin to v1.100.3 (2023-09-24)
+  - [#231](https://github.com/JohT/alias/pull/231) Update dependency io.projectreactor:reactor-core to v3.5.11 (2023-10-11)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
