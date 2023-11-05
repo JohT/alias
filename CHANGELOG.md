@@ -91,6 +91,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#239](https://github.com/JohT/alias/pull/239) Update axon.version to v4.9.0 (minor) (2023-10-24)
   - [#240](https://github.com/JohT/alias/pull/240) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.2.1 (2023-10-24)
   - [#241](https://github.com/JohT/alias/pull/241) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.2.1 (2023-10-24)
+  - [#244](https://github.com/JohT/alias/pull/244) Update dependency org.junit.jupiter:junit-jupiter to v5.10.1 (2023-11-05)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
