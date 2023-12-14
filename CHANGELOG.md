@@ -100,6 +100,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#253](https://github.com/JohT/alias/pull/253) Update dependency org.jboss.arquillian:arquillian-bom to v1.8.0.Final (2023-11-18)
   - [#254](https://github.com/JohT/alias/pull/254) Update dependency org.apache.logging.log4j:log4j-core to v2.22.0 (2023-11-21)
   - [#256](https://github.com/JohT/alias/pull/256) Update actions/setup-java action to v4 (2023-11-30)
+  - [#262](https://github.com/JohT/alias/pull/262) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.2.3 (2023-12-14)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
