@@ -104,6 +104,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#262](https://github.com/JohT/alias/pull/262) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.2.3 (2023-12-14)
   - [#263](https://github.com/JohT/alias/pull/263) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.2.3 (2023-12-14)
   - [#264](https://github.com/JohT/alias/pull/264) Update github/codeql-action action to v3 (2023-12-14)
+  - [#265](https://github.com/JohT/alias/pull/265) Update dependency se.bjurr.gitchangelog:git-changelog-maven-plugin to v1.101.0 (2023-12-17)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
