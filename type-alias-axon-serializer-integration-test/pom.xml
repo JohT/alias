@@ -34,7 +34,7 @@
 		<xom.version>1.2.10</xom.version>
 		<jackson.core.version>2.16.1</jackson.core.version>
 		<jackson.version>2.16.1</jackson.version>
-		<reactor.version>3.6.1</reactor.version>
+		<reactor.version>3.6.2</reactor.version>
 
 		<!-- Logging libraries -->
 		<slf4j.version>2.0.11</slf4j.version>
