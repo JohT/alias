@@ -108,6 +108,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#266](https://github.com/JohT/alias/pull/266) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.12.0 (2023-12-19)
   - [#269](https://github.com/JohT/alias/pull/269) Update jackson.version to v2.16.1 (patch) (2023-12-24)
   - [#275](https://github.com/JohT/alias/pull/275) Update dependency org.slf4j:log4j-over-slf4j to v2.0.11 (2024-01-09)
+  - [#278](https://github.com/JohT/alias/pull/278) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.2.5 (2024-01-10)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
