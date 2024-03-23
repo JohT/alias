@@ -117,6 +117,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#297](https://github.com/JohT/alias/pull/297) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.17.0 (2024-03-13)
   - [#298](https://github.com/JohT/alias/pull/298) Update jackson.version to v2.17.0 (minor) (2024-03-13)
   - [#300](https://github.com/JohT/alias/pull/300) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.13.0 (2024-03-19)
+  - [#301](https://github.com/JohT/alias/pull/301) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.16 (2024-03-23)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
