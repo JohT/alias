@@ -124,6 +124,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#316](https://github.com/JohT/alias/pull/316) Update dependency org.sonatype.plugins:nexus-staging-maven-plugin to v1.7.0 (2024-05-29)
   - [#318](https://github.com/JohT/alias/pull/318) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.7.0 (2024-06-01)
   - [#320](https://github.com/JohT/alias/pull/320) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.7.0 (2024-06-12)
+  - [#321](https://github.com/JohT/alias/pull/321) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.3.0 (2024-06-15)
   - [#322](https://github.com/JohT/alias/pull/322) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.3.0 (2024-06-15)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
