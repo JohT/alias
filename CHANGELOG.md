@@ -138,6 +138,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#345](https://github.com/JohT/alias/pull/345) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.4.0 (2024-08-19)
   - [#346](https://github.com/JohT/alias/pull/346) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.4.0 (2024-08-19)
   - [#349](https://github.com/JohT/alias/pull/349) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.8.0 (2024-08-23)
+  - [#351](https://github.com/JohT/alias/pull/351) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.0 (2024-08-28)
   - [#352](https://github.com/JohT/alias/pull/352) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.10.0 (2024-08-28)
   - [#353](https://github.com/JohT/alias/pull/353) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.0 (2024-08-28)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
