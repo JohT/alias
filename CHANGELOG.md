@@ -149,6 +149,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#362](https://github.com/JohT/alias/pull/362) Update jackson.version to v2.18.0 (minor) (2024-09-27)
   - [#369](https://github.com/JohT/alias/pull/369) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.1 (2024-10-06)
   - [#371](https://github.com/JohT/alias/pull/371) Update dependency io.projectreactor:reactor-core to v3.6.11 (2024-10-16)
+  - [#372](https://github.com/JohT/alias/pull/372) Update dependency org.wildfly:wildfly-dist to v34 (2024-10-18)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
