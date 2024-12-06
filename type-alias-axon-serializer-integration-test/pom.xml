@@ -48,7 +48,7 @@
 		<wildfly.version>34.0.1.Final</wildfly.version>
 
 		<!-- Unit testing -->
-		<equalsverifier.version>3.17.4</equalsverifier.version>
+		<equalsverifier.version>3.17.5</equalsverifier.version>
 		<junit-jupiter.version>5.11.3</junit-jupiter.version>
 		<hamcrest.version>2.2</hamcrest.version>
 		<mockito.version>1.10.19</mockito.version>
