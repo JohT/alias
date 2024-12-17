@@ -154,6 +154,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#384](https://github.com/JohT/alias/pull/384) Update dependency io.projectreactor:reactor-core to v3.7.0 (2024-11-14)
   - [#386](https://github.com/JohT/alias/pull/386) Update dependency org.wildfly:wildfly-dist to v34.0.1.Final (2024-11-23)
   - [#390](https://github.com/JohT/alias/pull/390) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.17.5 (2024-12-06)
+  - [#395](https://github.com/JohT/alias/pull/395) Update dependency org.junit.jupiter:junit-jupiter to v5.11.4 (2024-12-17)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
