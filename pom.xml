@@ -65,7 +65,7 @@
 		<maven.surefire.version>3.5.2</maven.surefire.version>
 		<maven.failsafe.version>3.5.2</maven.failsafe.version>
 		<maven.assembly.version>3.3.0</maven.assembly.version>
-		<git-changelog-maven-plugin.version>2.1.0</git-changelog-maven-plugin.version>
+		<git-changelog-maven-plugin.version>2.2.2</git-changelog-maven-plugin.version>
 		
 		<!-- Java Annotation Processing API -->
 		<annotation.api.version>1.3.2</annotation.api.version>
