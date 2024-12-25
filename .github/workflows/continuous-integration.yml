@@ -32,7 +32,7 @@ jobs:
     env: 
       CI_COMMIT_CHANGELOG_MESSAGE: Update Changelog
       CI_COMMIT_CHANGELOG_AUTHOR: ${{ github.event.repository.name }} Changelog Generator
-
+      JAVA_VERSION: 11
     steps:
     - name: (GIT) Checkout code
       uses: actions/checkout@v4
@@ -40,11 +40,11 @@ jobs:
         token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
         fetch-depth: 0
 
-    - name: (Setup) Java Development Kit (JDK) 11
+    - name: (Setup) Java Development Kit (JDK) ${{env.JAVA_VERSION}}
       uses: actions/setup-java@v4
       with:
         distribution: 'adopt'
-        java-version: 11
+        java-version: ${{env.JAVA_VERSION}}
         cache: 'maven'
         
     - name: (Maven) Build
