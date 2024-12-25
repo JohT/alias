@@ -10,6 +10,49 @@
     ":ignoreUnstable",
     "group:recommended"
   ],
-  "ignoreDeps": ["org.eclipse.m2e:lifecycle-mapping"],
-  "labels": ["dependencies"]
+  "ignoreDeps": [
+    "org.eclipse.m2e:lifecycle-mapping"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "java-version"
+      ],
+      "groupName": "Java Development Kit (JDK)"
+    }
+  ],
+  "customManagers": [
+    {
+      "description": "Update java version in Maven pom.xml",
+      "customType": "regex",
+      "datasourceTemplate": "java-version",
+      "depNameTemplate": "java",
+      "packageNameTemplate": "",
+      "fileMatch": [
+        "(^|/|\\.)pom\\.xml$"
+      ],
+      "matchStrings": [
+        "<java.version>(?<currentValue>[0-9]+)<\/java.version>"
+      ],
+      "extractVersionTemplate": "^(?<version>\\d+).*$"
+    },
+    {
+      "description": "Update java version in GitHub Action environment variable",
+      "customType": "regex",
+      "datasourceTemplate": "java-version",
+      "depNameTemplate": "java",
+      "packageNameTemplate": "",
+      "fileMatch": [
+        "^(workflow-templates|\\.github/workflows)\\/[^/]+\\.ya?ml$",
+        "(^|\\/)action\\.ya?ml$]"
+      ],
+      "matchStrings": [
+        "JAVA_VERSION:\\s+?(?<currentValue>.*?)\\s+"
+      ],
+      "extractVersionTemplate": "^(?<version>\\d+).*$"
+    }
+  ]
 }
