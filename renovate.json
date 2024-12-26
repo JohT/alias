@@ -18,10 +18,12 @@
   ],
   "packageRules": [
     {
+      "description": "Updates Java Development Kit in conjunction with the custom managers below. Disabled for now in favor of compatibility.",
       "matchDatasources": [
         "java-version"
       ],
-      "groupName": "Java Development Kit (JDK)"
+      "groupName": "Java Development Kit (JDK)",
+      "enabled": false
     }
   ],
   "customManagers": [
