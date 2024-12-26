@@ -32,7 +32,7 @@ jobs:
     env: 
       CI_COMMIT_CHANGELOG_MESSAGE: Update Changelog
       CI_COMMIT_CHANGELOG_AUTHOR: ${{ github.event.repository.name }} Changelog Generator
-      JAVA_VERSION: 17
+      JAVA_VERSION: 11
     steps:
     - name: (GIT) Checkout code
       uses: actions/checkout@v4
