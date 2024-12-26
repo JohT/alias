@@ -11,7 +11,8 @@
     "group:recommended"
   ],
   "ignoreDeps": [
-    "org.eclipse.m2e:lifecycle-mapping"
+    "org.eclipse.m2e:lifecycle-mapping",
+    "se.bjurr.gitchangelog:git-changelog-maven-plugin"
   ],
   "labels": [
     "dependencies"
