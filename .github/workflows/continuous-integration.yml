@@ -28,7 +28,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env: 
       CI_COMMIT_CHANGELOG_MESSAGE: Update Changelog
       CI_COMMIT_CHANGELOG_AUTHOR: ${{ github.event.repository.name }} Changelog Generator
