@@ -167,6 +167,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#410](https://github.com/JohT/alias/pull/410) Update slf4j monorepo to v2.0.17 (patch) (2025-02-26)
   - [#412](https://github.com/JohT/alias/pull/412) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.18.3 (2025-03-01)
   - [#413](https://github.com/JohT/alias/pull/413) Update jackson.version to v2.18.3 (patch) (2025-03-01)
+  - [#416](https://github.com/JohT/alias/pull/416) Update dependency org.junit.jupiter:junit-jupiter to v5.12.1 (2025-03-15)
   - [#95](https://github.com/JohT/alias/pull/95) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.13.4 (2022-09-10)
   - [#96](https://github.com/JohT/alias/pull/96) Update dependency org.wildfly:wildfly-dist to v26.1.2.Final (2022-09-10)
   - [#98](https://github.com/JohT/alias/pull/98) Update jackson.version to v2.13.4 (2022-09-12)
