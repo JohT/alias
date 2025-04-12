@@ -120,6 +120,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #316  (2024-05-29)
  - #318  (2024-06-01)
  - #320  (2024-06-12)
+ - #321  (2024-06-15)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -128,7 +129,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#321](https://github.com/JohT/alias/pull/321) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.3.0 (2024-06-15)
   - [#322](https://github.com/JohT/alias/pull/322) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.3.0 (2024-06-15)
   - [#323](https://github.com/JohT/alias/pull/323) Update dependency org.apache.maven.plugins:maven-release-plugin to v3.1.0 (2024-06-17)
   - [#328](https://github.com/JohT/alias/pull/328) Update jackson.version to v2.17.2 (patch) (2024-07-06)
@@ -175,6 +175,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#417](https://github.com/JohT/alias/pull/417) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.3 (2025-03-31)
   - [#418](https://github.com/JohT/alias/pull/418) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.3 (2025-03-31)
   - [#420](https://github.com/JohT/alias/pull/420) Update dependency org.wildfly:wildfly-dist to v36 (2025-04-11)
+  - [#421](https://github.com/JohT/alias/pull/421) Update dependency org.junit.jupiter:junit-jupiter to v5.12.2 (2025-04-12)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
