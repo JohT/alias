@@ -121,6 +121,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #318  (2024-06-01)
  - #320  (2024-06-12)
  - #321  (2024-06-15)
+ - #322  (2024-06-15)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -129,7 +130,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#322](https://github.com/JohT/alias/pull/322) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.3.0 (2024-06-15)
   - [#323](https://github.com/JohT/alias/pull/323) Update dependency org.apache.maven.plugins:maven-release-plugin to v3.1.0 (2024-06-17)
   - [#328](https://github.com/JohT/alias/pull/328) Update jackson.version to v2.17.2 (patch) (2024-07-06)
   - [#332](https://github.com/JohT/alias/pull/332) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.3.1 (2024-07-11)
