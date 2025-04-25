@@ -176,6 +176,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#418](https://github.com/JohT/alias/pull/418) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.3 (2025-03-31)
   - [#420](https://github.com/JohT/alias/pull/420) Update dependency org.wildfly:wildfly-dist to v36 (2025-04-11)
   - [#421](https://github.com/JohT/alias/pull/421) Update dependency org.junit.jupiter:junit-jupiter to v5.12.2 (2025-04-12)
+  - [#425](https://github.com/JohT/alias/pull/425) Update jackson.version to v2.19.0 (minor) (2025-04-25)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
