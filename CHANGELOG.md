@@ -123,6 +123,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #321  (2024-06-15)
  - #322  (2024-06-15)
  - #323  (2024-06-17)
+ - #328  (2024-07-06)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -131,7 +132,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#328](https://github.com/JohT/alias/pull/328) Update jackson.version to v2.17.2 (patch) (2024-07-06)
   - [#332](https://github.com/JohT/alias/pull/332) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.3.1 (2024-07-11)
   - [#334](https://github.com/JohT/alias/pull/334) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.8.0 (2024-07-20)
   - [#335](https://github.com/JohT/alias/pull/335) Update axon.version to v4.10.0 (minor) (2024-07-22)
