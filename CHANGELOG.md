@@ -124,6 +124,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #322  (2024-06-15)
  - #323  (2024-06-17)
  - #328  (2024-07-06)
+ - #332  (2024-07-11)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -132,7 +133,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#332](https://github.com/JohT/alias/pull/332) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.3.1 (2024-07-11)
   - [#334](https://github.com/JohT/alias/pull/334) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.8.0 (2024-07-20)
   - [#335](https://github.com/JohT/alias/pull/335) Update axon.version to v4.10.0 (minor) (2024-07-22)
   - [#336](https://github.com/JohT/alias/pull/336) Update dependency org.wildfly:wildfly-dist to v33 (2024-07-23)
