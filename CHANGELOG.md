@@ -125,6 +125,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #323  (2024-06-17)
  - #328  (2024-07-06)
  - #332  (2024-07-11)
+ - #334  (2024-07-20)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -133,7 +134,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#334](https://github.com/JohT/alias/pull/334) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.8.0 (2024-07-20)
   - [#335](https://github.com/JohT/alias/pull/335) Update axon.version to v4.10.0 (minor) (2024-07-22)
   - [#336](https://github.com/JohT/alias/pull/336) Update dependency org.wildfly:wildfly-dist to v33 (2024-07-23)
   - [#337](https://github.com/JohT/alias/pull/337) Update dependency org.hamcrest:hamcrest-core to v3 (2024-08-02)
@@ -180,6 +180,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#425](https://github.com/JohT/alias/pull/425) Update jackson.version to v2.19.0 (minor) (2025-04-25)
   - [#430](https://github.com/JohT/alias/pull/430) Update dependency org.junit.jupiter:junit-jupiter to v5.13.0 (2025-05-31)
   - [#431](https://github.com/JohT/alias/pull/431) Update dependency org.junit.jupiter:junit-jupiter to v5.13.1 (2025-06-07)
+  - [#434](https://github.com/JohT/alias/pull/434) Update jackson.version to v2.19.1 (patch) (2025-06-14)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
