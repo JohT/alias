@@ -180,6 +180,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#425](https://github.com/JohT/alias/pull/425) Update jackson.version to v2.19.0 (minor) (2025-04-25)
   - [#430](https://github.com/JohT/alias/pull/430) Update dependency org.junit.jupiter:junit-jupiter to v5.13.0 (2025-05-31)
   - [#431](https://github.com/JohT/alias/pull/431) Update dependency org.junit.jupiter:junit-jupiter to v5.13.1 (2025-06-07)
+  - [#433](https://github.com/JohT/alias/pull/433) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.19.1 (2025-06-14)
   - [#434](https://github.com/JohT/alias/pull/434) Update jackson.version to v2.19.1 (patch) (2025-06-14)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
