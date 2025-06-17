@@ -126,6 +126,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #328  (2024-07-06)
  - #332  (2024-07-11)
  - #334  (2024-07-20)
+ - #335  (2024-07-22)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -134,7 +135,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#335](https://github.com/JohT/alias/pull/335) Update axon.version to v4.10.0 (minor) (2024-07-22)
   - [#336](https://github.com/JohT/alias/pull/336) Update dependency org.wildfly:wildfly-dist to v33 (2024-07-23)
   - [#337](https://github.com/JohT/alias/pull/337) Update dependency org.hamcrest:hamcrest-core to v3 (2024-08-02)
   - [#341](https://github.com/JohT/alias/pull/341) Update slf4j monorepo to v2.0.16 (patch) (2024-08-10)
@@ -182,6 +182,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#431](https://github.com/JohT/alias/pull/431) Update dependency org.junit.jupiter:junit-jupiter to v5.13.1 (2025-06-07)
   - [#433](https://github.com/JohT/alias/pull/433) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.19.1 (2025-06-14)
   - [#434](https://github.com/JohT/alias/pull/434) Update jackson.version to v2.19.1 (patch) (2025-06-14)
+  - [#435](https://github.com/JohT/alias/pull/435) Update dependency org.apache.logging.log4j:log4j-core to v2.25.0 (2025-06-17)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
