@@ -3,7 +3,7 @@
 
 	<groupId>io.github.joht.alias</groupId>
 	<artifactId>type-alias-axon-serializer-integration-test</artifactId>
-	<version>2.0.1-SNAPSHOT</version>
+	<version>3.0.0-SNAPSHOT</version>
 
 	<name>type-alias-axon-serializer-integration-test</name>
 	<description>Contains the integration test for the type alias aware axon serializer including a fully working demo configuration for axon using JavaEE 8.</description>
@@ -48,10 +48,9 @@
 		<wildfly.version>36.0.1.Final</wildfly.version>
 
 		<!-- Unit testing -->
-		<equalsverifier.version>3.19.4</equalsverifier.version>
+		<equalsverifier.version>4.0.3</equalsverifier.version>
 		<junit-jupiter.version>5.13.1</junit-jupiter.version>
 		<hamcrest.version>2.2</hamcrest.version>
-		<mockito.version>1.10.19</mockito.version>
 
 		<!-- Maven Plugins -->
 		<maven.compiler.version>3.14.0</maven.compiler.version>
