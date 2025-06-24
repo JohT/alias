@@ -27,7 +27,7 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 <dependency>
   <groupId>io.github.joht.alias</groupId>
   <artifactId>type-alias</artifactId>
-  <version>2.0.0</version>
+  <version>3.0.0</version>
   <scope>provided</scope>
   <optional>true</optional>
 </dependency>
@@ -44,6 +44,12 @@ All changes are listed in [CHANGELOG.md](./CHANGELOG.md). The file is generated 
 - `type-alias-jsonb-typereference` had been migrated to Java 11
 - `type-alias-example` had been migrated to Java 11
 - `type-alias-axon-serializer-integration-test` will no longer be published to maven central
+
+#### Breaking changes in Version 3.x
+
+- `type-alias-jsonb-typereference` had been migrated to Java 17
+- `type-alias-example` had been migrated to Java 17
+- `type-alias-axon-serializer-integration-test` had been migrated to Java 17
 
 ### Contents
 - [type-alias](https://github.com/JohT/alias/tree/master/type-alias) 
