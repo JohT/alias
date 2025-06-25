@@ -127,6 +127,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #332  (2024-07-11)
  - #334  (2024-07-20)
  - #335  (2024-07-22)
+ - #336  (2024-07-23)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -135,7 +136,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#336](https://github.com/JohT/alias/pull/336) Update dependency org.wildfly:wildfly-dist to v33 (2024-07-23)
   - [#337](https://github.com/JohT/alias/pull/337) Update dependency org.hamcrest:hamcrest-core to v3 (2024-08-02)
   - [#341](https://github.com/JohT/alias/pull/341) Update slf4j monorepo to v2.0.16 (patch) (2024-08-10)
   - [#344](https://github.com/JohT/alias/pull/344) Update dependency org.junit.jupiter:junit-jupiter to v5.11.0 (2024-08-15)
