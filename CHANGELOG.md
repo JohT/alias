@@ -128,6 +128,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #334  (2024-07-20)
  - #335  (2024-07-22)
  - #336  (2024-07-23)
+ - #337  (2024-08-02)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -136,7 +137,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#337](https://github.com/JohT/alias/pull/337) Update dependency org.hamcrest:hamcrest-core to v3 (2024-08-02)
   - [#341](https://github.com/JohT/alias/pull/341) Update slf4j monorepo to v2.0.16 (patch) (2024-08-10)
   - [#344](https://github.com/JohT/alias/pull/344) Update dependency org.junit.jupiter:junit-jupiter to v5.11.0 (2024-08-15)
   - [#345](https://github.com/JohT/alias/pull/345) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.4.0 (2024-08-19)
