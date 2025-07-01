@@ -183,6 +183,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#433](https://github.com/JohT/alias/pull/433) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.19.1 (2025-06-14)
   - [#434](https://github.com/JohT/alias/pull/434) Update jackson.version to v2.19.1 (patch) (2025-06-14)
   - [#435](https://github.com/JohT/alias/pull/435) Update dependency org.apache.logging.log4j:log4j-core to v2.25.0 (2025-06-17)
+  - [#438](https://github.com/JohT/alias/pull/438) Update dependency org.dom4j:dom4j to v2.2.0 (2025-07-01)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
