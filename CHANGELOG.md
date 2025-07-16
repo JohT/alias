@@ -184,6 +184,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#434](https://github.com/JohT/alias/pull/434) Update jackson.version to v2.19.1 (patch) (2025-06-14)
   - [#435](https://github.com/JohT/alias/pull/435) Update dependency org.apache.logging.log4j:log4j-core to v2.25.0 (2025-06-17)
   - [#438](https://github.com/JohT/alias/pull/438) Update dependency org.dom4j:dom4j to v2.2.0 (2025-07-01)
+  - [#442](https://github.com/JohT/alias/pull/442) Update dependency io.projectreactor:reactor-core to v3.7.8 (2025-07-16)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
