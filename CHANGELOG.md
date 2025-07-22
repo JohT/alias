@@ -131,6 +131,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #337  (2024-08-02)
  - #341  (2024-08-10)
  - #344  (2024-08-15)
+ - #345  (2024-08-19)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -139,7 +140,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#345](https://github.com/JohT/alias/pull/345) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.4.0 (2024-08-19)
   - [#346](https://github.com/JohT/alias/pull/346) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.4.0 (2024-08-19)
   - [#349](https://github.com/JohT/alias/pull/349) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.8.0 (2024-08-23)
   - [#351](https://github.com/JohT/alias/pull/351) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.0 (2024-08-28)
