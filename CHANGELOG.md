@@ -132,6 +132,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #341  (2024-08-10)
  - #344  (2024-08-15)
  - #345  (2024-08-19)
+ - #346  (2024-08-19)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -140,7 +141,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#346](https://github.com/JohT/alias/pull/346) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.4.0 (2024-08-19)
   - [#349](https://github.com/JohT/alias/pull/349) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.8.0 (2024-08-23)
   - [#351](https://github.com/JohT/alias/pull/351) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.0 (2024-08-28)
   - [#352](https://github.com/JohT/alias/pull/352) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.10.0 (2024-08-28)
@@ -187,6 +187,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#442](https://github.com/JohT/alias/pull/442) Update dependency io.projectreactor:reactor-core to v3.7.8 (2025-07-16)
   - [#443](https://github.com/JohT/alias/pull/443) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.19.2 (2025-07-19)
   - [#444](https://github.com/JohT/alias/pull/444) Update jackson.version to v2.19.2 (patch) (2025-07-19)
+  - [#446](https://github.com/JohT/alias/pull/446) Update axon.version to v4.11.3 (patch) (2025-07-24)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
