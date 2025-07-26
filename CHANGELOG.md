@@ -188,6 +188,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#443](https://github.com/JohT/alias/pull/443) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.19.2 (2025-07-19)
   - [#444](https://github.com/JohT/alias/pull/444) Update jackson.version to v2.19.2 (patch) (2025-07-19)
   - [#446](https://github.com/JohT/alias/pull/446) Update axon.version to v4.11.3 (patch) (2025-07-24)
+  - [#447](https://github.com/JohT/alias/pull/447) Update axon.version to v4.12.0 (minor) (2025-07-26)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
