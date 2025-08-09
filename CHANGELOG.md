@@ -133,6 +133,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #344  (2024-08-15)
  - #345  (2024-08-19)
  - #346  (2024-08-19)
+ - #349  (2024-08-23)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -141,7 +142,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#349](https://github.com/JohT/alias/pull/349) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.8.0 (2024-08-23)
   - [#351](https://github.com/JohT/alias/pull/351) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.0 (2024-08-28)
   - [#352](https://github.com/JohT/alias/pull/352) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.10.0 (2024-08-28)
   - [#353](https://github.com/JohT/alias/pull/353) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.0 (2024-08-28)
@@ -190,6 +190,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#446](https://github.com/JohT/alias/pull/446) Update axon.version to v4.11.3 (patch) (2025-07-24)
   - [#447](https://github.com/JohT/alias/pull/447) Update axon.version to v4.12.0 (minor) (2025-07-26)
   - [#448](https://github.com/JohT/alias/pull/448) Update axon.version to v4.12.1 (patch) (2025-08-08)
+  - [#449](https://github.com/JohT/alias/pull/449) Update dependency org.wildfly:wildfly-dist to v37 (2025-08-09)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
