@@ -191,6 +191,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#447](https://github.com/JohT/alias/pull/447) Update axon.version to v4.12.0 (minor) (2025-07-26)
   - [#448](https://github.com/JohT/alias/pull/448) Update axon.version to v4.12.1 (patch) (2025-08-08)
   - [#449](https://github.com/JohT/alias/pull/449) Update dependency org.wildfly:wildfly-dist to v37 (2025-08-09)
+  - [#450](https://github.com/JohT/alias/pull/450) Update actions/checkout action to v5 (2025-08-12)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
