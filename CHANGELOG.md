@@ -134,6 +134,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #345  (2024-08-19)
  - #346  (2024-08-19)
  - #349  (2024-08-23)
+ - #351  (2024-08-28)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -142,7 +143,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#351](https://github.com/JohT/alias/pull/351) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.0 (2024-08-28)
   - [#352](https://github.com/JohT/alias/pull/352) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.10.0 (2024-08-28)
   - [#353](https://github.com/JohT/alias/pull/353) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.0 (2024-08-28)
   - [#354](https://github.com/JohT/alias/pull/354) Update dependency org.apache.logging.log4j:log4j-core to v2.24.0 (2024-09-07)
@@ -192,6 +192,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#448](https://github.com/JohT/alias/pull/448) Update axon.version to v4.12.1 (patch) (2025-08-08)
   - [#449](https://github.com/JohT/alias/pull/449) Update dependency org.wildfly:wildfly-dist to v37 (2025-08-09)
   - [#450](https://github.com/JohT/alias/pull/450) Update actions/checkout action to v5 (2025-08-12)
+  - [#451](https://github.com/JohT/alias/pull/451) Update dependency io.projectreactor:reactor-core to v3.7.9 (2025-08-13)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
