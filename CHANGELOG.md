@@ -136,6 +136,8 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #349  (2024-08-23)
  - #351  (2024-08-28)
  - #352  (2024-08-28)
+ - #353  (2024-08-28)
+ - #354  (2024-09-07)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -144,8 +146,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#353](https://github.com/JohT/alias/pull/353) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.0 (2024-08-28)
-  - [#354](https://github.com/JohT/alias/pull/354) Update dependency org.apache.logging.log4j:log4j-core to v2.24.0 (2024-09-07)
   - [#356](https://github.com/JohT/alias/pull/356) Update dependency org.apache.maven.plugins:maven-gpg-plugin to v3.2.6 (2024-09-14)
   - [#358](https://github.com/JohT/alias/pull/358) Update axon.version to v4.10.1 (patch) (2024-09-23)
   - [#359](https://github.com/JohT/alias/pull/359) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.17 (2024-09-25)
@@ -194,6 +194,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#450](https://github.com/JohT/alias/pull/450) Update actions/checkout action to v5 (2025-08-12)
   - [#451](https://github.com/JohT/alias/pull/451) Update dependency io.projectreactor:reactor-core to v3.7.9 (2025-08-13)
   - [#452](https://github.com/JohT/alias/pull/452) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.11.3 (2025-08-16)
+  - [#455](https://github.com/JohT/alias/pull/455) Update jackson.version to v2.20.0 (minor) (2025-08-31)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
