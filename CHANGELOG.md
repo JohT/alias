@@ -194,6 +194,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#450](https://github.com/JohT/alias/pull/450) Update actions/checkout action to v5 (2025-08-12)
   - [#451](https://github.com/JohT/alias/pull/451) Update dependency io.projectreactor:reactor-core to v3.7.9 (2025-08-13)
   - [#452](https://github.com/JohT/alias/pull/452) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.11.3 (2025-08-16)
+  - [#454](https://github.com/JohT/alias/pull/454) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.20.0 (2025-09-01)
   - [#455](https://github.com/JohT/alias/pull/455) Update jackson.version to v2.20.0 (minor) (2025-08-31)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
