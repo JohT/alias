@@ -139,6 +139,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #353  (2024-08-28)
  - #354  (2024-09-07)
  - #356  (2024-09-14)
+ - #358  (2024-09-23)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -147,7 +148,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#358](https://github.com/JohT/alias/pull/358) Update axon.version to v4.10.1 (patch) (2024-09-23)
   - [#359](https://github.com/JohT/alias/pull/359) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.17 (2024-09-25)
   - [#361](https://github.com/JohT/alias/pull/361) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.18.0 (2024-09-27)
   - [#362](https://github.com/JohT/alias/pull/362) Update jackson.version to v2.18.0 (minor) (2024-09-27)
