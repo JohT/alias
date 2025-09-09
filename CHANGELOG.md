@@ -197,6 +197,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#454](https://github.com/JohT/alias/pull/454) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.20.0 (2025-09-01)
   - [#455](https://github.com/JohT/alias/pull/455) Update jackson.version to v2.20.0 (minor) (2025-08-31)
   - [#456](https://github.com/JohT/alias/pull/456) Update dependency org.wildfly:wildfly-dist to v37.0.1.Final (2025-09-04)
+  - [#457](https://github.com/JohT/alias/pull/457) Update dependency org.wildfly.arquillian:wildfly-arquillian-container-managed to v5.1.0.Final (2025-09-09)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
