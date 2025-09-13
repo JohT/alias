@@ -140,6 +140,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #354  (2024-09-07)
  - #356  (2024-09-14)
  - #358  (2024-09-23)
+ - #359  (2024-09-25)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -148,7 +149,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#359](https://github.com/JohT/alias/pull/359) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.17 (2024-09-25)
   - [#361](https://github.com/JohT/alias/pull/361) Update dependency com.fasterxml.jackson.core:jackson-databind to v2.18.0 (2024-09-27)
   - [#362](https://github.com/JohT/alias/pull/362) Update jackson.version to v2.18.0 (minor) (2024-09-27)
   - [#369](https://github.com/JohT/alias/pull/369) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.1 (2024-10-06)
@@ -198,6 +198,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#455](https://github.com/JohT/alias/pull/455) Update jackson.version to v2.20.0 (minor) (2025-08-31)
   - [#456](https://github.com/JohT/alias/pull/456) Update dependency org.wildfly:wildfly-dist to v37.0.1.Final (2025-09-04)
   - [#457](https://github.com/JohT/alias/pull/457) Update dependency org.wildfly.arquillian:wildfly-arquillian-container-managed to v5.1.0.Final (2025-09-09)
+  - [#460](https://github.com/JohT/alias/pull/460) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.4 (2025-09-13)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
