@@ -142,6 +142,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #358  (2024-09-23)
  - #359  (2024-09-25)
  - #361  (2024-09-27)
+ - #362  (2024-09-27)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -150,7 +151,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#362](https://github.com/JohT/alias/pull/362) Update jackson.version to v2.18.0 (minor) (2024-09-27)
   - [#369](https://github.com/JohT/alias/pull/369) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.1 (2024-10-06)
   - [#371](https://github.com/JohT/alias/pull/371) Update dependency io.projectreactor:reactor-core to v3.6.11 (2024-10-16)
   - [#372](https://github.com/JohT/alias/pull/372) Update dependency org.wildfly:wildfly-dist to v34 (2024-10-18)
@@ -200,6 +200,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#457](https://github.com/JohT/alias/pull/457) Update dependency org.wildfly.arquillian:wildfly-arquillian-container-managed to v5.1.0.Final (2025-09-09)
   - [#460](https://github.com/JohT/alias/pull/460) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.4 (2025-09-13)
   - [#461](https://github.com/JohT/alias/pull/461) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.12.0 (2025-09-21)
+  - [#463](https://github.com/JohT/alias/pull/463) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.14.1 (2025-09-23)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
