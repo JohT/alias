@@ -202,6 +202,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#460](https://github.com/JohT/alias/pull/460) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.4 (2025-09-13)
   - [#461](https://github.com/JohT/alias/pull/461) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.12.0 (2025-09-21)
   - [#463](https://github.com/JohT/alias/pull/463) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.14.1 (2025-09-23)
+  - [#464](https://github.com/JohT/alias/pull/464) Update dependency org.junit.jupiter:junit-jupiter to v5.14.0 (2025-10-01)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
