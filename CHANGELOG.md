@@ -204,6 +204,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#463](https://github.com/JohT/alias/pull/463) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.14.1 (2025-09-23)
   - [#464](https://github.com/JohT/alias/pull/464) Update dependency org.junit.jupiter:junit-jupiter to v5.14.0 (2025-10-01)
   - [#466](https://github.com/JohT/alias/pull/466) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.9.0 (2025-10-03)
+  - [#467](https://github.com/JohT/alias/pull/467) Update github/codeql-action action to v4 (2025-10-08)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
