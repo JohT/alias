@@ -143,6 +143,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #359  (2024-09-25)
  - #361  (2024-09-27)
  - #362  (2024-09-27)
+ - #369  (2024-10-06)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -151,7 +152,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#369](https://github.com/JohT/alias/pull/369) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.1 (2024-10-06)
   - [#371](https://github.com/JohT/alias/pull/371) Update dependency io.projectreactor:reactor-core to v3.6.11 (2024-10-16)
   - [#372](https://github.com/JohT/alias/pull/372) Update dependency org.wildfly:wildfly-dist to v34 (2024-10-18)
   - [#379](https://github.com/JohT/alias/pull/379) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.11.1 (2024-11-03)
@@ -206,6 +206,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#466](https://github.com/JohT/alias/pull/466) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.9.0 (2025-10-03)
   - [#467](https://github.com/JohT/alias/pull/467) Update github/codeql-action action to v4 (2025-10-08)
   - [#468](https://github.com/JohT/alias/pull/468) Update dependency io.projectreactor:reactor-core to v3.7.12 (2025-10-15)
+  - [#469](https://github.com/JohT/alias/pull/469) Update dependency org.wildfly:wildfly-dist to v38 (2025-10-25)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
