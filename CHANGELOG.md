@@ -145,6 +145,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #362  (2024-09-27)
  - #369  (2024-10-06)
  - #371  (2024-10-16)
+ - #372  (2024-10-18)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -153,7 +154,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#372](https://github.com/JohT/alias/pull/372) Update dependency org.wildfly:wildfly-dist to v34 (2024-10-18)
   - [#379](https://github.com/JohT/alias/pull/379) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.11.1 (2024-11-03)
   - [#384](https://github.com/JohT/alias/pull/384) Update dependency io.projectreactor:reactor-core to v3.7.0 (2024-11-14)
   - [#386](https://github.com/JohT/alias/pull/386) Update dependency org.wildfly:wildfly-dist to v34.0.1.Final (2024-11-23)
@@ -208,6 +208,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#468](https://github.com/JohT/alias/pull/468) Update dependency io.projectreactor:reactor-core to v3.7.12 (2025-10-15)
   - [#469](https://github.com/JohT/alias/pull/469) Update dependency org.wildfly:wildfly-dist to v38 (2025-10-25)
   - [#471](https://github.com/JohT/alias/pull/471) Update jackson.version to v2.20.1 (patch) (2025-10-31)
+  - [#472](https://github.com/JohT/alias/pull/472) Update dependency org.junit.jupiter:junit-jupiter to v5.14.1 (2025-11-01)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
