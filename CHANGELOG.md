@@ -211,6 +211,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#472](https://github.com/JohT/alias/pull/472) Update dependency org.junit.jupiter:junit-jupiter to v5.14.1 (2025-11-01)
   - [#475](https://github.com/JohT/alias/pull/475) Update dependency io.projectreactor:reactor-core to v3.8.0 (2025-11-08)
   - [#476](https://github.com/JohT/alias/pull/476) Update dependency org.apache.maven.plugins:maven-release-plugin to v3.2.0 (2025-11-08)
+  - [#477](https://github.com/JohT/alias/pull/477) Update dependency org.wildfly:wildfly-dist to v38.0.1.Final (2025-11-18)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
