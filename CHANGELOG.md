@@ -146,6 +146,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #369  (2024-10-06)
  - #371  (2024-10-16)
  - #372  (2024-10-18)
+ - #379  (2024-11-03)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -154,7 +155,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#379](https://github.com/JohT/alias/pull/379) Update dependency org.apache.maven.plugins:maven-javadoc-plugin to v3.11.1 (2024-11-03)
   - [#384](https://github.com/JohT/alias/pull/384) Update dependency io.projectreactor:reactor-core to v3.7.0 (2024-11-14)
   - [#386](https://github.com/JohT/alias/pull/386) Update dependency org.wildfly:wildfly-dist to v34.0.1.Final (2024-11-23)
   - [#390](https://github.com/JohT/alias/pull/390) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.17.5 (2024-12-06)
@@ -212,6 +212,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#475](https://github.com/JohT/alias/pull/475) Update dependency io.projectreactor:reactor-core to v3.8.0 (2025-11-08)
   - [#476](https://github.com/JohT/alias/pull/476) Update dependency org.apache.maven.plugins:maven-release-plugin to v3.2.0 (2025-11-08)
   - [#477](https://github.com/JohT/alias/pull/477) Update dependency org.wildfly:wildfly-dist to v38.0.1.Final (2025-11-18)
+  - [#479](https://github.com/JohT/alias/pull/479) Update actions/checkout action to v6 (2025-11-21)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
