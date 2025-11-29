@@ -213,6 +213,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#476](https://github.com/JohT/alias/pull/476) Update dependency org.apache.maven.plugins:maven-release-plugin to v3.2.0 (2025-11-08)
   - [#477](https://github.com/JohT/alias/pull/477) Update dependency org.wildfly:wildfly-dist to v38.0.1.Final (2025-11-18)
   - [#479](https://github.com/JohT/alias/pull/479) Update actions/checkout action to v6 (2025-11-21)
+  - [#480](https://github.com/JohT/alias/pull/480) Update dependency org.apache.maven.plugins:maven-resources-plugin to v3.4.0 (2025-11-29)
   - [#481](https://github.com/JohT/alias/pull/481) Update dependency org.apache.maven.plugins:maven-source-plugin to v3.4.0 (2025-11-29)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
