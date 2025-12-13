@@ -215,6 +215,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#479](https://github.com/JohT/alias/pull/479) Update actions/checkout action to v6 (2025-11-21)
   - [#480](https://github.com/JohT/alias/pull/480) Update dependency org.apache.maven.plugins:maven-resources-plugin to v3.4.0 (2025-11-29)
   - [#481](https://github.com/JohT/alias/pull/481) Update dependency org.apache.maven.plugins:maven-source-plugin to v3.4.0 (2025-11-29)
+  - [#482](https://github.com/JohT/alias/pull/482) Update dependency org.apache.maven.plugins:maven-release-plugin to v3.3.1 (2025-12-13)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
