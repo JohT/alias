@@ -147,6 +147,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #371  (2024-10-16)
  - #372  (2024-10-18)
  - #379  (2024-11-03)
+ - #384  (2024-11-14)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -155,7 +156,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#384](https://github.com/JohT/alias/pull/384) Update dependency io.projectreactor:reactor-core to v3.7.0 (2024-11-14)
   - [#386](https://github.com/JohT/alias/pull/386) Update dependency org.wildfly:wildfly-dist to v34.0.1.Final (2024-11-23)
   - [#390](https://github.com/JohT/alias/pull/390) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.17.5 (2024-12-06)
   - [#395](https://github.com/JohT/alias/pull/395) Update dependency org.junit.jupiter:junit-jupiter to v5.11.4 (2024-12-17)
