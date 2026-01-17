@@ -217,6 +217,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#481](https://github.com/JohT/alias/pull/481) Update dependency org.apache.maven.plugins:maven-source-plugin to v3.4.0 (2025-11-29)
   - [#482](https://github.com/JohT/alias/pull/482) Update dependency org.apache.maven.plugins:maven-release-plugin to v3.3.1 (2025-12-13)
   - [#487](https://github.com/JohT/alias/pull/487) Update dependency io.projectreactor:reactor-core to v3.8.2 (2026-01-14)
+  - [#488](https://github.com/JohT/alias/pull/488) Update dependency org.wildfly:wildfly-dist to v39 (2026-01-17)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
