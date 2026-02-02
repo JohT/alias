@@ -41,7 +41,7 @@
 		<log4j.version>2.25.3</log4j.version>
 
 		<!-- Integration testing -->
-		<arquillian.version>1.8.1.Final</arquillian.version>
+		<arquillian.version>1.10.0.Final</arquillian.version>
 
 		<!-- Wildfly managed -->
 		<wildfly-arquillian.version>5.1.0.Final</wildfly-arquillian.version>
