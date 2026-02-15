@@ -150,6 +150,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #384  (2024-11-14)
  - #386  (2024-11-23)
  - #390  (2024-12-06)
+ - #395  (2024-12-17)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -158,7 +159,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#395](https://github.com/JohT/alias/pull/395) Update dependency org.junit.jupiter:junit-jupiter to v5.11.4 (2024-12-17)
   - [#396](https://github.com/JohT/alias/pull/396) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.18 (2024-12-25)
   - [#398](https://github.com/JohT/alias/pull/398) Update dependency org.wildfly:wildfly-dist to v35 (2025-01-09)
   - [#401](https://github.com/JohT/alias/pull/401) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.18.2 (2025-02-06)
