@@ -222,6 +222,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#490](https://github.com/JohT/alias/pull/490) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.15.0 (2026-02-02)
   - [#492](https://github.com/JohT/alias/pull/492) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.10.0 (2026-02-09)
   - [#494](https://github.com/JohT/alias/pull/494) Update dependency org.wildfly:wildfly-dist to v39.0.1.Final (2026-02-12)
+  - [#496](https://github.com/JohT/alias/pull/496) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.5 (2026-02-21)
   - [#497](https://github.com/JohT/alias/pull/497) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.5 (2026-02-21)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
