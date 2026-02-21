@@ -151,6 +151,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #386  (2024-11-23)
  - #390  (2024-12-06)
  - #395  (2024-12-17)
+ - #396  (2024-12-25)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -159,7 +160,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#396](https://github.com/JohT/alias/pull/396) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.18 (2024-12-25)
   - [#398](https://github.com/JohT/alias/pull/398) Update dependency org.wildfly:wildfly-dist to v35 (2025-01-09)
   - [#401](https://github.com/JohT/alias/pull/401) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.18.2 (2025-02-06)
   - [#403](https://github.com/JohT/alias/pull/403) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.19 (2025-02-07)
@@ -222,6 +222,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#490](https://github.com/JohT/alias/pull/490) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.15.0 (2026-02-02)
   - [#492](https://github.com/JohT/alias/pull/492) Update dependency org.apache.maven.plugins:maven-dependency-plugin to v3.10.0 (2026-02-09)
   - [#494](https://github.com/JohT/alias/pull/494) Update dependency org.wildfly:wildfly-dist to v39.0.1.Final (2026-02-12)
+  - [#497](https://github.com/JohT/alias/pull/497) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.5 (2026-02-21)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
