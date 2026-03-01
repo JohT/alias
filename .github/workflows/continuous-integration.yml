@@ -49,13 +49,6 @@ jobs:
         
     - name: (Maven) Build
       run: mvn --batch-mode install --file pom.xml
-      
-    - name: (Setup) Java Development Kit (JDK) 8 for integration tests
-      uses: actions/setup-java@v5
-      with:
-        distribution: 'adopt'
-        java-version: 8
-        cache: 'maven'
 
     - name: (Maven) Build and run integration tests
       working-directory: type-alias-axon-serializer-integration-test
