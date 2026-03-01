@@ -46,11 +46,11 @@ All changes are listed in [CHANGELOG.md](./CHANGELOG.md). The file is generated 
 - `type-alias-axon-serializer-integration-test` will no longer be published to maven central
 
 ### Contents
-- [type-alias](https://github.com/JohT/alias/tree/master/type-alias) 
+- [type-alias](https://github.com/JohT/alias/tree/main/type-alias) 
 contains the main module with the java annotation processing based file generator.
-- [type-alias-example](https://github.com/JohT/alias/tree/master/type-alias-example) 
+- [type-alias-example](https://github.com/JohT/alias/tree/main/type-alias-example) 
 shows, how to use and customize "type-alias" code generation.
-- [type-alias-axon-serializer](https://github.com/JohT/alias/tree/master/type-alias-axon-serializer)
+- [type-alias-axon-serializer](https://github.com/JohT/alias/tree/main/type-alias-axon-serializer)
 shows, how to enhance axon serializer to use aliases.
-- [type-alias-axon-serializer-integration-test](https://github.com/JohT/alias/tree/master/type-alias-axon-serializer-integration-test)
+- [type-alias-axon-serializer-integration-test](https://github.com/JohT/alias/tree/main/type-alias-axon-serializer-integration-test)
 shows, how to configure axon serializer to use aliases.

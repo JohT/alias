@@ -20,7 +20,7 @@ The free version of [snyk.io](https://snyk.io) is used to track security issues.
 
 ## Priority
 
-[type-alias](https://github.com/JohT/alias/tree/master/type-alias) 
+[type-alias](https://github.com/JohT/alias/tree/main/type-alias) 
 contains the main module with the java annotation processing based file generator. 
 Any security issue within this module will be fixed with priority.
 

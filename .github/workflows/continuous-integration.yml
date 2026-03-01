@@ -3,7 +3,7 @@ name: Java Continuous Integration
 on:
   push:
     branches:
-      - master
+      - main
     # Ignore changes in documentation and configuration. 
     # Need to contain the files listed in the git add parameters below.
     paths-ignore: 
@@ -15,7 +15,7 @@ on:
       - '**/*.txt'
   pull_request:
     branches:
-      - master
+      - main
     # Ignore changes in documentation and configuration.
     # Need to contain the files listed in the git add parameters below.
     paths-ignore: 
@@ -61,11 +61,11 @@ jobs:
       working-directory: type-alias-axon-serializer-integration-test
       run: mvn --batch-mode package --file pom.xml
 
-    # Commit and push changelog on merge into "master" branch
+    # Commit and push changelog on merge into "main" branch
     - name: (Display) Environment variable "github.event_name"
       run: echo "github.event_name=${{ github.event_name }}"
     - name: (GIT) Commit Generated Changelog
-      # Only run when a pull request gets merged or a commit is pushed to the "master" branch.
+      # Only run when a pull request gets merged or a commit is pushed to the "main" branch.
       # git add parameters need to directly or indirectly match paths-ignore parameters above.
       if: github.event_name == 'push'
       run: |

@@ -7,7 +7,7 @@
 
 	<name>type-alias-axon-serializer-integration-test</name>
 	<description>Contains the integration test for the type alias aware axon serializer including a fully working demo configuration for axon using JavaEE 8.</description>
-	<url>https://github.com/JohT/alias/tree/master/type-alias-axon-serializer-integration-test</url>
+	<url>https://github.com/JohT/alias/tree/main/type-alias-axon-serializer-integration-test</url>
 
 	<licenses>
 		<license>
