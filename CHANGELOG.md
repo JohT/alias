@@ -153,6 +153,9 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #395  (2024-12-17)
  - #396  (2024-12-25)
  - #398  (2025-01-09)
+ - #401  (2025-02-06)
+ - #403  (2025-02-07)
+ - #404  (2025-02-12)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -161,9 +164,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#401](https://github.com/JohT/alias/pull/401) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.18.2 (2025-02-06)
-  - [#403](https://github.com/JohT/alias/pull/403) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.19 (2025-02-07)
-  - [#404](https://github.com/JohT/alias/pull/404) Update dependency io.projectreactor:reactor-core to v3.7.3 (2025-02-12)
   - [#405](https://github.com/JohT/alias/pull/405) Update axon.version to v4.11.0 (minor) (2025-02-15)
   - [#406](https://github.com/JohT/alias/pull/406) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.19.1 (2025-02-18)
   - [#408](https://github.com/JohT/alias/pull/408) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.14.0 (2025-02-22)
@@ -224,6 +224,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#494](https://github.com/JohT/alias/pull/494) Update dependency org.wildfly:wildfly-dist to v39.0.1.Final (2026-02-12)
   - [#496](https://github.com/JohT/alias/pull/496) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.5 (2026-02-21)
   - [#497](https://github.com/JohT/alias/pull/497) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.5 (2026-02-21)
+  - [#504](https://github.com/JohT/alias/pull/504) Update dependency org.apache.maven.plugins:maven-resources-plugin to v3.5.0 (2026-03-06)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
