@@ -156,6 +156,7 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #401  (2025-02-06)
  - #403  (2025-02-07)
  - #404  (2025-02-12)
+ - #405  (2025-02-15)
  - #87  (2022-09-11)
  - #95  (2022-09-10)
  - #96  (2022-09-10)
@@ -164,7 +165,6 @@ Changelog for [alias](https://github.com/JohT/alias).
  - #99  (2022-09-19)
 
 ### Dependencies
-  - [#405](https://github.com/JohT/alias/pull/405) Update axon.version to v4.11.0 (minor) (2025-02-15)
   - [#406](https://github.com/JohT/alias/pull/406) Update dependency nl.jqno.equalsverifier:equalsverifier to v3.19.1 (2025-02-18)
   - [#408](https://github.com/JohT/alias/pull/408) Update dependency org.apache.maven.plugins:maven-compiler-plugin to v3.14.0 (2025-02-22)
   - [#409](https://github.com/JohT/alias/pull/409) Update dependency org.junit.jupiter:junit-jupiter to v5.12.0 (2025-02-22)
@@ -225,6 +225,7 @@ Changelog for [alias](https://github.com/JohT/alias).
   - [#496](https://github.com/JohT/alias/pull/496) Update dependency org.apache.maven.plugins:maven-failsafe-plugin to v3.5.5 (2026-02-21)
   - [#497](https://github.com/JohT/alias/pull/497) Update dependency org.apache.maven.plugins:maven-surefire-plugin to v3.5.5 (2026-02-21)
   - [#504](https://github.com/JohT/alias/pull/504) Update dependency org.apache.maven.plugins:maven-resources-plugin to v3.5.0 (2026-03-06)
+  - [#505](https://github.com/JohT/alias/pull/505) Update dependency io.projectreactor:reactor-core to v3.8.4 (2026-03-11)
  
 ## [v2.0.0](https://github.com/JohT/alias/releases/tag/v2.0.0) (2022-08-31)
 
