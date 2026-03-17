@@ -32,7 +32,7 @@ jobs:
     env: 
       CI_COMMIT_CHANGELOG_MESSAGE: Update Changelog
       CI_COMMIT_CHANGELOG_AUTHOR: ${{ github.event.repository.name }} Changelog Generator
-      JAVA_VERSION: 11
+      JAVA_VERSION: 21
     steps:
     - name: (GIT) Checkout code
       uses: actions/checkout@v6
@@ -50,13 +50,6 @@ jobs:
     - name: (Maven) Build
       run: mvn --batch-mode install --file pom.xml
       
-    - name: (Setup) Java Development Kit (JDK) 8 for integration tests
-      uses: actions/setup-java@v5
-      with:
-        distribution: 'adopt'
-        java-version: 8
-        cache: 'maven'
-
     - name: (Maven) Build and run integration tests
       working-directory: type-alias-axon-serializer-integration-test
       run: mvn --batch-mode package --file pom.xml
