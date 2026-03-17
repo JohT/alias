@@ -1,9 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.github.joht.alias</groupId>
+	<parent>
+		<groupId>io.github.joht.alias</groupId>
+		<artifactId>alias-parent</artifactId>
+		<version>2.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
 	<artifactId>type-alias-axon-serializer-integration-test</artifactId>
-	<version>2.0.1-SNAPSHOT</version>
 
 	<name>type-alias-axon-serializer-integration-test</name>
 	<description>Contains the integration test for the type alias aware axon serializer including a fully working demo configuration for axon using JavaEE 8.</description>
@@ -25,7 +30,6 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
 
 		<axon.version>4.12.3</axon.version>
 
@@ -51,13 +55,8 @@
 		<equalsverifier.version>3.19.4</equalsverifier.version>
 		<junit-jupiter.version>5.14.3</junit-jupiter.version>
 		<hamcrest.version>2.2</hamcrest.version>
-		<mockito.version>1.10.19</mockito.version>
 
 		<!-- Maven Plugins -->
-		<maven.compiler.version>3.15.0</maven.compiler.version>
-		<maven.surefire.version>3.5.5</maven.surefire.version>
-		<maven.failsafe.version>3.5.5</maven.failsafe.version>
-		<maven.assembly.version>3.3.0</maven.assembly.version>
 		<maven.dependency.version>3.10.0</maven.dependency.version>
 		<maven.resources.plugin.version>3.5.0</maven.resources.plugin.version>
 		<eclipse.lifecycle.mapping.version>1.0.0</eclipse.lifecycle.mapping.version>
