@@ -73,7 +73,7 @@
 		<!-- Test libraries -->
 		<junit-jupiter.version>5.14.3</junit-jupiter.version>
 		<hamcrest.version>3.0</hamcrest.version>
-		<mockito.version>5.5.0</mockito.version>
+		<mockito.version>5.23.0</mockito.version>
 	</properties>
 
 	<modules>
