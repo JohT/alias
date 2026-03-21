@@ -36,8 +36,8 @@
 		<!-- Optional dependencies for axon -->
 		<dom4j.version>2.2.0</dom4j.version>
 		<xom.version>1.2.10</xom.version>
-		<jackson.core.version>2.21.1</jackson.core.version>
-		<jackson.version>2.21.1</jackson.version>
+		<jackson.core.version>2.21.2</jackson.core.version>
+		<jackson.version>2.21.2</jackson.version>
 		<reactor.version>3.8.4</reactor.version>
 
 		<!-- Logging libraries -->
