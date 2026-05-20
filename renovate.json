@@ -25,6 +25,28 @@
       ],
       "groupName": "Java Development Kit (JDK)",
       "enabled": false
+    },
+    {
+      "description": "Keep Axon 4 modules on the latest 4.x version.",
+      "matchFileNames": [
+        "type-alias-axon-serializer/**",
+        "type-alias-axon-serializer-integration-test/**"
+      ],
+      "matchPackageNames": [
+        "org.axonframework:**"
+      ],
+      "allowedVersions": "<5.0.0"
+    },
+    {
+      "description": "Keep Axon 5 modules on the latest 5.x version.",
+      "matchFileNames": [
+        "type-alias-axon-5-serializer/**",
+        "type-alias-axon-5-serializer-integration-test/**"
+      ],
+      "matchPackageNames": [
+        "org.axonframework:**"
+      ],
+      "allowedVersions": ">=5.0.0 <6.0.0"
     }
   ],
   "customManagers": [

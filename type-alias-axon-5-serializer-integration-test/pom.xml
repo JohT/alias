@@ -1,0 +1,134 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>io.github.joht.alias</groupId>
+		<artifactId>alias-parent</artifactId>
+		<version>2.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<artifactId>type-alias-axon-5-serializer-integration-test</artifactId>
+	<name>type-alias-axon-5-serializer-integration-test</name>
+	<description>Integration tests for the type alias aware MessageTypeResolver for Axon Framework 5.</description>
+	<url>https://github.com/JohT/alias/tree/main/type-alias-axon-5-serializer-integration-test</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<axon5.version>5.1.0</axon5.version>
+		<jackson.version>2.21.3</jackson.version>
+	</properties>
+
+	<dependencies>
+		<!-- Library under test -->
+		<dependency>
+			<groupId>io.github.joht.alias</groupId>
+			<artifactId>type-alias-axon-5-serializer</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- type-alias annotation processor (compile-time) -->
+		<dependency>
+			<groupId>io.github.joht.alias</groupId>
+			<artifactId>type-alias</artifactId>
+			<version>${project.version}</version>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Required by the type-alias annotation processor for @Generated -->
+		<dependency>
+			<groupId>javax.annotation</groupId>
+			<artifactId>javax.annotation-api</artifactId>
+			<version>${annotation.api.version}</version>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- Axon 5 runtime dependencies -->
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-messaging</artifactId>
+			<version>${axon5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-modelling</artifactId>
+			<version>${axon5.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-eventsourcing</artifactId>
+			<version>${axon5.version}</version>
+		</dependency>
+
+		<!-- Testing -->
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-test</artifactId>
+			<version>${axon5.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.axonframework</groupId>
+			<artifactId>axon-conversion</artifactId>
+			<version>${axon5.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.version}</version>
+				<configuration>
+					<source>17</source>
+					<target>17</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>io.github.joht.alias</groupId>
+							<artifactId>type-alias</artifactId>
+							<version>${project.version}</version>
+						</path>
+						<path>
+							<groupId>javax.annotation</groupId>
+							<artifactId>javax.annotation-api</artifactId>
+							<version>${annotation.api.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
+				<configuration>
+					<includes>
+						<include>**/*IT.java</include>
+						<include>**/*Test.java</include>
+					</includes>
+					<systemPropertyVariables>
+						<user.language>en</user.language>
+						<user.country>US</user.country>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -36,7 +36,7 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 
 ### Building this project
 
-Install maven and use `mvn install` to build this project, run all tests including the integration tests and copy the resulting artifacts into the local maven repository. A list of the most important commands can be found in [COMMANDS.md](COMMANDS.md).
+Install maven and use `mvn install` to build this project and copy the resulting artifacts into the local maven repository. Integration-test modules are not part of the root reactor and must be built explicitly. A list of the most important commands can be found in [COMMANDS.md](COMMANDS.md).
 
 ### Changes
 
