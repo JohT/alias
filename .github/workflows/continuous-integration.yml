@@ -48,6 +48,8 @@ jobs:
         cache: 'maven'
         
     - name: (Maven) Build
+      env:
+        GITHUB_CHANGELOG_TOKEN: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
       run: mvn --batch-mode install --file pom.xml
       
     - name: (Maven) Build and run integration tests

@@ -40,7 +40,13 @@ Install maven and use `mvn install` to build this project and copy the resulting
 
 ### Changes
 
-All changes are listed in [CHANGELOG.md](./CHANGELOG.md). The file is generated automatically during "generate-resources" build phase based on merged pull requests and their tags.
+All changes are listed in [CHANGELOG.md](./CHANGELOG.md). The file is generated during the `generate-sources` phase when the `releases` Maven profile is activated. To regenerate it locally with PR titles, set the `GITHUB_CHANGELOG_TOKEN` environment variable:
+
+```bash
+GITHUB_CHANGELOG_TOKEN=<your-token> mvn clean verify -Preleases
+```
+
+Without the token, only dependency updates (extracted from commit messages) will include titles; feature PRs will show only issue numbers.
 
 #### Breaking changes in Version 2.x
 
