@@ -1,6 +1,7 @@
+# alias
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.joht.alias/type-alias.svg?style=shield)](https://maven-badges.herokuapp.com/maven-central/io.github.joht.alias/type-alias/)
-# alias
 
 Java identifies types by their class name. 
 The class name heavily depends on implementation details (e.g. where the class is located).
@@ -34,9 +35,11 @@ that generates (by default) the ResourceBundle `TypeAlias.java` inside the defau
 ```
 
 ### Building this project
-Install maven and use `mvn install` to build this project, run all tests including the integration tests and copy the resulting artifacts into the local maven repository. A list of the most important commands can be found in [COMMANDS.md](COMMANDS.md).
+
+Install maven and use `mvn install` to build this project and copy the resulting artifacts into the local maven repository. Integration-test modules are not part of the root reactor and must be built explicitly. A list of the most important commands can be found in [COMMANDS.md](COMMANDS.md).
 
 ### Changes
+
 All changes are listed in [CHANGELOG.md](./CHANGELOG.md). The file is generated automatically during "generate-resources" build phase based on merged pull requests and their tags.
 
 #### Breaking changes in Version 2.x
@@ -46,6 +49,7 @@ All changes are listed in [CHANGELOG.md](./CHANGELOG.md). The file is generated 
 - `type-alias-axon-serializer-integration-test` will no longer be published to maven central
 
 ### Contents
+
 - [type-alias](https://github.com/JohT/alias/tree/main/type-alias) 
 contains the main module with the java annotation processing based file generator.
 - [type-alias-example](https://github.com/JohT/alias/tree/main/type-alias-example) 
