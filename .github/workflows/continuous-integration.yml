@@ -35,7 +35,7 @@ jobs:
       JAVA_VERSION: 21
     steps:
     - name: (GIT) Checkout code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         token: ${{ secrets.WORKFLOW_GIT_ACCESS_TOKEN }}
         fetch-depth: 0
